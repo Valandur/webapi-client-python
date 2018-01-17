@@ -35,6 +35,7 @@ from .models.command_response_1 import CommandResponse1
 from .models.command_result import CommandResult
 from .models.commands_response import CommandsResponse
 from .models.create_entity_request import CreateEntityRequest
+from .models.create_web_book_request import CreateWebBookRequest
 from .models.create_world_request import CreateWorldRequest
 from .models.damage_request import DamageRequest
 from .models.damage_request_1 import DamageRequest1
@@ -43,6 +44,7 @@ from .models.entities_list import EntitiesList
 from .models.entity import Entity
 from .models.entity_method_result import EntityMethodResult
 from .models.entity_response import EntityResponse
+from .models.error400 import Error400
 from .models.execute_command_response import ExecuteCommandResponse
 from .models.execute_player_method_response import ExecutePlayerMethodResponse
 from .models.execute_tile_entity_method_response import ExecuteTileEntityMethodResponse
@@ -51,7 +53,6 @@ from .models.husky_crate import HuskyCrate
 from .models.husky_crate_full_rewards import HuskyCrateFullRewards
 from .models.husky_crate_response import HuskyCrateResponse
 from .models.husky_crates_response import HuskyCratesResponse
-from .models.inline_response_400 import InlineResponse400
 from .models.inventory import Inventory
 from .models.item_stack import ItemStack
 from .models.location import Location
@@ -66,11 +67,7 @@ from .models.message_option import MessageOption
 from .models.message_request import MessageRequest
 from .models.message_response import MessageResponse
 from .models.messages_response import MessagesResponse
-from .models.nations_nation import NationsNation
-from .models.nations_nation_response import NationsNationResponse
-from .models.nations_nations_response import NationsNationsResponse
-from .models.nations_rect import NationsRect
-from .models.nations_zone import NationsZone
+from .models.model_property import ModelProperty
 from .models.nucleus_jail_full import NucleusJailFull
 from .models.nucleus_jail_response import NucleusJailResponse
 from .models.nucleus_jails_response import NucleusJailsResponse
@@ -96,8 +93,11 @@ from .models.raw_request_param import RawRequestParam
 from .models.raw_response import RawResponse
 from .models.server_info import ServerInfo
 from .models.server_info_detail import ServerInfoDetail
+from .models.server_properties_list import ServerPropertiesList
 from .models.servlets_response import ServletsResponse
 from .models.single_block import SingleBlock
+from .models.stat import Stat
+from .models.stats_response import StatsResponse
 from .models.tile_entities_response import TileEntitiesResponse
 from .models.tile_entity import TileEntity
 from .models.tile_entity_response import TileEntityResponse
@@ -107,6 +107,9 @@ from .models.update_world_request import UpdateWorldRequest
 from .models.user import User
 from .models.user_response import UserResponse
 from .models.vector3 import Vector3
+from .models.web_book import WebBook
+from .models.web_books_response import WebBooksResponse
+from .models.web_books_response_1 import WebBooksResponse1
 from .models.world import World
 from .models.world_full_border import WorldFullBorder
 from .models.world_full_dimension import WorldFullDimension
@@ -121,11 +124,11 @@ from .models.entity_full import EntityFull
 from .models.husky_crate_full import HuskyCrateFull
 from .models.mmc_ticket_full import MMCTicketFull
 from .models.message_full import MessageFull
-from .models.nations_nation_full import NationsNationFull
 from .models.nucleus_kit_full import NucleusKitFull
 from .models.player_full import PlayerFull
 from .models.plugin_full import PluginFull
 from .models.tile_entity_full import TileEntityFull
+from .models.web_book_full import WebBookFull
 from .models.world_full import WorldFull
 
 # import apis into sdk package
@@ -138,7 +141,6 @@ from .apis.husky_crates_api import HuskyCratesApi
 from .apis.info_api import InfoApi
 from .apis.mmc_tickets_api import MMCTicketsApi
 from .apis.message_api import MessageApi
-from .apis.nations_api import NationsApi
 from .apis.nucleus_api import NucleusApi
 from .apis.player_api import PlayerApi
 from .apis.plugin_api import PluginApi
@@ -146,6 +148,7 @@ from .apis.registry_api import RegistryApi
 from .apis.servlet_api import ServletApi
 from .apis.tile_entity_api import TileEntityApi
 from .apis.user_api import UserApi
+from .apis.web_books_api import WebBooksApi
 from .apis.world_api import WorldApi
 
 # import ApiClient

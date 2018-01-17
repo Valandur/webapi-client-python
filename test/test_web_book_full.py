@@ -19,40 +19,24 @@ import unittest
 
 import swagger_client
 from swagger_client.rest import ApiException
-from swagger_client.apis.info_api import InfoApi
+from swagger_client.models.web_book_full import WebBookFull
 
 
-class TestInfoApi(unittest.TestCase):
-    """ InfoApi unit test stubs """
+class TestWebBookFull(unittest.TestCase):
+    """ WebBookFull unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.info_api.InfoApi()
+        pass
 
     def tearDown(self):
         pass
 
-    def test_get_info(self):
+    def testWebBookFull(self):
         """
-        Test case for get_info
-
-        Server info
+        Test WebBookFull
         """
-        pass
-
-    def test_get_server_properties(self):
-        """
-        Test case for get_server_properties
-
-        Server properties
-        """
-        pass
-
-    def test_get_stats(self):
-        """
-        Test case for get_stats
-
-        Server stats
-        """
+        # FIXME: construct object with mandatory attributes with example values
+        #model = swagger_client.models.web_book_full.WebBookFull()
         pass
 
 

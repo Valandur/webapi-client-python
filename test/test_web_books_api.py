@@ -19,39 +19,63 @@ import unittest
 
 import swagger_client
 from swagger_client.rest import ApiException
-from swagger_client.apis.info_api import InfoApi
+from swagger_client.apis.web_books_api import WebBooksApi
 
 
-class TestInfoApi(unittest.TestCase):
-    """ InfoApi unit test stubs """
+class TestWebBooksApi(unittest.TestCase):
+    """ WebBooksApi unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.info_api.InfoApi()
+        self.api = swagger_client.apis.web_books_api.WebBooksApi()
 
     def tearDown(self):
         pass
 
-    def test_get_info(self):
+    def test_create_book(self):
         """
-        Test case for get_info
+        Test case for create_book
 
-        Server info
-        """
-        pass
-
-    def test_get_server_properties(self):
-        """
-        Test case for get_server_properties
-
-        Server properties
+        Create web book
         """
         pass
 
-    def test_get_stats(self):
+    def test_delete_book(self):
         """
-        Test case for get_stats
+        Test case for delete_book
 
-        Server stats
+        Delete a web book
+        """
+        pass
+
+    def test_get_book(self):
+        """
+        Test case for get_book
+
+        Detailed web book info
+        """
+        pass
+
+    def test_get_book_html(self):
+        """
+        Test case for get_book_html
+
+        Web Book HTML
+        """
+        pass
+
+    def test_get_book_html_post(self):
+        """
+        Test case for get_book_html_post
+
+        Web Book HTML
+        """
+        pass
+
+    def test_get_books(self):
+        """
+        Test case for get_books
+
+        Books list
         """
         pass
 

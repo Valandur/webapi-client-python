@@ -35,6 +35,7 @@ from .command_response_1 import CommandResponse1
 from .command_result import CommandResult
 from .commands_response import CommandsResponse
 from .create_entity_request import CreateEntityRequest
+from .create_web_book_request import CreateWebBookRequest
 from .create_world_request import CreateWorldRequest
 from .damage_request import DamageRequest
 from .damage_request_1 import DamageRequest1
@@ -43,6 +44,7 @@ from .entities_list import EntitiesList
 from .entity import Entity
 from .entity_method_result import EntityMethodResult
 from .entity_response import EntityResponse
+from .error400 import Error400
 from .execute_command_response import ExecuteCommandResponse
 from .execute_player_method_response import ExecutePlayerMethodResponse
 from .execute_tile_entity_method_response import ExecuteTileEntityMethodResponse
@@ -51,7 +53,6 @@ from .husky_crate import HuskyCrate
 from .husky_crate_full_rewards import HuskyCrateFullRewards
 from .husky_crate_response import HuskyCrateResponse
 from .husky_crates_response import HuskyCratesResponse
-from .inline_response_400 import InlineResponse400
 from .inventory import Inventory
 from .item_stack import ItemStack
 from .location import Location
@@ -66,11 +67,7 @@ from .message_option import MessageOption
 from .message_request import MessageRequest
 from .message_response import MessageResponse
 from .messages_response import MessagesResponse
-from .nations_nation import NationsNation
-from .nations_nation_response import NationsNationResponse
-from .nations_nations_response import NationsNationsResponse
-from .nations_rect import NationsRect
-from .nations_zone import NationsZone
+from .model_property import ModelProperty
 from .nucleus_jail_full import NucleusJailFull
 from .nucleus_jail_response import NucleusJailResponse
 from .nucleus_jails_response import NucleusJailsResponse
@@ -96,8 +93,11 @@ from .raw_request_param import RawRequestParam
 from .raw_response import RawResponse
 from .server_info import ServerInfo
 from .server_info_detail import ServerInfoDetail
+from .server_properties_list import ServerPropertiesList
 from .servlets_response import ServletsResponse
 from .single_block import SingleBlock
+from .stat import Stat
+from .stats_response import StatsResponse
 from .tile_entities_response import TileEntitiesResponse
 from .tile_entity import TileEntity
 from .tile_entity_response import TileEntityResponse
@@ -107,6 +107,9 @@ from .update_world_request import UpdateWorldRequest
 from .user import User
 from .user_response import UserResponse
 from .vector3 import Vector3
+from .web_book import WebBook
+from .web_books_response import WebBooksResponse
+from .web_books_response_1 import WebBooksResponse1
 from .world import World
 from .world_full_border import WorldFullBorder
 from .world_full_dimension import WorldFullDimension
@@ -121,9 +124,9 @@ from .entity_full import EntityFull
 from .husky_crate_full import HuskyCrateFull
 from .mmc_ticket_full import MMCTicketFull
 from .message_full import MessageFull
-from .nations_nation_full import NationsNationFull
 from .nucleus_kit_full import NucleusKitFull
 from .player_full import PlayerFull
 from .plugin_full import PluginFull
 from .tile_entity_full import TileEntityFull
+from .web_book_full import WebBookFull
 from .world_full import WorldFull

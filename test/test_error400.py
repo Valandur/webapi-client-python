@@ -19,11 +19,11 @@ import unittest
 
 import swagger_client
 from swagger_client.rest import ApiException
-from swagger_client.models.nations_zone import NationsZone
+from swagger_client.models.error400 import Error400
 
 
-class TestNationsZone(unittest.TestCase):
-    """ NationsZone unit test stubs """
+class TestError400(unittest.TestCase):
+    """ Error400 unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestNationsZone(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testNationsZone(self):
+    def testError400(self):
         """
-        Test NationsZone
+        Test Error400
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = swagger_client.models.nations_zone.NationsZone()
+        #model = swagger_client.models.error400.Error400()
         pass
 
 
