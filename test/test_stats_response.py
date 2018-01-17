@@ -19,11 +19,11 @@ import unittest
 
 import swagger_client
 from swagger_client.rest import ApiException
-from swagger_client.models.nations_nations_response import NationsNationsResponse
+from swagger_client.models.stats_response import StatsResponse
 
 
-class TestNationsNationsResponse(unittest.TestCase):
-    """ NationsNationsResponse unit test stubs """
+class TestStatsResponse(unittest.TestCase):
+    """ StatsResponse unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestNationsNationsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testNationsNationsResponse(self):
+    def testStatsResponse(self):
         """
-        Test NationsNationsResponse
+        Test StatsResponse
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = swagger_client.models.nations_nations_response.NationsNationsResponse()
+        #model = swagger_client.models.stats_response.StatsResponse()
         pass
 
 

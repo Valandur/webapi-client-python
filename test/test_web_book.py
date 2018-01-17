@@ -19,11 +19,11 @@ import unittest
 
 import swagger_client
 from swagger_client.rest import ApiException
-from swagger_client.models.inline_response_400 import InlineResponse400
+from swagger_client.models.web_book import WebBook
 
 
-class TestInlineResponse400(unittest.TestCase):
-    """ InlineResponse400 unit test stubs """
+class TestWebBook(unittest.TestCase):
+    """ WebBook unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestInlineResponse400(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testInlineResponse400(self):
+    def testWebBook(self):
         """
-        Test InlineResponse400
+        Test WebBook
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = swagger_client.models.inline_response_400.InlineResponse400()
+        #model = swagger_client.models.web_book.WebBook()
         pass
 
 

@@ -19,32 +19,24 @@ import unittest
 
 import swagger_client
 from swagger_client.rest import ApiException
-from swagger_client.apis.nations_api import NationsApi
+from swagger_client.models.web_books_response import WebBooksResponse
 
 
-class TestNationsApi(unittest.TestCase):
-    """ NationsApi unit test stubs """
+class TestWebBooksResponse(unittest.TestCase):
+    """ WebBooksResponse unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.nations_api.NationsApi()
+        pass
 
     def tearDown(self):
         pass
 
-    def test_get_nation(self):
+    def testWebBooksResponse(self):
         """
-        Test case for get_nation
-
-        Detailed nation info
+        Test WebBooksResponse
         """
-        pass
-
-    def test_get_nations(self):
-        """
-        Test case for get_nations
-
-        Nations list
-        """
+        # FIXME: construct object with mandatory attributes with example values
+        #model = swagger_client.models.web_books_response.WebBooksResponse()
         pass
 
 

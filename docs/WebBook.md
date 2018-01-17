@@ -1,11 +1,11 @@
-# ExecuteTileEntityMethodResponse
+# WebBook
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ok** | [**Ok**](Ok.md) |  | [optional] 
-**tile_entity** | [**TileEntityFull**](TileEntityFull.md) |  | [optional] 
-**result** | [**RawResponse**](RawResponse.md) |  | [optional] 
+**id** | **str** | The id of the web books. | [optional] 
+**title** | **str** | The title of the web book. | [optional] 
+**lines** | **list[str]** | The lines of text in the web book. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
