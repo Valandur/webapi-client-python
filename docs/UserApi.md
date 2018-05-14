@@ -1,21 +1,22 @@
 # swagger_client.UserApi
 
-All URIs are relative to *http://&lt;host&gt;/api*
+All URIs are relative to *https://localhost/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**check_user**](UserApi.md#check_user) | **GET** /user | Check a user key
+[**get_user_details**](UserApi.md#get_user_details) | **GET** /user | Check info
 [**login**](UserApi.md#login) | **POST** /user | Login
+[**logout**](UserApi.md#logout) | **POST** /user/logout | Logout
 
 
-# **check_user**
-> UserResponse check_user()
+# **get_user_details**
+> PermissionStruct get_user_details(details=details, accept=accept, pretty=pretty)
 
-Check a user key
+Check info
 
-Checks to see if the passed api key is still valid. 
+Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.user**   
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -23,36 +24,46 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: headerKey
-swagger_client.configuration.api_key['x-webapi-key'] = 'YOUR_API_KEY'
+# Configure API key authorization: ApiKeyHeader
+configuration = swagger_client.Configuration()
+configuration.api_key['X-WebAPI-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['x-webapi-key'] = 'Bearer'
-# Configure API key authorization: queryKey
-swagger_client.configuration.api_key['key'] = 'YOUR_API_KEY'
+# configuration.api_key_prefix['X-WebAPI-Key'] = 'Bearer'
+# Configure API key authorization: ApiKeyQuery
+configuration = swagger_client.Configuration()
+configuration.api_key['key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['key'] = 'Bearer'
+# configuration.api_key_prefix['key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.UserApi()
+api_instance = swagger_client.UserApi(swagger_client.ApiClient(configuration))
+details = true # bool | Add to include additional details, omit or false otherwise (optional)
+accept = 'accept_example' # str | Override the 'Accept' request header (useful for debugging your requests) (optional)
+pretty = true # bool | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)
 
-try: 
-    # Check a user key
-    api_response = api_instance.check_user()
+try:
+    # Check info
+    api_response = api_instance.get_user_details(details=details, accept=accept, pretty=pretty)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling UserApi->check_user: %s\n" % e)
+    print("Exception when calling UserApi->get_user_details: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **details** | **bool**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **str**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**UserResponse**](UserResponse.md)
+[**PermissionStruct**](PermissionStruct.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -62,13 +73,13 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **login**
-> LoginResponse login(login_request)
+> PermissionStruct login(body=body, details=details, accept=accept, pretty=pretty)
 
 Login
 
-Tries to aquire an api key with the passed credentials. 
+Tries to acquire an api key with the passed credentials.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -76,22 +87,16 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: headerKey
-swagger_client.configuration.api_key['x-webapi-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['x-webapi-key'] = 'Bearer'
-# Configure API key authorization: queryKey
-swagger_client.configuration.api_key['key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['key'] = 'Bearer'
-
 # create an instance of the API class
 api_instance = swagger_client.UserApi()
-login_request = swagger_client.LoginRequest() # LoginRequest | 
+body = swagger_client.AuthenticationRequest() # AuthenticationRequest |  (optional)
+details = true # bool | Add to include additional details, omit or false otherwise (optional)
+accept = 'accept_example' # str | Override the 'Accept' request header (useful for debugging your requests) (optional)
+pretty = true # bool | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)
 
-try: 
+try:
     # Login
-    api_response = api_instance.login(login_request)
+    api_response = api_instance.login(body=body, details=details, accept=accept, pretty=pretty)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserApi->login: %s\n" % e)
@@ -101,15 +106,70 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **login_request** | [**LoginRequest**](LoginRequest.md)|  | 
+ **body** | [**AuthenticationRequest**](AuthenticationRequest.md)|  | [optional] 
+ **details** | **bool**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **str**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**LoginResponse**](LoginResponse.md)
+[**PermissionStruct**](PermissionStruct.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **logout**
+> PermissionStruct logout(details=details, accept=accept, pretty=pretty)
+
+Logout
+
+Invalidate the current API key, logging out the active user.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.UserApi()
+details = true # bool | Add to include additional details, omit or false otherwise (optional)
+accept = 'accept_example' # str | Override the 'Accept' request header (useful for debugging your requests) (optional)
+pretty = true # bool | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)
+
+try:
+    # Logout
+    api_response = api_instance.logout(details=details, accept=accept, pretty=pretty)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UserApi->logout: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **details** | **bool**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **str**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**PermissionStruct**](PermissionStruct.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

@@ -1,20 +1,20 @@
 # swagger_client.RegistryApi
 
-All URIs are relative to *http://&lt;host&gt;/api*
+All URIs are relative to *https://localhost/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_catalog_values**](RegistryApi.md#get_catalog_values) | **GET** /registry/{className} | List catalog values
+[**get_registry**](RegistryApi.md#get_registry) | **GET** /registry/{class} | Get a catalog type
 
 
-# **get_catalog_values**
-> CatalogTypesResponse get_catalog_values(class_name)
+# **get_registry**
+> list[CatalogType] get_registry(_class, details=details, accept=accept, pretty=pretty)
 
-List catalog values
+Get a catalog type
 
-Lists all the catalog values of a specified CatalogType.  > Required permission: registry.one 
+Lists all the catalog values of a specified CatalogType.     **Required permissions:**    - **registry.one**   
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -22,40 +22,48 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: headerKey
-swagger_client.configuration.api_key['x-webapi-key'] = 'YOUR_API_KEY'
+# Configure API key authorization: ApiKeyHeader
+configuration = swagger_client.Configuration()
+configuration.api_key['X-WebAPI-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['x-webapi-key'] = 'Bearer'
-# Configure API key authorization: queryKey
-swagger_client.configuration.api_key['key'] = 'YOUR_API_KEY'
+# configuration.api_key_prefix['X-WebAPI-Key'] = 'Bearer'
+# Configure API key authorization: ApiKeyQuery
+configuration = swagger_client.Configuration()
+configuration.api_key['key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['key'] = 'Bearer'
+# configuration.api_key_prefix['key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.RegistryApi()
-class_name = 'class_name_example' # str | The fully qualified class name of the CatalogType to get.
+api_instance = swagger_client.RegistryApi(swagger_client.ApiClient(configuration))
+_class = '_class_example' # str | The fully qualified classname of the catalog type
+details = true # bool | Add to include additional details, omit or false otherwise (optional)
+accept = 'accept_example' # str | Override the 'Accept' request header (useful for debugging your requests) (optional)
+pretty = true # bool | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)
 
-try: 
-    # List catalog values
-    api_response = api_instance.get_catalog_values(class_name)
+try:
+    # Get a catalog type
+    api_response = api_instance.get_registry(_class, details=details, accept=accept, pretty=pretty)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling RegistryApi->get_catalog_values: %s\n" % e)
+    print("Exception when calling RegistryApi->get_registry: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **class_name** | **str**| The fully qualified class name of the CatalogType to get. | 
+ **_class** | **str**| The fully qualified classname of the catalog type | 
+ **details** | **bool**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **str**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**CatalogTypesResponse**](CatalogTypesResponse.md)
+[**list[CatalogType]**](CatalogType.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 

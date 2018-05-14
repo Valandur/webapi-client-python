@@ -1,21 +1,21 @@
 # swagger_client.HistoryApi
 
-All URIs are relative to *http://&lt;host&gt;/api*
+All URIs are relative to *https://localhost/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_chat_history**](HistoryApi.md#get_chat_history) | **GET** /history/chat | Chat History
-[**get_command_history**](HistoryApi.md#get_command_history) | **GET** /history/cmd | Command History
+[**get_chat**](HistoryApi.md#get_chat) | **GET** /history/message | Get message history
+[**get_commands**](HistoryApi.md#get_commands) | **GET** /history/cmd | Get command history
 
 
-# **get_chat_history**
-> ChatHistoryResponse get_chat_history()
+# **get_chat**
+> list[Message] get_chat(details=details, accept=accept, pretty=pretty)
 
-Chat History
+Get message history
 
-View a history of the server chat.  > Required permission: history.chat 
+View a history of the server messages.     **Required permissions:**    - **history.message**   
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -23,36 +23,46 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: headerKey
-swagger_client.configuration.api_key['x-webapi-key'] = 'YOUR_API_KEY'
+# Configure API key authorization: ApiKeyHeader
+configuration = swagger_client.Configuration()
+configuration.api_key['X-WebAPI-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['x-webapi-key'] = 'Bearer'
-# Configure API key authorization: queryKey
-swagger_client.configuration.api_key['key'] = 'YOUR_API_KEY'
+# configuration.api_key_prefix['X-WebAPI-Key'] = 'Bearer'
+# Configure API key authorization: ApiKeyQuery
+configuration = swagger_client.Configuration()
+configuration.api_key['key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['key'] = 'Bearer'
+# configuration.api_key_prefix['key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.HistoryApi()
+api_instance = swagger_client.HistoryApi(swagger_client.ApiClient(configuration))
+details = true # bool | Add to include additional details, omit or false otherwise (optional)
+accept = 'accept_example' # str | Override the 'Accept' request header (useful for debugging your requests) (optional)
+pretty = true # bool | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)
 
-try: 
-    # Chat History
-    api_response = api_instance.get_chat_history()
+try:
+    # Get message history
+    api_response = api_instance.get_chat(details=details, accept=accept, pretty=pretty)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling HistoryApi->get_chat_history: %s\n" % e)
+    print("Exception when calling HistoryApi->get_chat: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **details** | **bool**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **str**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**ChatHistoryResponse**](ChatHistoryResponse.md)
+[**list[Message]**](Message.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -61,14 +71,14 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_command_history**
-> CommandHistoryResponse get_command_history()
+# **get_commands**
+> list[CommandCall] get_commands(details=details, accept=accept, pretty=pretty)
 
-Command History
+Get command history
 
-View a history of the server commands.  > Required permission: history.cmd 
+View a history of the server commands.     **Required permissions:**    - **history.cmd**   
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -76,36 +86,46 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: headerKey
-swagger_client.configuration.api_key['x-webapi-key'] = 'YOUR_API_KEY'
+# Configure API key authorization: ApiKeyHeader
+configuration = swagger_client.Configuration()
+configuration.api_key['X-WebAPI-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['x-webapi-key'] = 'Bearer'
-# Configure API key authorization: queryKey
-swagger_client.configuration.api_key['key'] = 'YOUR_API_KEY'
+# configuration.api_key_prefix['X-WebAPI-Key'] = 'Bearer'
+# Configure API key authorization: ApiKeyQuery
+configuration = swagger_client.Configuration()
+configuration.api_key['key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['key'] = 'Bearer'
+# configuration.api_key_prefix['key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.HistoryApi()
+api_instance = swagger_client.HistoryApi(swagger_client.ApiClient(configuration))
+details = true # bool | Add to include additional details, omit or false otherwise (optional)
+accept = 'accept_example' # str | Override the 'Accept' request header (useful for debugging your requests) (optional)
+pretty = true # bool | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)
 
-try: 
-    # Command History
-    api_response = api_instance.get_command_history()
+try:
+    # Get command history
+    api_response = api_instance.get_commands(details=details, accept=accept, pretty=pretty)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling HistoryApi->get_command_history: %s\n" % e)
+    print("Exception when calling HistoryApi->get_commands: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **details** | **bool**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **str**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**CommandHistoryResponse**](CommandHistoryResponse.md)
+[**list[CommandCall]**](CommandCall.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 

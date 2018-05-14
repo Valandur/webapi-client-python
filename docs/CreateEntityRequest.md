@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**world** | **str** | The UUID or name of the world to create the entity in. | [optional] 
-**position** | [**Vector3**](Vector3.md) |  | [optional] 
-**type** | **str** | The type of the entity. Check &#x60;/registry/org.spongepowered.api.entity.EntityType&#x60;. | [optional] 
+**position** | [**Vector3d**](Vector3d.md) | The position where the entity is spawned | 
+**type** | **str** | The type of entity that will be spawned | 
+**world** | **str** | The world that the entity will be spawned in | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

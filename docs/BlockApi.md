@@ -1,25 +1,25 @@
 # swagger_client.BlockApi
 
-All URIs are relative to *http://&lt;host&gt;/api*
+All URIs are relative to *https://localhost/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_block_operation**](BlockApi.md#cancel_block_operation) | **DELETE** /block/op/{uuid} | Cancel block operation
-[**change_block_operation**](BlockApi.md#change_block_operation) | **PUT** /block/op/{uuid} | Modify block operation
-[**get_block**](BlockApi.md#get_block) | **GET** /block/{world}/{x}/{y}/{z} | Get one block
-[**get_block_operation**](BlockApi.md#get_block_operation) | **GET** /block/op/{uuid} | Block operation details
-[**get_block_operations**](BlockApi.md#get_block_operations) | **GET** /block/op | List block operations
-[**start_block_operation**](BlockApi.md#start_block_operation) | **POST** /block/op | Create block operation
+[**create_block_operation**](BlockApi.md#create_block_operation) | **POST** /block/op | Create a block operation
+[**delete_block_operation**](BlockApi.md#delete_block_operation) | **DELETE** /block/op/{uuid} | Stop a block operation
+[**get_block**](BlockApi.md#get_block) | **GET** /block/{world}/{x}/{y}/{z} | Get a block
+[**get_block_operation**](BlockApi.md#get_block_operation) | **GET** /block/op/{uuid} | Get a block operation
+[**list_block_operations**](BlockApi.md#list_block_operations) | **GET** /block/op | List block operations
+[**modify_block_operation**](BlockApi.md#modify_block_operation) | **PUT** /block/op/{uuid} | Modify a block operation
 
 
-# **cancel_block_operation**
-> BlockOperationResponse cancel_block_operation(uuid)
+# **create_block_operation**
+> BlockOperation create_block_operation(body=body, details=details, accept=accept, pretty=pretty)
 
-Cancel block operation
+Create a block operation
 
-Cancel a pending or running block operation. **THIS DOES NOT UNDO THE BLOCK CHANGES**  > Required permission: block.op.delete 
+Start a request to get or change blocks on the server.     **Required permissions:**    - **block.op.create**   
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -27,40 +27,48 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: headerKey
-swagger_client.configuration.api_key['x-webapi-key'] = 'YOUR_API_KEY'
+# Configure API key authorization: ApiKeyHeader
+configuration = swagger_client.Configuration()
+configuration.api_key['X-WebAPI-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['x-webapi-key'] = 'Bearer'
-# Configure API key authorization: queryKey
-swagger_client.configuration.api_key['key'] = 'YOUR_API_KEY'
+# configuration.api_key_prefix['X-WebAPI-Key'] = 'Bearer'
+# Configure API key authorization: ApiKeyQuery
+configuration = swagger_client.Configuration()
+configuration.api_key['key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['key'] = 'Bearer'
+# configuration.api_key_prefix['key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.BlockApi()
-uuid = 'uuid_example' # str | The uuid of the block operation.
+api_instance = swagger_client.BlockApi(swagger_client.ApiClient(configuration))
+body = swagger_client.CreateBlockOperationRequest() # CreateBlockOperationRequest |  (optional)
+details = true # bool | Add to include additional details, omit or false otherwise (optional)
+accept = 'accept_example' # str | Override the 'Accept' request header (useful for debugging your requests) (optional)
+pretty = true # bool | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)
 
-try: 
-    # Cancel block operation
-    api_response = api_instance.cancel_block_operation(uuid)
+try:
+    # Create a block operation
+    api_response = api_instance.create_block_operation(body=body, details=details, accept=accept, pretty=pretty)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling BlockApi->cancel_block_operation: %s\n" % e)
+    print("Exception when calling BlockApi->create_block_operation: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| The uuid of the block operation. | 
+ **body** | [**CreateBlockOperationRequest**](CreateBlockOperationRequest.md)|  | [optional] 
+ **details** | **bool**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **str**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**BlockOperationResponse**](BlockOperationResponse.md)
+[**BlockOperation**](BlockOperation.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -69,14 +77,14 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **change_block_operation**
-> BlockOperationResponse change_block_operation(uuid, data)
+# **delete_block_operation**
+> BlockOperation delete_block_operation(uuid, details=details, accept=accept, pretty=pretty)
 
-Modify block operation
+Stop a block operation
 
-Modify an existing block operation to either pause or continue it.  > Required permission: block.op.change 
+Cancel a pending or running block operation. **THIS DOES NOT UNDO THE BLOCK CHANGES**     **Required permissions:**    - **block.op.delete**   
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -84,42 +92,48 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: headerKey
-swagger_client.configuration.api_key['x-webapi-key'] = 'YOUR_API_KEY'
+# Configure API key authorization: ApiKeyHeader
+configuration = swagger_client.Configuration()
+configuration.api_key['X-WebAPI-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['x-webapi-key'] = 'Bearer'
-# Configure API key authorization: queryKey
-swagger_client.configuration.api_key['key'] = 'YOUR_API_KEY'
+# configuration.api_key_prefix['X-WebAPI-Key'] = 'Bearer'
+# Configure API key authorization: ApiKeyQuery
+configuration = swagger_client.Configuration()
+configuration.api_key['key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['key'] = 'Bearer'
+# configuration.api_key_prefix['key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.BlockApi()
-uuid = 'uuid_example' # str | The uuid of the block operation.
-data = swagger_client.Data() # Data | The new data applied to the block operation.
+api_instance = swagger_client.BlockApi(swagger_client.ApiClient(configuration))
+uuid = 'uuid_example' # str | The uuid of the block operation
+details = true # bool | Add to include additional details, omit or false otherwise (optional)
+accept = 'accept_example' # str | Override the 'Accept' request header (useful for debugging your requests) (optional)
+pretty = true # bool | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)
 
-try: 
-    # Modify block operation
-    api_response = api_instance.change_block_operation(uuid, data)
+try:
+    # Stop a block operation
+    api_response = api_instance.delete_block_operation(uuid, details=details, accept=accept, pretty=pretty)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling BlockApi->change_block_operation: %s\n" % e)
+    print("Exception when calling BlockApi->delete_block_operation: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| The uuid of the block operation. | 
- **data** | [**Data**](Data.md)| The new data applied to the block operation. | 
+ **uuid** | [**str**](.md)| The uuid of the block operation | 
+ **details** | **bool**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **str**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**BlockOperationResponse**](BlockOperationResponse.md)
+[**BlockOperation**](BlockOperation.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -129,13 +143,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_block**
-> SingleBlock get_block(world, x, y, z)
+> BlockState get_block(world, x, y, z, details=details, accept=accept, pretty=pretty)
 
-Get one block
+Get a block
 
-Gets information about one block in the world.  > Required permission: block.one 
+Gets information about one block in the world.     **Required permissions:**    - **block.one**   
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -143,25 +157,30 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: headerKey
-swagger_client.configuration.api_key['x-webapi-key'] = 'YOUR_API_KEY'
+# Configure API key authorization: ApiKeyHeader
+configuration = swagger_client.Configuration()
+configuration.api_key['X-WebAPI-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['x-webapi-key'] = 'Bearer'
-# Configure API key authorization: queryKey
-swagger_client.configuration.api_key['key'] = 'YOUR_API_KEY'
+# configuration.api_key_prefix['X-WebAPI-Key'] = 'Bearer'
+# Configure API key authorization: ApiKeyQuery
+configuration = swagger_client.Configuration()
+configuration.api_key['key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['key'] = 'Bearer'
+# configuration.api_key_prefix['key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.BlockApi()
-world = 'world_example' # str | The uuid of the world the block is in.
-x = 56 # int | The x-coordinate of the block.
-y = 56 # int | The y-coordinate of the block.
-z = 56 # int | The z-coordinate of the block.
+api_instance = swagger_client.BlockApi(swagger_client.ApiClient(configuration))
+world = 'world_example' # str | The uuid of the world to get the block from
+x = 56 # int | The x-coordinate of the block
+y = 56 # int | The y-coordinate of the block
+z = 56 # int | The z-coordinate of the block
+details = true # bool | Add to include additional details, omit or false otherwise (optional)
+accept = 'accept_example' # str | Override the 'Accept' request header (useful for debugging your requests) (optional)
+pretty = true # bool | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)
 
-try: 
-    # Get one block
-    api_response = api_instance.get_block(world, x, y, z)
+try:
+    # Get a block
+    api_response = api_instance.get_block(world, x, y, z, details=details, accept=accept, pretty=pretty)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BlockApi->get_block: %s\n" % e)
@@ -171,18 +190,21 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **world** | **str**| The uuid of the world the block is in. | 
- **x** | **int**| The x-coordinate of the block. | 
- **y** | **int**| The y-coordinate of the block. | 
- **z** | **int**| The z-coordinate of the block. | 
+ **world** | **str**| The uuid of the world to get the block from | 
+ **x** | **int**| The x-coordinate of the block | 
+ **y** | **int**| The y-coordinate of the block | 
+ **z** | **int**| The z-coordinate of the block | 
+ **details** | **bool**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **str**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**SingleBlock**](SingleBlock.md)
+[**BlockState**](BlockState.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -192,13 +214,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_block_operation**
-> BlockOperationResponse get_block_operation(uuid)
+> BlockOperation get_block_operation(uuid, details=details, accept=accept, pretty=pretty)
 
-Block operation details
+Get a block operation
 
-Gets details about a specific block operation  > Required permission: block.op.one 
+Gets details about a specific block operation     **Required permissions:**    - **block.op.one**   
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -206,22 +228,27 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: headerKey
-swagger_client.configuration.api_key['x-webapi-key'] = 'YOUR_API_KEY'
+# Configure API key authorization: ApiKeyHeader
+configuration = swagger_client.Configuration()
+configuration.api_key['X-WebAPI-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['x-webapi-key'] = 'Bearer'
-# Configure API key authorization: queryKey
-swagger_client.configuration.api_key['key'] = 'YOUR_API_KEY'
+# configuration.api_key_prefix['X-WebAPI-Key'] = 'Bearer'
+# Configure API key authorization: ApiKeyQuery
+configuration = swagger_client.Configuration()
+configuration.api_key['key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['key'] = 'Bearer'
+# configuration.api_key_prefix['key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.BlockApi()
-uuid = 'uuid_example' # str | The uuid of the block operation.
+api_instance = swagger_client.BlockApi(swagger_client.ApiClient(configuration))
+uuid = 'uuid_example' # str | The uuid of the block operation
+details = true # bool | Add to include additional details, omit or false otherwise (optional)
+accept = 'accept_example' # str | Override the 'Accept' request header (useful for debugging your requests) (optional)
+pretty = true # bool | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)
 
-try: 
-    # Block operation details
-    api_response = api_instance.get_block_operation(uuid)
+try:
+    # Get a block operation
+    api_response = api_instance.get_block_operation(uuid, details=details, accept=accept, pretty=pretty)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BlockApi->get_block_operation: %s\n" % e)
@@ -231,15 +258,18 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **str**| The uuid of the block operation. | 
+ **uuid** | [**str**](.md)| The uuid of the block operation | 
+ **details** | **bool**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **str**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**BlockOperationResponse**](BlockOperationResponse.md)
+[**BlockOperation**](BlockOperation.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -248,14 +278,14 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_block_operations**
-> BlockOperationsList get_block_operations()
+# **list_block_operations**
+> list[BlockOperation] list_block_operations(details=details, accept=accept, pretty=pretty)
 
 List block operations
 
-Returns a list of all the currently running block operations.  > Required permission: block.op.list 
+Returns a list of all the currently running block operations.     **Required permissions:**    - **block.op.list**   
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -263,93 +293,113 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: headerKey
-swagger_client.configuration.api_key['x-webapi-key'] = 'YOUR_API_KEY'
+# Configure API key authorization: ApiKeyHeader
+configuration = swagger_client.Configuration()
+configuration.api_key['X-WebAPI-Key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['x-webapi-key'] = 'Bearer'
-# Configure API key authorization: queryKey
-swagger_client.configuration.api_key['key'] = 'YOUR_API_KEY'
+# configuration.api_key_prefix['X-WebAPI-Key'] = 'Bearer'
+# Configure API key authorization: ApiKeyQuery
+configuration = swagger_client.Configuration()
+configuration.api_key['key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['key'] = 'Bearer'
+# configuration.api_key_prefix['key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = swagger_client.BlockApi()
+api_instance = swagger_client.BlockApi(swagger_client.ApiClient(configuration))
+details = true # bool | Add to include additional details, omit or false otherwise (optional)
+accept = 'accept_example' # str | Override the 'Accept' request header (useful for debugging your requests) (optional)
+pretty = true # bool | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)
 
-try: 
+try:
     # List block operations
-    api_response = api_instance.get_block_operations()
+    api_response = api_instance.list_block_operations(details=details, accept=accept, pretty=pretty)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling BlockApi->get_block_operations: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**BlockOperationsList**](BlockOperationsList.md)
-
-### Authorization
-
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/xml
- - **Accept**: application/json, application/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **start_block_operation**
-> BlockOperationResponse start_block_operation(request)
-
-Create block operation
-
-Start a request to get or change blocks on the server.  > Required permission: block.op.create 
-
-### Example 
-```python
-from __future__ import print_function
-import time
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: headerKey
-swagger_client.configuration.api_key['x-webapi-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['x-webapi-key'] = 'Bearer'
-# Configure API key authorization: queryKey
-swagger_client.configuration.api_key['key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# swagger_client.configuration.api_key_prefix['key'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = swagger_client.BlockApi()
-request = [swagger_client.BlockOperationNew()] # list[BlockOperationNew] | The requested changes to blocks
-
-try: 
-    # Create block operation
-    api_response = api_instance.start_block_operation(request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BlockApi->start_block_operation: %s\n" % e)
+    print("Exception when calling BlockApi->list_block_operations: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**list[BlockOperationNew]**](BlockOperationNew.md)| The requested changes to blocks | 
+ **details** | **bool**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **str**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**BlockOperationResponse**](BlockOperationResponse.md)
+[**list[BlockOperation]**](BlockOperation.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **modify_block_operation**
+> BlockOperation modify_block_operation(uuid, body=body, details=details, accept=accept, pretty=pretty)
+
+Modify a block operation
+
+Modify an existing block operation to either pause or continue it.     **Required permissions:**    - **block.op.modify**   
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: ApiKeyHeader
+configuration = swagger_client.Configuration()
+configuration.api_key['X-WebAPI-Key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['X-WebAPI-Key'] = 'Bearer'
+# Configure API key authorization: ApiKeyQuery
+configuration = swagger_client.Configuration()
+configuration.api_key['key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = swagger_client.BlockApi(swagger_client.ApiClient(configuration))
+uuid = 'uuid_example' # str | The uuid of the block operation
+body = swagger_client.ModifyBlockOperationRequest() # ModifyBlockOperationRequest |  (optional)
+details = true # bool | Add to include additional details, omit or false otherwise (optional)
+accept = 'accept_example' # str | Override the 'Accept' request header (useful for debugging your requests) (optional)
+pretty = true # bool | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)
+
+try:
+    # Modify a block operation
+    api_response = api_instance.modify_block_operation(uuid, body=body, details=details, accept=accept, pretty=pretty)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BlockApi->modify_block_operation: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**str**](.md)| The uuid of the block operation | 
+ **body** | [**ModifyBlockOperationRequest**](ModifyBlockOperationRequest.md)|  | [optional] 
+ **details** | **bool**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **str**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**BlockOperation**](BlockOperation.md)
+
+### Authorization
+
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
