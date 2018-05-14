@@ -3,20 +3,21 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**world** | **str** | The UUID or name of the world that the player is moved to. | [optional] 
-**position** | [**Vector3**](Vector3.md) |  | [optional] 
-**velocity** | [**Vector3**](Vector3.md) |  | [optional] 
-**rotation** | [**Vector3**](Vector3.md) |  | [optional] 
-**scale** | [**Vector3**](Vector3.md) |  | [optional] 
-**food_level** | **float** | The new food level of the player. | [optional] 
-**exhaustion** | **float** | The new exhaustion level of the player. | [optional] 
-**saturation** | **float** | The new saturation level of the player. | [optional] 
-**total_experience** | **float** | The total amount of experience the player has. This implicitly also sets the level. | [optional] 
-**level** | **float** | The current level of the player. This is also defined by the total amount of experience the player has. | [optional] 
-**experience_since_level** | **float** | The amount of experience since the last level up that the player has collected. | [optional] 
-**health** | **float** | The current amount of health the player has. | [optional] 
-**max_health** | **float** | The total amount of health the player can have at maximum. | [optional] 
-**damage** | [**DamageRequest1**](DamageRequest1.md) |  | [optional] 
+**damage** | [**DamageRequest**](DamageRequest.md) | The damage the entity will take | [optional] 
+**exhaustion** | **float** | The exhaustion of the player | [optional] 
+**experience_since_level** | **int** | The amount of experience gained since the last level | [optional] 
+**food_level** | **int** | The food level of the player | [optional] 
+**health** | **float** | The current amount of health the player has | [optional] 
+**inventory** | [**list[ItemStack]**](ItemStack.md) | The ItemStacks in the inventory of the entity | [optional] 
+**level** | **int** | The player level | [optional] 
+**max_health** | **float** | The maximum health of the player | [optional] 
+**position** | [**Vector3d**](Vector3d.md) | The position that the entity will be moved to | [optional] 
+**rotation** | [**Vector3d**](Vector3d.md) | The new rotation of the entity | [optional] 
+**saturation** | **float** | The saturation of the player | [optional] 
+**scale** | [**Vector3d**](Vector3d.md) | The new scale of the entity | [optional] 
+**total_experience** | **int** | The total experience of the player | [optional] 
+**velocity** | [**Vector3d**](Vector3d.md) | The new speed of the entity | [optional] 
+**world** | **str** | The world that the entity will be moved to | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
