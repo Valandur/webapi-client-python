@@ -18,7 +18,6 @@ import six
 
 from swagger_client.models.location import Location  # noqa: F401,E501
 from swagger_client.models.player import Player  # noqa: F401,E501
-from swagger_client.models.player_full import PlayerFull  # noqa: F401,E501
 
 
 class MMCTicketsTicket(object):
@@ -43,7 +42,7 @@ class MMCTicketsTicket(object):
         'comment': 'str',
         'location': 'Location',
         'notified': 'int',
-        'sender': 'PlayerFull',
+        'sender': 'Player',
         'staff': 'Player'
     }
 
@@ -298,7 +297,7 @@ class MMCTicketsTicket(object):
         The sender of this ticket  # noqa: E501
 
         :return: The sender of this MMCTicketsTicket.  # noqa: E501
-        :rtype: PlayerFull
+        :rtype: Player
         """
         return self._sender
 
@@ -309,7 +308,7 @@ class MMCTicketsTicket(object):
         The sender of this ticket  # noqa: E501
 
         :param sender: The sender of this MMCTicketsTicket.  # noqa: E501
-        :type: PlayerFull
+        :type: Player
         """
 
         self._sender = sender

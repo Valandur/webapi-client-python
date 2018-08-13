@@ -147,7 +147,7 @@ class PermissionApi(object):
     def get_subject(self, id, sub_id, **kwargs):  # noqa: E501
         """Get subject  # noqa: E501
 
-        Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.list**     # noqa: E501
+        Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_subject(id, sub_id, async=True)
@@ -173,7 +173,7 @@ class PermissionApi(object):
     def get_subject_with_http_info(self, id, sub_id, **kwargs):  # noqa: E501
         """Get subject  # noqa: E501
 
-        Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.list**     # noqa: E501
+        Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_subject_with_http_info(id, sub_id, async=True)

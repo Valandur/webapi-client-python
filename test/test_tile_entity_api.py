@@ -50,6 +50,13 @@ class TestTileEntityApi(unittest.TestCase):
         """
         pass
 
+    def test_modify_tile_entity(self):
+        """Test case for modify_tile_entity
+
+        Modify tile entity  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

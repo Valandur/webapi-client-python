@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import swagger_client
-from swagger_client.models.player_full import PlayerFull  # noqa: E501
+from swagger_client.models.modify_user_request import ModifyUserRequest  # noqa: E501
 from swagger_client.rest import ApiException
 
 
-class TestPlayerFull(unittest.TestCase):
-    """PlayerFull unit test stubs"""
+class TestModifyUserRequest(unittest.TestCase):
+    """ModifyUserRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestPlayerFull(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testPlayerFull(self):
-        """Test PlayerFull"""
+    def testModifyUserRequest(self):
+        """Test ModifyUserRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.player_full.PlayerFull()  # noqa: E501
+        # model = swagger_client.models.modify_user_request.ModifyUserRequest()  # noqa: E501
         pass
 
 

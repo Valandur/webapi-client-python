@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ban_reason** | **str** | The reason why the item is banned | 
 **breaking_banned** | **bool** | True if breaking of this item is banned, false otherwise | 
+**craft_banned** | **bool** | True if crafting this item is banned, false otherwise | 
 **drop_banned** | **bool** | True if dropping this item is banned, false otherwise | 
 **item** | [**CatalogTypeItemType**](CatalogTypeItemType.md) | The item type that is banned | 
 **link** | **str** | The API link that can be used to obtain more information about this object | 

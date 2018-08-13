@@ -162,7 +162,7 @@ class PlayerApi(object):
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
-        :return: PlayerFull
+        :return: Player
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -187,7 +187,7 @@ class PlayerApi(object):
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
-        :return: PlayerFull
+        :return: Player
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -251,7 +251,7 @@ class PlayerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='PlayerFull',  # noqa: E501
+            response_type='Player',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -272,7 +272,7 @@ class PlayerApi(object):
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
-        :return: list[PlayerFull]
+        :return: list[Player]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -296,7 +296,7 @@ class PlayerApi(object):
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
-        :return: list[PlayerFull]
+        :return: list[Player]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -354,7 +354,7 @@ class PlayerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[PlayerFull]',  # noqa: E501
+            response_type='list[Player]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -377,7 +377,7 @@ class PlayerApi(object):
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
-        :return: PlayerFull
+        :return: Player
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -403,7 +403,7 @@ class PlayerApi(object):
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
-        :return: PlayerFull
+        :return: Player
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -469,7 +469,7 @@ class PlayerApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='PlayerFull',  # noqa: E501
+            response_type='Player',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

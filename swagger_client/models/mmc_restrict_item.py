@@ -35,6 +35,7 @@ class MMCRestrictItem(object):
     swagger_types = {
         'ban_reason': 'str',
         'breaking_banned': 'bool',
+        'craft_banned': 'bool',
         'drop_banned': 'bool',
         'item': 'CatalogTypeItemType',
         'link': 'str',
@@ -47,6 +48,7 @@ class MMCRestrictItem(object):
     attribute_map = {
         'ban_reason': 'banReason',
         'breaking_banned': 'breakingBanned',
+        'craft_banned': 'craftBanned',
         'drop_banned': 'dropBanned',
         'item': 'item',
         'link': 'link',
@@ -56,11 +58,12 @@ class MMCRestrictItem(object):
         'world_banned': 'worldBanned'
     }
 
-    def __init__(self, ban_reason=None, breaking_banned=None, drop_banned=None, item=None, link=None, ownership_banned=None, placing_banned=None, usage_banned=None, world_banned=None):  # noqa: E501
+    def __init__(self, ban_reason=None, breaking_banned=None, craft_banned=None, drop_banned=None, item=None, link=None, ownership_banned=None, placing_banned=None, usage_banned=None, world_banned=None):  # noqa: E501
         """MMCRestrictItem - a model defined in Swagger"""  # noqa: E501
 
         self._ban_reason = None
         self._breaking_banned = None
+        self._craft_banned = None
         self._drop_banned = None
         self._item = None
         self._link = None
@@ -72,6 +75,7 @@ class MMCRestrictItem(object):
 
         self.ban_reason = ban_reason
         self.breaking_banned = breaking_banned
+        self.craft_banned = craft_banned
         self.drop_banned = drop_banned
         self.item = item
         self.link = link
@@ -129,6 +133,31 @@ class MMCRestrictItem(object):
             raise ValueError("Invalid value for `breaking_banned`, must not be `None`")  # noqa: E501
 
         self._breaking_banned = breaking_banned
+
+    @property
+    def craft_banned(self):
+        """Gets the craft_banned of this MMCRestrictItem.  # noqa: E501
+
+        True if crafting this item is banned, false otherwise  # noqa: E501
+
+        :return: The craft_banned of this MMCRestrictItem.  # noqa: E501
+        :rtype: bool
+        """
+        return self._craft_banned
+
+    @craft_banned.setter
+    def craft_banned(self, craft_banned):
+        """Sets the craft_banned of this MMCRestrictItem.
+
+        True if crafting this item is banned, false otherwise  # noqa: E501
+
+        :param craft_banned: The craft_banned of this MMCRestrictItem.  # noqa: E501
+        :type: bool
+        """
+        if craft_banned is None:
+            raise ValueError("Invalid value for `craft_banned`, must not be `None`")  # noqa: E501
+
+        self._craft_banned = craft_banned
 
     @property
     def drop_banned(self):

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Load & Generate a chunk
 
-Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.chunk.create**   
+Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.create**   
 
 ### Example
 ```python
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 Get a chunk
 
-Get detailed information about a chunk     **Required permissions:**    - **chunk.chunk.one **   
+Get detailed information about a chunk     **Required permissions:**    - **chunk.one**   
 
 ### Example
 ```python
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 List chunks
 
-Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.chunk.list**   
+Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.list**   
 
 ### Example
 ```python

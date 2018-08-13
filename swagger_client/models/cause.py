@@ -32,27 +32,23 @@ class Cause(object):
     """
     swagger_types = {
         'causes': 'list[object]',
-        'context': 'dict(str, object)',
-        'link': 'str'
+        'context': 'dict(str, object)'
     }
 
     attribute_map = {
         'causes': 'causes',
-        'context': 'context',
-        'link': 'link'
+        'context': 'context'
     }
 
-    def __init__(self, causes=None, context=None, link=None):  # noqa: E501
+    def __init__(self, causes=None, context=None):  # noqa: E501
         """Cause - a model defined in Swagger"""  # noqa: E501
 
         self._causes = None
         self._context = None
-        self._link = None
         self.discriminator = None
 
         self.causes = causes
         self.context = context
-        self.link = link
 
     @property
     def causes(self):
@@ -103,31 +99,6 @@ class Cause(object):
             raise ValueError("Invalid value for `context`, must not be `None`")  # noqa: E501
 
         self._context = context
-
-    @property
-    def link(self):
-        """Gets the link of this Cause.  # noqa: E501
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :return: The link of this Cause.  # noqa: E501
-        :rtype: str
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this Cause.
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :param link: The link of this Cause.  # noqa: E501
-        :type: str
-        """
-        if link is None:
-            raise ValueError("Invalid value for `link`, must not be `None`")  # noqa: E501
-
-        self._link = link
 
     def to_dict(self):
         """Returns the model properties as a dict"""

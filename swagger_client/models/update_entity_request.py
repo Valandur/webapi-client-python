@@ -17,7 +17,7 @@ import re  # noqa: F401
 import six
 
 from swagger_client.models.damage_request import DamageRequest  # noqa: F401,E501
-from swagger_client.models.item_stack import ItemStack  # noqa: F401,E501
+from swagger_client.models.slot_request import SlotRequest  # noqa: F401,E501
 from swagger_client.models.vector3d import Vector3d  # noqa: F401,E501
 
 
@@ -36,7 +36,7 @@ class UpdateEntityRequest(object):
     """
     swagger_types = {
         'damage': 'DamageRequest',
-        'inventory': 'list[ItemStack]',
+        'inventory': 'list[SlotRequest]',
         'position': 'Vector3d',
         'rotation': 'Vector3d',
         'scale': 'Vector3d',
@@ -108,10 +108,10 @@ class UpdateEntityRequest(object):
     def inventory(self):
         """Gets the inventory of this UpdateEntityRequest.  # noqa: E501
 
-        The ItemStacks in the inventory of the entity  # noqa: E501
+        The slots in the inventory of the entity to modify  # noqa: E501
 
         :return: The inventory of this UpdateEntityRequest.  # noqa: E501
-        :rtype: list[ItemStack]
+        :rtype: list[SlotRequest]
         """
         return self._inventory
 
@@ -119,10 +119,10 @@ class UpdateEntityRequest(object):
     def inventory(self, inventory):
         """Sets the inventory of this UpdateEntityRequest.
 
-        The ItemStacks in the inventory of the entity  # noqa: E501
+        The slots in the inventory of the entity to modify  # noqa: E501
 
         :param inventory: The inventory of this UpdateEntityRequest.  # noqa: E501
-        :type: list[ItemStack]
+        :type: list[SlotRequest]
         """
 
         self._inventory = inventory

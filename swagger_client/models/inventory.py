@@ -16,8 +16,8 @@ import re  # noqa: F401
 
 import six
 
-from swagger_client.models.catalog_type import CatalogType  # noqa: F401,E501
-from swagger_client.models.item_stack import ItemStack  # noqa: F401,E501
+from swagger_client.models.catalog_type_inventory_archetype import CatalogTypeInventoryArchetype  # noqa: F401,E501
+from swagger_client.models.slot import Slot  # noqa: F401,E501
 
 
 class Inventory(object):
@@ -35,37 +35,33 @@ class Inventory(object):
     """
     swagger_types = {
         'capacity': 'int',
-        'item_stacks': 'list[ItemStack]',
-        'link': 'str',
         'name': 'str',
+        'slots': 'list[Slot]',
         'total_items': 'int',
-        'type': 'CatalogType'
+        'type': 'CatalogTypeInventoryArchetype'
     }
 
     attribute_map = {
         'capacity': 'capacity',
-        'item_stacks': 'itemStacks',
-        'link': 'link',
         'name': 'name',
+        'slots': 'slots',
         'total_items': 'totalItems',
         'type': 'type'
     }
 
-    def __init__(self, capacity=None, item_stacks=None, link=None, name=None, total_items=None, type=None):  # noqa: E501
+    def __init__(self, capacity=None, name=None, slots=None, total_items=None, type=None):  # noqa: E501
         """Inventory - a model defined in Swagger"""  # noqa: E501
 
         self._capacity = None
-        self._item_stacks = None
-        self._link = None
         self._name = None
+        self._slots = None
         self._total_items = None
         self._type = None
         self.discriminator = None
 
         self.capacity = capacity
-        self.item_stacks = item_stacks
-        self.link = link
         self.name = name
+        self.slots = slots
         self.total_items = total_items
         self.type = type
 
@@ -95,56 +91,6 @@ class Inventory(object):
         self._capacity = capacity
 
     @property
-    def item_stacks(self):
-        """Gets the item_stacks of this Inventory.  # noqa: E501
-
-        Gets a list of item stacks in the inventory  # noqa: E501
-
-        :return: The item_stacks of this Inventory.  # noqa: E501
-        :rtype: list[ItemStack]
-        """
-        return self._item_stacks
-
-    @item_stacks.setter
-    def item_stacks(self, item_stacks):
-        """Sets the item_stacks of this Inventory.
-
-        Gets a list of item stacks in the inventory  # noqa: E501
-
-        :param item_stacks: The item_stacks of this Inventory.  # noqa: E501
-        :type: list[ItemStack]
-        """
-        if item_stacks is None:
-            raise ValueError("Invalid value for `item_stacks`, must not be `None`")  # noqa: E501
-
-        self._item_stacks = item_stacks
-
-    @property
-    def link(self):
-        """Gets the link of this Inventory.  # noqa: E501
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :return: The link of this Inventory.  # noqa: E501
-        :rtype: str
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this Inventory.
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :param link: The link of this Inventory.  # noqa: E501
-        :type: str
-        """
-        if link is None:
-            raise ValueError("Invalid value for `link`, must not be `None`")  # noqa: E501
-
-        self._link = link
-
-    @property
     def name(self):
         """Gets the name of this Inventory.  # noqa: E501
 
@@ -168,6 +114,31 @@ class Inventory(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def slots(self):
+        """Gets the slots of this Inventory.  # noqa: E501
+
+        Gets a list of slots in the inventory (with their items)  # noqa: E501
+
+        :return: The slots of this Inventory.  # noqa: E501
+        :rtype: list[Slot]
+        """
+        return self._slots
+
+    @slots.setter
+    def slots(self, slots):
+        """Sets the slots of this Inventory.
+
+        Gets a list of slots in the inventory (with their items)  # noqa: E501
+
+        :param slots: The slots of this Inventory.  # noqa: E501
+        :type: list[Slot]
+        """
+        if slots is None:
+            raise ValueError("Invalid value for `slots`, must not be `None`")  # noqa: E501
+
+        self._slots = slots
 
     @property
     def total_items(self):
@@ -201,7 +172,7 @@ class Inventory(object):
         The type of the inventory  # noqa: E501
 
         :return: The type of this Inventory.  # noqa: E501
-        :rtype: CatalogType
+        :rtype: CatalogTypeInventoryArchetype
         """
         return self._type
 
@@ -212,7 +183,7 @@ class Inventory(object):
         The type of the inventory  # noqa: E501
 
         :param type: The type of this Inventory.  # noqa: E501
-        :type: CatalogType
+        :type: CatalogTypeInventoryArchetype
         """
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501

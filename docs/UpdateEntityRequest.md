@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **damage** | [**DamageRequest**](DamageRequest.md) | The damage the entity will take | [optional] 
-**inventory** | [**list[ItemStack]**](ItemStack.md) | The ItemStacks in the inventory of the entity | [optional] 
+**inventory** | [**list[SlotRequest]**](SlotRequest.md) | The slots in the inventory of the entity to modify | [optional] 
 **position** | [**Vector3d**](Vector3d.md) | The position that the entity will be moved to | [optional] 
 **rotation** | [**Vector3d**](Vector3d.md) | The new rotation of the entity | [optional] 
 **scale** | [**Vector3d**](Vector3d.md) | The new scale of the entity | [optional] 

@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_player**
-> PlayerFull get_player(player, details=details, accept=accept, pretty=pretty)
+> Player get_player(player, details=details, accept=accept, pretty=pretty)
 
 Get a player
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlayerFull**](PlayerFull.md)
+[**Player**](Player.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_players**
-> list[PlayerFull] list_players(details=details, accept=accept, pretty=pretty)
+> list[Player] list_players(details=details, accept=accept, pretty=pretty)
 
 List players
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PlayerFull]**](PlayerFull.md)
+[**list[Player]**](Player.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **modify_player**
-> PlayerFull modify_player(player, body=body, details=details, accept=accept, pretty=pretty)
+> Player modify_player(player, body=body, details=details, accept=accept, pretty=pretty)
 
 Modify a player
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlayerFull**](PlayerFull.md)
+[**Player**](Player.md)
 
 ### Authorization
 

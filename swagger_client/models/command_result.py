@@ -31,7 +31,6 @@ class CommandResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'link': 'str',
         'affected_blocks': 'int',
         'affected_entities': 'int',
         'affected_items': 'int',
@@ -40,7 +39,6 @@ class CommandResult(object):
     }
 
     attribute_map = {
-        'link': 'link',
         'affected_blocks': 'affectedBlocks',
         'affected_entities': 'affectedEntities',
         'affected_items': 'affectedItems',
@@ -48,10 +46,9 @@ class CommandResult(object):
         'success_count': 'successCount'
     }
 
-    def __init__(self, link=None, affected_blocks=None, affected_entities=None, affected_items=None, query_result=None, success_count=None):  # noqa: E501
+    def __init__(self, affected_blocks=None, affected_entities=None, affected_items=None, query_result=None, success_count=None):  # noqa: E501
         """CommandResult - a model defined in Swagger"""  # noqa: E501
 
-        self._link = None
         self._affected_blocks = None
         self._affected_entities = None
         self._affected_items = None
@@ -59,7 +56,6 @@ class CommandResult(object):
         self._success_count = None
         self.discriminator = None
 
-        self.link = link
         if affected_blocks is not None:
             self.affected_blocks = affected_blocks
         if affected_entities is not None:
@@ -70,31 +66,6 @@ class CommandResult(object):
             self.query_result = query_result
         if success_count is not None:
             self.success_count = success_count
-
-    @property
-    def link(self):
-        """Gets the link of this CommandResult.  # noqa: E501
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :return: The link of this CommandResult.  # noqa: E501
-        :rtype: str
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this CommandResult.
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :param link: The link of this CommandResult.  # noqa: E501
-        :type: str
-        """
-        if link is None:
-            raise ValueError("Invalid value for `link`, must not be `None`")  # noqa: E501
-
-        self._link = link
 
     @property
     def affected_blocks(self):

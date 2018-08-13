@@ -36,7 +36,9 @@ from swagger_client.models.catalog_type_difficulty import CatalogTypeDifficulty
 from swagger_client.models.catalog_type_dimension_type import CatalogTypeDimensionType
 from swagger_client.models.catalog_type_game_mode import CatalogTypeGameMode
 from swagger_client.models.catalog_type_generator_type import CatalogTypeGeneratorType
+from swagger_client.models.catalog_type_inventory_archetype import CatalogTypeInventoryArchetype
 from swagger_client.models.catalog_type_item_type import CatalogTypeItemType
+from swagger_client.models.catalog_type_sound_type import CatalogTypeSoundType
 from swagger_client.models.catalog_type_weather import CatalogTypeWeather
 from swagger_client.models.cause import Cause
 from swagger_client.models.chunk import Chunk
@@ -45,8 +47,10 @@ from swagger_client.models.command import Command
 from swagger_client.models.command_call import CommandCall
 from swagger_client.models.command_data import CommandData
 from swagger_client.models.command_result import CommandResult
+from swagger_client.models.command_task import CommandTask
 from swagger_client.models.create_block_operation_request import CreateBlockOperationRequest
 from swagger_client.models.create_entity_request import CreateEntityRequest
+from swagger_client.models.create_user_request import CreateUserRequest
 from swagger_client.models.create_world_request import CreateWorldRequest
 from swagger_client.models.currency import Currency
 from swagger_client.models.damage_request import DamageRequest
@@ -109,6 +113,7 @@ from swagger_client.models.message import Message
 from swagger_client.models.minecart_block_data import MinecartBlockData
 from swagger_client.models.mob_spawner_data import MobSpawnerData
 from swagger_client.models.modify_block_operation_request import ModifyBlockOperationRequest
+from swagger_client.models.modify_user_request import ModifyUserRequest
 from swagger_client.models.nucleus_kit import NucleusKit
 from swagger_client.models.nucleus_mail_message import NucleusMailMessage
 from swagger_client.models.nucleus_named_location import NucleusNamedLocation
@@ -120,6 +125,7 @@ from swagger_client.models.plugin_container import PluginContainer
 from swagger_client.models.plugin_dependency import PluginDependency
 from swagger_client.models.potion_effect import PotionEffect
 from swagger_client.models.red_protect_region import RedProtectRegion
+from swagger_client.models.schedule import Schedule
 from swagger_client.models.server_info import ServerInfo
 from swagger_client.models.server_property import ServerProperty
 from swagger_client.models.server_report import ServerReport
@@ -128,8 +134,10 @@ from swagger_client.models.server_stat_double import ServerStatDouble
 from swagger_client.models.server_stat_integer import ServerStatInteger
 from swagger_client.models.server_stats import ServerStats
 from swagger_client.models.slime_data import SlimeData
+from swagger_client.models.slot import Slot
 from swagger_client.models.slot_index import SlotIndex
 from swagger_client.models.slot_pos import SlotPos
+from swagger_client.models.slot_request import SlotRequest
 from swagger_client.models.slot_side import SlotSide
 from swagger_client.models.stat import Stat
 from swagger_client.models.structure_data import StructureData
@@ -145,7 +153,9 @@ from swagger_client.models.transform import Transform
 from swagger_client.models.universal_market_item import UniversalMarketItem
 from swagger_client.models.update_entity_request import UpdateEntityRequest
 from swagger_client.models.update_player_request import UpdatePlayerRequest
+from swagger_client.models.update_tile_entity_request import UpdateTileEntityRequest
 from swagger_client.models.update_world_request import UpdateWorldRequest
+from swagger_client.models.user_permission_struct import UserPermissionStruct
 from swagger_client.models.user_report import UserReport
 from swagger_client.models.vector2i import Vector2i
 from swagger_client.models.vector3d import Vector3d
@@ -155,8 +165,8 @@ from swagger_client.models.web_books_book import WebBooksBook
 from swagger_client.models.wire_attachment_data import WireAttachmentData
 from swagger_client.models.world import World
 from swagger_client.models.world_border import WorldBorder
+from swagger_client.models.block_change_operation import BlockChangeOperation
+from swagger_client.models.block_get_operation import BlockGetOperation
 from swagger_client.models.chat_message import ChatMessage
 from swagger_client.models.husky_crates_command_reward import HuskyCratesCommandReward
 from swagger_client.models.husky_crates_item_reward import HuskyCratesItemReward
-from swagger_client.models.player_full import PlayerFull
-from swagger_client.models.world_full import WorldFull

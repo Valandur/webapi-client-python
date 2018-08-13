@@ -35,7 +35,6 @@ class Advancement(object):
     """
     swagger_types = {
         'id': 'str',
-        'link': 'str',
         'name': 'str',
         'title': 'str',
         'announce_to_chat': 'bool',
@@ -48,7 +47,6 @@ class Advancement(object):
 
     attribute_map = {
         'id': 'id',
-        'link': 'link',
         'name': 'name',
         'title': 'title',
         'announce_to_chat': 'announceToChat',
@@ -59,11 +57,10 @@ class Advancement(object):
         'tree': 'tree'
     }
 
-    def __init__(self, id=None, link=None, name=None, title=None, announce_to_chat=None, description=None, hidden=None, parent=None, show_toast=None, tree=None):  # noqa: E501
+    def __init__(self, id=None, name=None, title=None, announce_to_chat=None, description=None, hidden=None, parent=None, show_toast=None, tree=None):  # noqa: E501
         """Advancement - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
-        self._link = None
         self._name = None
         self._title = None
         self._announce_to_chat = None
@@ -75,7 +72,6 @@ class Advancement(object):
         self.discriminator = None
 
         self.id = id
-        self.link = link
         self.name = name
         self.title = title
         if announce_to_chat is not None:
@@ -115,31 +111,6 @@ class Advancement(object):
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
-
-    @property
-    def link(self):
-        """Gets the link of this Advancement.  # noqa: E501
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :return: The link of this Advancement.  # noqa: E501
-        :rtype: str
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this Advancement.
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :param link: The link of this Advancement.  # noqa: E501
-        :type: str
-        """
-        if link is None:
-            raise ValueError("Invalid value for `link`, must not be `None`")  # noqa: E501
-
-        self._link = link
 
     @property
     def name(self):

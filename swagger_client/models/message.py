@@ -32,29 +32,25 @@ class Message(object):
     """
     swagger_types = {
         'content': 'str',
-        'link': 'str',
         'receivers': 'list[object]',
         'timestamp': 'int'
     }
 
     attribute_map = {
         'content': 'content',
-        'link': 'link',
         'receivers': 'receivers',
         'timestamp': 'timestamp'
     }
 
-    def __init__(self, content=None, link=None, receivers=None, timestamp=None):  # noqa: E501
+    def __init__(self, content=None, receivers=None, timestamp=None):  # noqa: E501
         """Message - a model defined in Swagger"""  # noqa: E501
 
         self._content = None
-        self._link = None
         self._receivers = None
         self._timestamp = None
         self.discriminator = None
 
         self.content = content
-        self.link = link
         self.receivers = receivers
         self.timestamp = timestamp
 
@@ -82,31 +78,6 @@ class Message(object):
             raise ValueError("Invalid value for `content`, must not be `None`")  # noqa: E501
 
         self._content = content
-
-    @property
-    def link(self):
-        """Gets the link of this Message.  # noqa: E501
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :return: The link of this Message.  # noqa: E501
-        :rtype: str
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this Message.
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :param link: The link of this Message.  # noqa: E501
-        :type: str
-        """
-        if link is None:
-            raise ValueError("Invalid value for `link`, must not be `None`")  # noqa: E501
-
-        self._link = link
 
     @property
     def receivers(self):

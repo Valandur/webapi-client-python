@@ -6,9 +6,11 @@ from __future__ import absolute_import
 from swagger_client.api.active_time_api import ActiveTimeApi
 from swagger_client.api.block_api import BlockApi
 from swagger_client.api.chunk_api import ChunkApi
+from swagger_client.api.cmd_scheduler_api import CmdSchedulerApi
 from swagger_client.api.command_api import CommandApi
 from swagger_client.api.economy_api import EconomyApi
 from swagger_client.api.entity_api import EntityApi
+from swagger_client.api.gwm_crates_api import GWMCratesApi
 from swagger_client.api.history_api import HistoryApi
 from swagger_client.api.husky_crates_api import HuskyCratesApi
 from swagger_client.api.info_api import InfoApi
