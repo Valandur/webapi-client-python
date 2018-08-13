@@ -48,13 +48,14 @@ class InteractiveMessageOption(object):
         self.discriminator = None
 
         self.key = key
-        self.value = value
+        if value is not None:
+            self.value = value
 
     @property
     def key(self):
         """Gets the key of this InteractiveMessageOption.  # noqa: E501
 
-        The key of the option (this is sent to the webhook)  # noqa: E501
+        The key of the option (this is sent to the WebHook)  # noqa: E501
 
         :return: The key of this InteractiveMessageOption.  # noqa: E501
         :rtype: str
@@ -65,7 +66,7 @@ class InteractiveMessageOption(object):
     def key(self, key):
         """Sets the key of this InteractiveMessageOption.
 
-        The key of the option (this is sent to the webhook)  # noqa: E501
+        The key of the option (this is sent to the WebHook)  # noqa: E501
 
         :param key: The key of this InteractiveMessageOption.  # noqa: E501
         :type: str
@@ -79,7 +80,6 @@ class InteractiveMessageOption(object):
     def value(self):
         """Gets the value of this InteractiveMessageOption.  # noqa: E501
 
-        The value of the option (this is displayed to the player)  # noqa: E501
 
         :return: The value of this InteractiveMessageOption.  # noqa: E501
         :rtype: str
@@ -90,13 +90,10 @@ class InteractiveMessageOption(object):
     def value(self, value):
         """Sets the value of this InteractiveMessageOption.
 
-        The value of the option (this is displayed to the player)  # noqa: E501
 
         :param value: The value of this InteractiveMessageOption.  # noqa: E501
         :type: str
         """
-        if value is None:
-            raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501
 
         self._value = value
 

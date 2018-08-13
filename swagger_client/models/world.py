@@ -16,6 +16,73 @@ import re  # noqa: F401
 
 import six
 
+from swagger_client.models.accepts_items import AcceptsItems  # noqa: F401,E501
+from swagger_client.models.ageable_data import AgeableData  # noqa: F401,E501
+from swagger_client.models.armor_slot_type import ArmorSlotType  # noqa: F401,E501
+from swagger_client.models.armor_stand_data import ArmorStandData  # noqa: F401,E501
+from swagger_client.models.banner_data import BannerData  # noqa: F401,E501
+from swagger_client.models.beacon_data import BeaconData  # noqa: F401,E501
+from swagger_client.models.block_state import BlockState  # noqa: F401,E501
+from swagger_client.models.breathing_data import BreathingData  # noqa: F401,E501
+from swagger_client.models.brewing_stand_data import BrewingStandData  # noqa: F401,E501
+from swagger_client.models.career import Career  # noqa: F401,E501
+from swagger_client.models.catalog_type import CatalogType  # noqa: F401,E501
+from swagger_client.models.catalog_type_difficulty import CatalogTypeDifficulty  # noqa: F401,E501
+from swagger_client.models.catalog_type_dimension_type import CatalogTypeDimensionType  # noqa: F401,E501
+from swagger_client.models.catalog_type_generator_type import CatalogTypeGeneratorType  # noqa: F401,E501
+from swagger_client.models.catalog_type_weather import CatalogTypeWeather  # noqa: F401,E501
+from swagger_client.models.color import Color  # noqa: F401,E501
+from swagger_client.models.command_data import CommandData  # noqa: F401,E501
+from swagger_client.models.damageable_data import DamageableData  # noqa: F401,E501
+from swagger_client.models.despawn_delay_data import DespawnDelayData  # noqa: F401,E501
+from swagger_client.models.durability_data import DurabilityData  # noqa: F401,E501
+from swagger_client.models.dye_color import DyeColor  # noqa: F401,E501
+from swagger_client.models.enchantment import Enchantment  # noqa: F401,E501
+from swagger_client.models.end_gateway_data import EndGatewayData  # noqa: F401,E501
+from swagger_client.models.equipment_slot_type import EquipmentSlotType  # noqa: F401,E501
+from swagger_client.models.experience_holder_data import ExperienceHolderData  # noqa: F401,E501
+from swagger_client.models.falling_block_data import FallingBlockData  # noqa: F401,E501
+from swagger_client.models.firework_effect import FireworkEffect  # noqa: F401,E501
+from swagger_client.models.firework_rocket_data import FireworkRocketData  # noqa: F401,E501
+from swagger_client.models.fluid_stack import FluidStack  # noqa: F401,E501
+from swagger_client.models.food_data import FoodData  # noqa: F401,E501
+from swagger_client.models.furnace_data import FurnaceData  # noqa: F401,E501
+from swagger_client.models.fuse_data import FuseData  # noqa: F401,E501
+from swagger_client.models.game_mode import GameMode  # noqa: F401,E501
+from swagger_client.models.growth_data import GrowthData  # noqa: F401,E501
+from swagger_client.models.gui_id_property import GuiIdProperty  # noqa: F401,E501
+from swagger_client.models.health_data import HealthData  # noqa: F401,E501
+from swagger_client.models.hide_data import HideData  # noqa: F401,E501
+from swagger_client.models.horse_data import HorseData  # noqa: F401,E501
+from swagger_client.models.identifiable import Identifiable  # noqa: F401,E501
+from swagger_client.models.igniteable_data import IgniteableData  # noqa: F401,E501
+from swagger_client.models.inventory import Inventory  # noqa: F401,E501
+from swagger_client.models.inventory_capacity import InventoryCapacity  # noqa: F401,E501
+from swagger_client.models.inventory_dimension import InventoryDimension  # noqa: F401,E501
+from swagger_client.models.inventory_title import InventoryTitle  # noqa: F401,E501
+from swagger_client.models.invisibility_data import InvisibilityData  # noqa: F401,E501
+from swagger_client.models.invulnerability_data import InvulnerabilityData  # noqa: F401,E501
+from swagger_client.models.item_stack import ItemStack  # noqa: F401,E501
+from swagger_client.models.join_data import JoinData  # noqa: F401,E501
+from swagger_client.models.leash_data import LeashData  # noqa: F401,E501
+from swagger_client.models.location import Location  # noqa: F401,E501
+from swagger_client.models.minecart_block_data import MinecartBlockData  # noqa: F401,E501
+from swagger_client.models.mob_spawner_data import MobSpawnerData  # noqa: F401,E501
+from swagger_client.models.pickup_delay_data import PickupDelayData  # noqa: F401,E501
+from swagger_client.models.potion_effect import PotionEffect  # noqa: F401,E501
+from swagger_client.models.slime_data import SlimeData  # noqa: F401,E501
+from swagger_client.models.slot_index import SlotIndex  # noqa: F401,E501
+from swagger_client.models.slot_pos import SlotPos  # noqa: F401,E501
+from swagger_client.models.slot_side import SlotSide  # noqa: F401,E501
+from swagger_client.models.stat import Stat  # noqa: F401,E501
+from swagger_client.models.structure_data import StructureData  # noqa: F401,E501
+from swagger_client.models.tameable_data import TameableData  # noqa: F401,E501
+from swagger_client.models.trade_offer import TradeOffer  # noqa: F401,E501
+from swagger_client.models.vector3d import Vector3d  # noqa: F401,E501
+from swagger_client.models.vehicle_data import VehicleData  # noqa: F401,E501
+from swagger_client.models.wire_attachment_data import WireAttachmentData  # noqa: F401,E501
+from swagger_client.models.world_border import WorldBorder  # noqa: F401,E501
+
 
 class World(object):
     """NOTE: This class is auto generated by the swagger code generator program.
@@ -31,32 +98,1280 @@ class World(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'allow_commands': 'bool',
+        'border': 'WorldBorder',
+        'difficulty': 'CatalogTypeDifficulty',
+        'dimension_type': 'CatalogTypeDimensionType',
+        'game_mode': 'GameMode',
+        'game_rules': 'dict(str, str)',
+        'generate_bonus_chests': 'bool',
+        'generator_type': 'CatalogTypeGeneratorType',
+        'keep_spawn_loaded': 'bool',
         'link': 'str',
+        'load_on_startup': 'bool',
         'loaded': 'bool',
+        'map_features_enabled': 'bool',
         'name': 'str',
-        'uuid': 'str'
+        'seed': 'int',
+        'spawn': 'CatalogType',
+        'time': 'int',
+        'uuid': 'str',
+        'weather': 'CatalogTypeWeather',
+        'absorption': 'float',
+        'age': 'AgeableData',
+        'aggressive': 'bool',
+        'ai_enabled': 'bool',
+        'anger_level': 'int',
+        'armor_stand': 'ArmorStandData',
+        'art': 'CatalogType',
+        'attached': 'bool',
+        'author': 'str',
+        'axis': 'str',
+        'banner': 'BannerData',
+        'beacon': 'BeaconData',
+        'big_mushroom': 'CatalogType',
+        'block': 'BlockState',
+        'breathing': 'BreathingData',
+        'breedable': 'bool',
+        'brewing_stand': 'BrewingStandData',
+        'brick': 'CatalogType',
+        'career': 'Career',
+        'charged': 'bool',
+        'coal': 'CatalogType',
+        'color': 'Color',
+        'command': 'CommandData',
+        'comparator': 'CatalogType',
+        'connected_direction': 'list[str]',
+        'cooked_fish': 'CatalogType',
+        'cooldown': 'int',
+        'critical_hit': 'bool',
+        'custom_name': 'bool',
+        'damage': 'float',
+        'damageable': 'DamageableData',
+        'decayable': 'bool',
+        'delay': 'int',
+        'despawn_delay': 'DespawnDelayData',
+        'direction': 'str',
+        'dirt': 'CatalogType',
+        'disarmed': 'bool',
+        'disguised_block': 'CatalogType',
+        'display_name': 'str',
+        'dominant_hand': 'CatalogType',
+        'double_plant': 'CatalogType',
+        'drops': 'bool',
+        'durability': 'DurabilityData',
+        'dye': 'DyeColor',
+        'enchantments': 'list[Enchantment]',
+        'end_gateway': 'EndGatewayData',
+        'exp_orb': 'int',
+        'experience': 'ExperienceHolderData',
+        'expire_ticks': 'int',
+        'explosion_radius': 'int',
+        'extended': 'bool',
+        'fall_distance': 'float',
+        'falling_block': 'FallingBlockData',
+        'filled': 'bool',
+        'firework_effects': 'list[FireworkEffect]',
+        'firework_rocket': 'FireworkRocketData',
+        'fish': 'CatalogType',
+        'flammable': 'bool',
+        'fluid': 'FluidStack',
+        'fluid_level': 'int',
+        'fluid_tanks': 'dict(str, list[FluidStack])',
+        'flying': 'bool',
+        'flying_ability': 'bool',
+        'food': 'FoodData',
+        'furnace': 'FurnaceData',
+        'fuse': 'FuseData',
+        'generation': 'int',
+        'glowing': 'bool',
+        'golden_apple': 'CatalogType',
+        'griefs': 'bool',
+        'growth': 'GrowthData',
+        'health': 'HealthData',
+        'hide': 'HideData',
+        'hinge': 'CatalogType',
+        'horse': 'HorseData',
+        'igniteable': 'IgniteableData',
+        'in_wall': 'bool',
+        'inventory': 'Inventory',
+        'invisibility': 'InvisibilityData',
+        'invulnerability': 'InvulnerabilityData',
+        'joined': 'JoinData',
+        'knockback': 'int',
+        'layer': 'int',
+        'leash': 'LeashData',
+        'lock_token': 'str',
+        'log_axis': 'CatalogType',
+        'lore': 'list[str]',
+        'minecart_block': 'MinecartBlockData',
+        'mob_spawner': 'MobSpawnerData',
+        'moisture': 'int',
+        'note': 'CatalogType',
+        'occupied': 'bool',
+        'ocelot': 'CatalogType',
+        'open': 'bool',
+        'pages': 'list[str]',
+        'passengers': 'list[str]',
+        'persists': 'bool',
+        'pickup_delay': 'PickupDelayData',
+        'pickup_rule': 'CatalogType',
+        'pig_saddle': 'bool',
+        'piston': 'CatalogType',
+        'placeable_on': 'list[CatalogType]',
+        'plant': 'CatalogType',
+        'player_created': 'bool',
+        'playing': 'bool',
+        'portion': 'CatalogType',
+        'potion_effects': 'list[PotionEffect]',
+        'powered': 'bool',
+        'prismarine': 'CatalogType',
+        'quartz': 'CatalogType',
+        'rabbit': 'CatalogType',
+        'rail_direction': 'CatalogType',
+        'redstone_power': 'int',
+        'represented_item': 'ItemStack',
+        'represented_player': 'str',
+        'respawn_locations': 'dict(str, Location)',
+        'sand': 'CatalogType',
+        'sand_stone': 'CatalogType',
+        'screaming': 'bool',
+        'seamless': 'bool',
+        'shatters': 'bool',
+        'sheared': 'bool',
+        'shrub': 'CatalogType',
+        'sign': 'list[str]',
+        'silent': 'bool',
+        'sitting': 'bool',
+        'skin': 'str',
+        'skull': 'CatalogType',
+        'slab': 'CatalogType',
+        'sleeping': 'bool',
+        'slime': 'SlimeData',
+        'sneaking': 'bool',
+        'snow': 'bool',
+        'sprinting': 'bool',
+        'stair_shape': 'CatalogType',
+        'statistics': 'list[Stat]',
+        'stone': 'CatalogType',
+        'stored_enchantments': 'list[Enchantment]',
+        'structure': 'StructureData',
+        'stuck_arrows': 'int',
+        'tamed': 'TameableData',
+        'target': 'Vector3d',
+        'trades': 'list[TradeOffer]',
+        'tree': 'CatalogType',
+        'vehicle': 'VehicleData',
+        'wall': 'CatalogType',
+        'wet': 'bool',
+        'wires': 'WireAttachmentData',
+        'accepts_items': 'AcceptsItems',
+        'applicable_effect': 'list[PotionEffect]',
+        'armor_slot_type': 'ArmorSlotType',
+        'armor_type': 'CatalogType',
+        'blast_resistance': 'float',
+        'burning_fuel': 'int',
+        'damage_absorption': 'int',
+        'efficiency': 'float',
+        'equipment_type': 'CatalogType',
+        'equiptment_slot_type': 'EquipmentSlotType',
+        'eye_height': 'float',
+        'eye_location': 'Vector3d',
+        'fluid_temperature': 'int',
+        'fluid_viscosity': 'int',
+        'food_restoration': 'int',
+        'full_block_selection_box': 'bool',
+        'gravity_affected': 'bool',
+        'ground_luminance': 'float',
+        'gui_id': 'GuiIdProperty',
+        'hardness': 'float',
+        'held_item': 'CatalogType',
+        'identifiable': 'Identifiable',
+        'indirectly_powered': 'bool',
+        'instrument': 'CatalogType',
+        'inventory_capacity': 'InventoryCapacity',
+        'inventory_dimension': 'InventoryDimension',
+        'inventory_title': 'InventoryTitle',
+        'light_emission': 'int',
+        'matter': 'str',
+        'passable': 'bool',
+        'record': 'CatalogType',
+        'replaceable': 'bool',
+        'saturation_property': 'float',
+        'sky_luminance': 'float',
+        'slot_index': 'SlotIndex',
+        'slot_pos': 'SlotPos',
+        'slot_side': 'SlotSide',
+        'smeltable': 'bool',
+        'solid_cube': 'bool',
+        'statistics_tracked': 'bool',
+        'surrogate_block': 'bool',
+        'temperature': 'float',
+        'tool_type': 'CatalogType',
+        'unbreakable': 'bool',
+        'use_limit': 'int'
     }
 
     attribute_map = {
+        'allow_commands': 'allowCommands',
+        'border': 'border',
+        'difficulty': 'difficulty',
+        'dimension_type': 'dimensionType',
+        'game_mode': 'gameMode',
+        'game_rules': 'gameRules',
+        'generate_bonus_chests': 'generateBonusChests',
+        'generator_type': 'generatorType',
+        'keep_spawn_loaded': 'keepSpawnLoaded',
         'link': 'link',
+        'load_on_startup': 'loadOnStartup',
         'loaded': 'loaded',
+        'map_features_enabled': 'mapFeaturesEnabled',
         'name': 'name',
-        'uuid': 'uuid'
+        'seed': 'seed',
+        'spawn': 'spawn',
+        'time': 'time',
+        'uuid': 'uuid',
+        'weather': 'weather',
+        'absorption': 'absorption',
+        'age': 'age',
+        'aggressive': 'aggressive',
+        'ai_enabled': 'aiEnabled',
+        'anger_level': 'angerLevel',
+        'armor_stand': 'armorStand',
+        'art': 'art',
+        'attached': 'attached',
+        'author': 'author',
+        'axis': 'axis',
+        'banner': 'banner',
+        'beacon': 'beacon',
+        'big_mushroom': 'bigMushroom',
+        'block': 'block',
+        'breathing': 'breathing',
+        'breedable': 'breedable',
+        'brewing_stand': 'brewingStand',
+        'brick': 'brick',
+        'career': 'career',
+        'charged': 'charged',
+        'coal': 'coal',
+        'color': 'color',
+        'command': 'command',
+        'comparator': 'comparator',
+        'connected_direction': 'connectedDirection',
+        'cooked_fish': 'cookedFish',
+        'cooldown': 'cooldown',
+        'critical_hit': 'criticalHit',
+        'custom_name': 'customName',
+        'damage': 'damage',
+        'damageable': 'damageable',
+        'decayable': 'decayable',
+        'delay': 'delay',
+        'despawn_delay': 'despawnDelay',
+        'direction': 'direction',
+        'dirt': 'dirt',
+        'disarmed': 'disarmed',
+        'disguised_block': 'disguisedBlock',
+        'display_name': 'displayName',
+        'dominant_hand': 'dominantHand',
+        'double_plant': 'doublePlant',
+        'drops': 'drops',
+        'durability': 'durability',
+        'dye': 'dye',
+        'enchantments': 'enchantments',
+        'end_gateway': 'endGateway',
+        'exp_orb': 'expOrb',
+        'experience': 'experience',
+        'expire_ticks': 'expireTicks',
+        'explosion_radius': 'explosionRadius',
+        'extended': 'extended',
+        'fall_distance': 'fallDistance',
+        'falling_block': 'fallingBlock',
+        'filled': 'filled',
+        'firework_effects': 'fireworkEffects',
+        'firework_rocket': 'fireworkRocket',
+        'fish': 'fish',
+        'flammable': 'flammable',
+        'fluid': 'fluid',
+        'fluid_level': 'fluidLevel',
+        'fluid_tanks': 'fluidTanks',
+        'flying': 'flying',
+        'flying_ability': 'flyingAbility',
+        'food': 'food',
+        'furnace': 'furnace',
+        'fuse': 'fuse',
+        'generation': 'generation',
+        'glowing': 'glowing',
+        'golden_apple': 'goldenApple',
+        'griefs': 'griefs',
+        'growth': 'growth',
+        'health': 'health',
+        'hide': 'hide',
+        'hinge': 'hinge',
+        'horse': 'horse',
+        'igniteable': 'igniteable',
+        'in_wall': 'inWall',
+        'inventory': 'inventory',
+        'invisibility': 'invisibility',
+        'invulnerability': 'invulnerability',
+        'joined': 'joined',
+        'knockback': 'knockback',
+        'layer': 'layer',
+        'leash': 'leash',
+        'lock_token': 'lockToken',
+        'log_axis': 'logAxis',
+        'lore': 'lore',
+        'minecart_block': 'minecartBlock',
+        'mob_spawner': 'mobSpawner',
+        'moisture': 'moisture',
+        'note': 'note',
+        'occupied': 'occupied',
+        'ocelot': 'ocelot',
+        'open': 'open',
+        'pages': 'pages',
+        'passengers': 'passengers',
+        'persists': 'persists',
+        'pickup_delay': 'pickupDelay',
+        'pickup_rule': 'pickupRule',
+        'pig_saddle': 'pigSaddle',
+        'piston': 'piston',
+        'placeable_on': 'placeableOn',
+        'plant': 'plant',
+        'player_created': 'playerCreated',
+        'playing': 'playing',
+        'portion': 'portion',
+        'potion_effects': 'potionEffects',
+        'powered': 'powered',
+        'prismarine': 'prismarine',
+        'quartz': 'quartz',
+        'rabbit': 'rabbit',
+        'rail_direction': 'railDirection',
+        'redstone_power': 'redstonePower',
+        'represented_item': 'representedItem',
+        'represented_player': 'representedPlayer',
+        'respawn_locations': 'respawnLocations',
+        'sand': 'sand',
+        'sand_stone': 'sandStone',
+        'screaming': 'screaming',
+        'seamless': 'seamless',
+        'shatters': 'shatters',
+        'sheared': 'sheared',
+        'shrub': 'shrub',
+        'sign': 'sign',
+        'silent': 'silent',
+        'sitting': 'sitting',
+        'skin': 'skin',
+        'skull': 'skull',
+        'slab': 'slab',
+        'sleeping': 'sleeping',
+        'slime': 'slime',
+        'sneaking': 'sneaking',
+        'snow': 'snow',
+        'sprinting': 'sprinting',
+        'stair_shape': 'stairShape',
+        'statistics': 'statistics',
+        'stone': 'stone',
+        'stored_enchantments': 'storedEnchantments',
+        'structure': 'structure',
+        'stuck_arrows': 'stuckArrows',
+        'tamed': 'tamed',
+        'target': 'target',
+        'trades': 'trades',
+        'tree': 'tree',
+        'vehicle': 'vehicle',
+        'wall': 'wall',
+        'wet': 'wet',
+        'wires': 'wires',
+        'accepts_items': 'acceptsItems',
+        'applicable_effect': 'applicableEffect',
+        'armor_slot_type': 'armorSlotType',
+        'armor_type': 'armorType',
+        'blast_resistance': 'blastResistance',
+        'burning_fuel': 'burningFuel',
+        'damage_absorption': 'damageAbsorption',
+        'efficiency': 'efficiency',
+        'equipment_type': 'equipmentType',
+        'equiptment_slot_type': 'equiptmentSlotType',
+        'eye_height': 'eyeHeight',
+        'eye_location': 'eyeLocation',
+        'fluid_temperature': 'fluidTemperature',
+        'fluid_viscosity': 'fluidViscosity',
+        'food_restoration': 'foodRestoration',
+        'full_block_selection_box': 'fullBlockSelectionBox',
+        'gravity_affected': 'gravityAffected',
+        'ground_luminance': 'groundLuminance',
+        'gui_id': 'guiId',
+        'hardness': 'hardness',
+        'held_item': 'heldItem',
+        'identifiable': 'identifiable',
+        'indirectly_powered': 'indirectlyPowered',
+        'instrument': 'instrument',
+        'inventory_capacity': 'inventoryCapacity',
+        'inventory_dimension': 'inventoryDimension',
+        'inventory_title': 'inventoryTitle',
+        'light_emission': 'lightEmission',
+        'matter': 'matter',
+        'passable': 'passable',
+        'record': 'record',
+        'replaceable': 'replaceable',
+        'saturation_property': 'saturationProperty',
+        'sky_luminance': 'skyLuminance',
+        'slot_index': 'slotIndex',
+        'slot_pos': 'slotPos',
+        'slot_side': 'slotSide',
+        'smeltable': 'smeltable',
+        'solid_cube': 'solidCube',
+        'statistics_tracked': 'statisticsTracked',
+        'surrogate_block': 'surrogateBlock',
+        'temperature': 'temperature',
+        'tool_type': 'toolType',
+        'unbreakable': 'unbreakable',
+        'use_limit': 'useLimit'
     }
 
-    def __init__(self, link=None, loaded=None, name=None, uuid=None):  # noqa: E501
+    def __init__(self, allow_commands=None, border=None, difficulty=None, dimension_type=None, game_mode=None, game_rules=None, generate_bonus_chests=None, generator_type=None, keep_spawn_loaded=None, link=None, load_on_startup=None, loaded=None, map_features_enabled=None, name=None, seed=None, spawn=None, time=None, uuid=None, weather=None, absorption=None, age=None, aggressive=None, ai_enabled=None, anger_level=None, armor_stand=None, art=None, attached=None, author=None, axis=None, banner=None, beacon=None, big_mushroom=None, block=None, breathing=None, breedable=None, brewing_stand=None, brick=None, career=None, charged=None, coal=None, color=None, command=None, comparator=None, connected_direction=None, cooked_fish=None, cooldown=None, critical_hit=None, custom_name=None, damage=None, damageable=None, decayable=None, delay=None, despawn_delay=None, direction=None, dirt=None, disarmed=None, disguised_block=None, display_name=None, dominant_hand=None, double_plant=None, drops=None, durability=None, dye=None, enchantments=None, end_gateway=None, exp_orb=None, experience=None, expire_ticks=None, explosion_radius=None, extended=None, fall_distance=None, falling_block=None, filled=None, firework_effects=None, firework_rocket=None, fish=None, flammable=None, fluid=None, fluid_level=None, fluid_tanks=None, flying=None, flying_ability=None, food=None, furnace=None, fuse=None, generation=None, glowing=None, golden_apple=None, griefs=None, growth=None, health=None, hide=None, hinge=None, horse=None, igniteable=None, in_wall=None, inventory=None, invisibility=None, invulnerability=None, joined=None, knockback=None, layer=None, leash=None, lock_token=None, log_axis=None, lore=None, minecart_block=None, mob_spawner=None, moisture=None, note=None, occupied=None, ocelot=None, open=None, pages=None, passengers=None, persists=None, pickup_delay=None, pickup_rule=None, pig_saddle=None, piston=None, placeable_on=None, plant=None, player_created=None, playing=None, portion=None, potion_effects=None, powered=None, prismarine=None, quartz=None, rabbit=None, rail_direction=None, redstone_power=None, represented_item=None, represented_player=None, respawn_locations=None, sand=None, sand_stone=None, screaming=None, seamless=None, shatters=None, sheared=None, shrub=None, sign=None, silent=None, sitting=None, skin=None, skull=None, slab=None, sleeping=None, slime=None, sneaking=None, snow=None, sprinting=None, stair_shape=None, statistics=None, stone=None, stored_enchantments=None, structure=None, stuck_arrows=None, tamed=None, target=None, trades=None, tree=None, vehicle=None, wall=None, wet=None, wires=None, accepts_items=None, applicable_effect=None, armor_slot_type=None, armor_type=None, blast_resistance=None, burning_fuel=None, damage_absorption=None, efficiency=None, equipment_type=None, equiptment_slot_type=None, eye_height=None, eye_location=None, fluid_temperature=None, fluid_viscosity=None, food_restoration=None, full_block_selection_box=None, gravity_affected=None, ground_luminance=None, gui_id=None, hardness=None, held_item=None, identifiable=None, indirectly_powered=None, instrument=None, inventory_capacity=None, inventory_dimension=None, inventory_title=None, light_emission=None, matter=None, passable=None, record=None, replaceable=None, saturation_property=None, sky_luminance=None, slot_index=None, slot_pos=None, slot_side=None, smeltable=None, solid_cube=None, statistics_tracked=None, surrogate_block=None, temperature=None, tool_type=None, unbreakable=None, use_limit=None):  # noqa: E501
         """World - a model defined in Swagger"""  # noqa: E501
 
+        self._allow_commands = None
+        self._border = None
+        self._difficulty = None
+        self._dimension_type = None
+        self._game_mode = None
+        self._game_rules = None
+        self._generate_bonus_chests = None
+        self._generator_type = None
+        self._keep_spawn_loaded = None
         self._link = None
+        self._load_on_startup = None
         self._loaded = None
+        self._map_features_enabled = None
         self._name = None
+        self._seed = None
+        self._spawn = None
+        self._time = None
         self._uuid = None
+        self._weather = None
+        self._absorption = None
+        self._age = None
+        self._aggressive = None
+        self._ai_enabled = None
+        self._anger_level = None
+        self._armor_stand = None
+        self._art = None
+        self._attached = None
+        self._author = None
+        self._axis = None
+        self._banner = None
+        self._beacon = None
+        self._big_mushroom = None
+        self._block = None
+        self._breathing = None
+        self._breedable = None
+        self._brewing_stand = None
+        self._brick = None
+        self._career = None
+        self._charged = None
+        self._coal = None
+        self._color = None
+        self._command = None
+        self._comparator = None
+        self._connected_direction = None
+        self._cooked_fish = None
+        self._cooldown = None
+        self._critical_hit = None
+        self._custom_name = None
+        self._damage = None
+        self._damageable = None
+        self._decayable = None
+        self._delay = None
+        self._despawn_delay = None
+        self._direction = None
+        self._dirt = None
+        self._disarmed = None
+        self._disguised_block = None
+        self._display_name = None
+        self._dominant_hand = None
+        self._double_plant = None
+        self._drops = None
+        self._durability = None
+        self._dye = None
+        self._enchantments = None
+        self._end_gateway = None
+        self._exp_orb = None
+        self._experience = None
+        self._expire_ticks = None
+        self._explosion_radius = None
+        self._extended = None
+        self._fall_distance = None
+        self._falling_block = None
+        self._filled = None
+        self._firework_effects = None
+        self._firework_rocket = None
+        self._fish = None
+        self._flammable = None
+        self._fluid = None
+        self._fluid_level = None
+        self._fluid_tanks = None
+        self._flying = None
+        self._flying_ability = None
+        self._food = None
+        self._furnace = None
+        self._fuse = None
+        self._generation = None
+        self._glowing = None
+        self._golden_apple = None
+        self._griefs = None
+        self._growth = None
+        self._health = None
+        self._hide = None
+        self._hinge = None
+        self._horse = None
+        self._igniteable = None
+        self._in_wall = None
+        self._inventory = None
+        self._invisibility = None
+        self._invulnerability = None
+        self._joined = None
+        self._knockback = None
+        self._layer = None
+        self._leash = None
+        self._lock_token = None
+        self._log_axis = None
+        self._lore = None
+        self._minecart_block = None
+        self._mob_spawner = None
+        self._moisture = None
+        self._note = None
+        self._occupied = None
+        self._ocelot = None
+        self._open = None
+        self._pages = None
+        self._passengers = None
+        self._persists = None
+        self._pickup_delay = None
+        self._pickup_rule = None
+        self._pig_saddle = None
+        self._piston = None
+        self._placeable_on = None
+        self._plant = None
+        self._player_created = None
+        self._playing = None
+        self._portion = None
+        self._potion_effects = None
+        self._powered = None
+        self._prismarine = None
+        self._quartz = None
+        self._rabbit = None
+        self._rail_direction = None
+        self._redstone_power = None
+        self._represented_item = None
+        self._represented_player = None
+        self._respawn_locations = None
+        self._sand = None
+        self._sand_stone = None
+        self._screaming = None
+        self._seamless = None
+        self._shatters = None
+        self._sheared = None
+        self._shrub = None
+        self._sign = None
+        self._silent = None
+        self._sitting = None
+        self._skin = None
+        self._skull = None
+        self._slab = None
+        self._sleeping = None
+        self._slime = None
+        self._sneaking = None
+        self._snow = None
+        self._sprinting = None
+        self._stair_shape = None
+        self._statistics = None
+        self._stone = None
+        self._stored_enchantments = None
+        self._structure = None
+        self._stuck_arrows = None
+        self._tamed = None
+        self._target = None
+        self._trades = None
+        self._tree = None
+        self._vehicle = None
+        self._wall = None
+        self._wet = None
+        self._wires = None
+        self._accepts_items = None
+        self._applicable_effect = None
+        self._armor_slot_type = None
+        self._armor_type = None
+        self._blast_resistance = None
+        self._burning_fuel = None
+        self._damage_absorption = None
+        self._efficiency = None
+        self._equipment_type = None
+        self._equiptment_slot_type = None
+        self._eye_height = None
+        self._eye_location = None
+        self._fluid_temperature = None
+        self._fluid_viscosity = None
+        self._food_restoration = None
+        self._full_block_selection_box = None
+        self._gravity_affected = None
+        self._ground_luminance = None
+        self._gui_id = None
+        self._hardness = None
+        self._held_item = None
+        self._identifiable = None
+        self._indirectly_powered = None
+        self._instrument = None
+        self._inventory_capacity = None
+        self._inventory_dimension = None
+        self._inventory_title = None
+        self._light_emission = None
+        self._matter = None
+        self._passable = None
+        self._record = None
+        self._replaceable = None
+        self._saturation_property = None
+        self._sky_luminance = None
+        self._slot_index = None
+        self._slot_pos = None
+        self._slot_side = None
+        self._smeltable = None
+        self._solid_cube = None
+        self._statistics_tracked = None
+        self._surrogate_block = None
+        self._temperature = None
+        self._tool_type = None
+        self._unbreakable = None
+        self._use_limit = None
         self.discriminator = None
 
+        self.allow_commands = allow_commands
+        self.border = border
+        self.difficulty = difficulty
+        self.dimension_type = dimension_type
+        if game_mode is not None:
+            self.game_mode = game_mode
+        self.game_rules = game_rules
+        self.generate_bonus_chests = generate_bonus_chests
+        self.generator_type = generator_type
+        self.keep_spawn_loaded = keep_spawn_loaded
         self.link = link
+        self.load_on_startup = load_on_startup
         self.loaded = loaded
+        self.map_features_enabled = map_features_enabled
         self.name = name
+        self.seed = seed
+        if spawn is not None:
+            self.spawn = spawn
+        self.time = time
         self.uuid = uuid
+        self.weather = weather
+        if absorption is not None:
+            self.absorption = absorption
+        if age is not None:
+            self.age = age
+        if aggressive is not None:
+            self.aggressive = aggressive
+        if ai_enabled is not None:
+            self.ai_enabled = ai_enabled
+        if anger_level is not None:
+            self.anger_level = anger_level
+        if armor_stand is not None:
+            self.armor_stand = armor_stand
+        if art is not None:
+            self.art = art
+        if attached is not None:
+            self.attached = attached
+        if author is not None:
+            self.author = author
+        if axis is not None:
+            self.axis = axis
+        if banner is not None:
+            self.banner = banner
+        if beacon is not None:
+            self.beacon = beacon
+        if big_mushroom is not None:
+            self.big_mushroom = big_mushroom
+        if block is not None:
+            self.block = block
+        if breathing is not None:
+            self.breathing = breathing
+        if breedable is not None:
+            self.breedable = breedable
+        if brewing_stand is not None:
+            self.brewing_stand = brewing_stand
+        if brick is not None:
+            self.brick = brick
+        if career is not None:
+            self.career = career
+        if charged is not None:
+            self.charged = charged
+        if coal is not None:
+            self.coal = coal
+        if color is not None:
+            self.color = color
+        if command is not None:
+            self.command = command
+        if comparator is not None:
+            self.comparator = comparator
+        if connected_direction is not None:
+            self.connected_direction = connected_direction
+        if cooked_fish is not None:
+            self.cooked_fish = cooked_fish
+        if cooldown is not None:
+            self.cooldown = cooldown
+        if critical_hit is not None:
+            self.critical_hit = critical_hit
+        if custom_name is not None:
+            self.custom_name = custom_name
+        if damage is not None:
+            self.damage = damage
+        if damageable is not None:
+            self.damageable = damageable
+        if decayable is not None:
+            self.decayable = decayable
+        if delay is not None:
+            self.delay = delay
+        if despawn_delay is not None:
+            self.despawn_delay = despawn_delay
+        if direction is not None:
+            self.direction = direction
+        if dirt is not None:
+            self.dirt = dirt
+        if disarmed is not None:
+            self.disarmed = disarmed
+        if disguised_block is not None:
+            self.disguised_block = disguised_block
+        if display_name is not None:
+            self.display_name = display_name
+        if dominant_hand is not None:
+            self.dominant_hand = dominant_hand
+        if double_plant is not None:
+            self.double_plant = double_plant
+        if drops is not None:
+            self.drops = drops
+        if durability is not None:
+            self.durability = durability
+        if dye is not None:
+            self.dye = dye
+        if enchantments is not None:
+            self.enchantments = enchantments
+        if end_gateway is not None:
+            self.end_gateway = end_gateway
+        if exp_orb is not None:
+            self.exp_orb = exp_orb
+        if experience is not None:
+            self.experience = experience
+        if expire_ticks is not None:
+            self.expire_ticks = expire_ticks
+        if explosion_radius is not None:
+            self.explosion_radius = explosion_radius
+        if extended is not None:
+            self.extended = extended
+        if fall_distance is not None:
+            self.fall_distance = fall_distance
+        if falling_block is not None:
+            self.falling_block = falling_block
+        if filled is not None:
+            self.filled = filled
+        if firework_effects is not None:
+            self.firework_effects = firework_effects
+        if firework_rocket is not None:
+            self.firework_rocket = firework_rocket
+        if fish is not None:
+            self.fish = fish
+        if flammable is not None:
+            self.flammable = flammable
+        if fluid is not None:
+            self.fluid = fluid
+        if fluid_level is not None:
+            self.fluid_level = fluid_level
+        if fluid_tanks is not None:
+            self.fluid_tanks = fluid_tanks
+        if flying is not None:
+            self.flying = flying
+        if flying_ability is not None:
+            self.flying_ability = flying_ability
+        if food is not None:
+            self.food = food
+        if furnace is not None:
+            self.furnace = furnace
+        if fuse is not None:
+            self.fuse = fuse
+        if generation is not None:
+            self.generation = generation
+        if glowing is not None:
+            self.glowing = glowing
+        if golden_apple is not None:
+            self.golden_apple = golden_apple
+        if griefs is not None:
+            self.griefs = griefs
+        if growth is not None:
+            self.growth = growth
+        if health is not None:
+            self.health = health
+        if hide is not None:
+            self.hide = hide
+        if hinge is not None:
+            self.hinge = hinge
+        if horse is not None:
+            self.horse = horse
+        if igniteable is not None:
+            self.igniteable = igniteable
+        if in_wall is not None:
+            self.in_wall = in_wall
+        if inventory is not None:
+            self.inventory = inventory
+        if invisibility is not None:
+            self.invisibility = invisibility
+        if invulnerability is not None:
+            self.invulnerability = invulnerability
+        if joined is not None:
+            self.joined = joined
+        if knockback is not None:
+            self.knockback = knockback
+        if layer is not None:
+            self.layer = layer
+        if leash is not None:
+            self.leash = leash
+        if lock_token is not None:
+            self.lock_token = lock_token
+        if log_axis is not None:
+            self.log_axis = log_axis
+        if lore is not None:
+            self.lore = lore
+        if minecart_block is not None:
+            self.minecart_block = minecart_block
+        if mob_spawner is not None:
+            self.mob_spawner = mob_spawner
+        if moisture is not None:
+            self.moisture = moisture
+        if note is not None:
+            self.note = note
+        if occupied is not None:
+            self.occupied = occupied
+        if ocelot is not None:
+            self.ocelot = ocelot
+        if open is not None:
+            self.open = open
+        if pages is not None:
+            self.pages = pages
+        if passengers is not None:
+            self.passengers = passengers
+        if persists is not None:
+            self.persists = persists
+        if pickup_delay is not None:
+            self.pickup_delay = pickup_delay
+        if pickup_rule is not None:
+            self.pickup_rule = pickup_rule
+        if pig_saddle is not None:
+            self.pig_saddle = pig_saddle
+        if piston is not None:
+            self.piston = piston
+        if placeable_on is not None:
+            self.placeable_on = placeable_on
+        if plant is not None:
+            self.plant = plant
+        if player_created is not None:
+            self.player_created = player_created
+        if playing is not None:
+            self.playing = playing
+        if portion is not None:
+            self.portion = portion
+        if potion_effects is not None:
+            self.potion_effects = potion_effects
+        if powered is not None:
+            self.powered = powered
+        if prismarine is not None:
+            self.prismarine = prismarine
+        if quartz is not None:
+            self.quartz = quartz
+        if rabbit is not None:
+            self.rabbit = rabbit
+        if rail_direction is not None:
+            self.rail_direction = rail_direction
+        if redstone_power is not None:
+            self.redstone_power = redstone_power
+        if represented_item is not None:
+            self.represented_item = represented_item
+        if represented_player is not None:
+            self.represented_player = represented_player
+        if respawn_locations is not None:
+            self.respawn_locations = respawn_locations
+        if sand is not None:
+            self.sand = sand
+        if sand_stone is not None:
+            self.sand_stone = sand_stone
+        if screaming is not None:
+            self.screaming = screaming
+        if seamless is not None:
+            self.seamless = seamless
+        if shatters is not None:
+            self.shatters = shatters
+        if sheared is not None:
+            self.sheared = sheared
+        if shrub is not None:
+            self.shrub = shrub
+        if sign is not None:
+            self.sign = sign
+        if silent is not None:
+            self.silent = silent
+        if sitting is not None:
+            self.sitting = sitting
+        if skin is not None:
+            self.skin = skin
+        if skull is not None:
+            self.skull = skull
+        if slab is not None:
+            self.slab = slab
+        if sleeping is not None:
+            self.sleeping = sleeping
+        if slime is not None:
+            self.slime = slime
+        if sneaking is not None:
+            self.sneaking = sneaking
+        if snow is not None:
+            self.snow = snow
+        if sprinting is not None:
+            self.sprinting = sprinting
+        if stair_shape is not None:
+            self.stair_shape = stair_shape
+        if statistics is not None:
+            self.statistics = statistics
+        if stone is not None:
+            self.stone = stone
+        if stored_enchantments is not None:
+            self.stored_enchantments = stored_enchantments
+        if structure is not None:
+            self.structure = structure
+        if stuck_arrows is not None:
+            self.stuck_arrows = stuck_arrows
+        if tamed is not None:
+            self.tamed = tamed
+        if target is not None:
+            self.target = target
+        if trades is not None:
+            self.trades = trades
+        if tree is not None:
+            self.tree = tree
+        if vehicle is not None:
+            self.vehicle = vehicle
+        if wall is not None:
+            self.wall = wall
+        if wet is not None:
+            self.wet = wet
+        if wires is not None:
+            self.wires = wires
+        if accepts_items is not None:
+            self.accepts_items = accepts_items
+        if applicable_effect is not None:
+            self.applicable_effect = applicable_effect
+        if armor_slot_type is not None:
+            self.armor_slot_type = armor_slot_type
+        if armor_type is not None:
+            self.armor_type = armor_type
+        if blast_resistance is not None:
+            self.blast_resistance = blast_resistance
+        if burning_fuel is not None:
+            self.burning_fuel = burning_fuel
+        if damage_absorption is not None:
+            self.damage_absorption = damage_absorption
+        if efficiency is not None:
+            self.efficiency = efficiency
+        if equipment_type is not None:
+            self.equipment_type = equipment_type
+        if equiptment_slot_type is not None:
+            self.equiptment_slot_type = equiptment_slot_type
+        if eye_height is not None:
+            self.eye_height = eye_height
+        if eye_location is not None:
+            self.eye_location = eye_location
+        if fluid_temperature is not None:
+            self.fluid_temperature = fluid_temperature
+        if fluid_viscosity is not None:
+            self.fluid_viscosity = fluid_viscosity
+        if food_restoration is not None:
+            self.food_restoration = food_restoration
+        if full_block_selection_box is not None:
+            self.full_block_selection_box = full_block_selection_box
+        if gravity_affected is not None:
+            self.gravity_affected = gravity_affected
+        if ground_luminance is not None:
+            self.ground_luminance = ground_luminance
+        if gui_id is not None:
+            self.gui_id = gui_id
+        if hardness is not None:
+            self.hardness = hardness
+        if held_item is not None:
+            self.held_item = held_item
+        if identifiable is not None:
+            self.identifiable = identifiable
+        if indirectly_powered is not None:
+            self.indirectly_powered = indirectly_powered
+        if instrument is not None:
+            self.instrument = instrument
+        if inventory_capacity is not None:
+            self.inventory_capacity = inventory_capacity
+        if inventory_dimension is not None:
+            self.inventory_dimension = inventory_dimension
+        if inventory_title is not None:
+            self.inventory_title = inventory_title
+        if light_emission is not None:
+            self.light_emission = light_emission
+        if matter is not None:
+            self.matter = matter
+        if passable is not None:
+            self.passable = passable
+        if record is not None:
+            self.record = record
+        if replaceable is not None:
+            self.replaceable = replaceable
+        if saturation_property is not None:
+            self.saturation_property = saturation_property
+        if sky_luminance is not None:
+            self.sky_luminance = sky_luminance
+        if slot_index is not None:
+            self.slot_index = slot_index
+        if slot_pos is not None:
+            self.slot_pos = slot_pos
+        if slot_side is not None:
+            self.slot_side = slot_side
+        if smeltable is not None:
+            self.smeltable = smeltable
+        if solid_cube is not None:
+            self.solid_cube = solid_cube
+        if statistics_tracked is not None:
+            self.statistics_tracked = statistics_tracked
+        if surrogate_block is not None:
+            self.surrogate_block = surrogate_block
+        if temperature is not None:
+            self.temperature = temperature
+        if tool_type is not None:
+            self.tool_type = tool_type
+        if unbreakable is not None:
+            self.unbreakable = unbreakable
+        if use_limit is not None:
+            self.use_limit = use_limit
+
+    @property
+    def allow_commands(self):
+        """Gets the allow_commands of this World.  # noqa: E501
+
+        True if commands are allowed to be executed in this world, false otherwise  # noqa: E501
+
+        :return: The allow_commands of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_commands
+
+    @allow_commands.setter
+    def allow_commands(self, allow_commands):
+        """Sets the allow_commands of this World.
+
+        True if commands are allowed to be executed in this world, false otherwise  # noqa: E501
+
+        :param allow_commands: The allow_commands of this World.  # noqa: E501
+        :type: bool
+        """
+        if allow_commands is None:
+            raise ValueError("Invalid value for `allow_commands`, must not be `None`")  # noqa: E501
+
+        self._allow_commands = allow_commands
+
+    @property
+    def border(self):
+        """Gets the border of this World.  # noqa: E501
+
+        The border of the world  # noqa: E501
+
+        :return: The border of this World.  # noqa: E501
+        :rtype: WorldBorder
+        """
+        return self._border
+
+    @border.setter
+    def border(self, border):
+        """Sets the border of this World.
+
+        The border of the world  # noqa: E501
+
+        :param border: The border of this World.  # noqa: E501
+        :type: WorldBorder
+        """
+        if border is None:
+            raise ValueError("Invalid value for `border`, must not be `None`")  # noqa: E501
+
+        self._border = border
+
+    @property
+    def difficulty(self):
+        """Gets the difficulty of this World.  # noqa: E501
+
+        The difficulty of the world  # noqa: E501
+
+        :return: The difficulty of this World.  # noqa: E501
+        :rtype: CatalogTypeDifficulty
+        """
+        return self._difficulty
+
+    @difficulty.setter
+    def difficulty(self, difficulty):
+        """Sets the difficulty of this World.
+
+        The difficulty of the world  # noqa: E501
+
+        :param difficulty: The difficulty of this World.  # noqa: E501
+        :type: CatalogTypeDifficulty
+        """
+        if difficulty is None:
+            raise ValueError("Invalid value for `difficulty`, must not be `None`")  # noqa: E501
+
+        self._difficulty = difficulty
+
+    @property
+    def dimension_type(self):
+        """Gets the dimension_type of this World.  # noqa: E501
+
+        The dimension of the world  # noqa: E501
+
+        :return: The dimension_type of this World.  # noqa: E501
+        :rtype: CatalogTypeDimensionType
+        """
+        return self._dimension_type
+
+    @dimension_type.setter
+    def dimension_type(self, dimension_type):
+        """Sets the dimension_type of this World.
+
+        The dimension of the world  # noqa: E501
+
+        :param dimension_type: The dimension_type of this World.  # noqa: E501
+        :type: CatalogTypeDimensionType
+        """
+        if dimension_type is None:
+            raise ValueError("Invalid value for `dimension_type`, must not be `None`")  # noqa: E501
+
+        self._dimension_type = dimension_type
+
+    @property
+    def game_mode(self):
+        """Gets the game_mode of this World.  # noqa: E501
+
+
+        :return: The game_mode of this World.  # noqa: E501
+        :rtype: GameMode
+        """
+        return self._game_mode
+
+    @game_mode.setter
+    def game_mode(self, game_mode):
+        """Sets the game_mode of this World.
+
+
+        :param game_mode: The game_mode of this World.  # noqa: E501
+        :type: GameMode
+        """
+
+        self._game_mode = game_mode
+
+    @property
+    def game_rules(self):
+        """Gets the game_rules of this World.  # noqa: E501
+
+        A map of world rule names to values  # noqa: E501
+
+        :return: The game_rules of this World.  # noqa: E501
+        :rtype: dict(str, str)
+        """
+        return self._game_rules
+
+    @game_rules.setter
+    def game_rules(self, game_rules):
+        """Sets the game_rules of this World.
+
+        A map of world rule names to values  # noqa: E501
+
+        :param game_rules: The game_rules of this World.  # noqa: E501
+        :type: dict(str, str)
+        """
+        if game_rules is None:
+            raise ValueError("Invalid value for `game_rules`, must not be `None`")  # noqa: E501
+
+        self._game_rules = game_rules
+
+    @property
+    def generate_bonus_chests(self):
+        """Gets the generate_bonus_chests of this World.  # noqa: E501
+
+        True if bonus chests are generated for this world, false otherwise  # noqa: E501
+
+        :return: The generate_bonus_chests of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._generate_bonus_chests
+
+    @generate_bonus_chests.setter
+    def generate_bonus_chests(self, generate_bonus_chests):
+        """Sets the generate_bonus_chests of this World.
+
+        True if bonus chests are generated for this world, false otherwise  # noqa: E501
+
+        :param generate_bonus_chests: The generate_bonus_chests of this World.  # noqa: E501
+        :type: bool
+        """
+        if generate_bonus_chests is None:
+            raise ValueError("Invalid value for `generate_bonus_chests`, must not be `None`")  # noqa: E501
+
+        self._generate_bonus_chests = generate_bonus_chests
+
+    @property
+    def generator_type(self):
+        """Gets the generator_type of this World.  # noqa: E501
+
+        The generator type used for this world  # noqa: E501
+
+        :return: The generator_type of this World.  # noqa: E501
+        :rtype: CatalogTypeGeneratorType
+        """
+        return self._generator_type
+
+    @generator_type.setter
+    def generator_type(self, generator_type):
+        """Sets the generator_type of this World.
+
+        The generator type used for this world  # noqa: E501
+
+        :param generator_type: The generator_type of this World.  # noqa: E501
+        :type: CatalogTypeGeneratorType
+        """
+        if generator_type is None:
+            raise ValueError("Invalid value for `generator_type`, must not be `None`")  # noqa: E501
+
+        self._generator_type = generator_type
+
+    @property
+    def keep_spawn_loaded(self):
+        """Gets the keep_spawn_loaded of this World.  # noqa: E501
+
+        True if the spawn of this world is always kept loaded, false otherwise  # noqa: E501
+
+        :return: The keep_spawn_loaded of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._keep_spawn_loaded
+
+    @keep_spawn_loaded.setter
+    def keep_spawn_loaded(self, keep_spawn_loaded):
+        """Sets the keep_spawn_loaded of this World.
+
+        True if the spawn of this world is always kept loaded, false otherwise  # noqa: E501
+
+        :param keep_spawn_loaded: The keep_spawn_loaded of this World.  # noqa: E501
+        :type: bool
+        """
+        if keep_spawn_loaded is None:
+            raise ValueError("Invalid value for `keep_spawn_loaded`, must not be `None`")  # noqa: E501
+
+        self._keep_spawn_loaded = keep_spawn_loaded
 
     @property
     def link(self):
@@ -84,6 +1399,31 @@ class World(object):
         self._link = link
 
     @property
+    def load_on_startup(self):
+        """Gets the load_on_startup of this World.  # noqa: E501
+
+        True if this world is loaded when the server starts, false otherwise  # noqa: E501
+
+        :return: The load_on_startup of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._load_on_startup
+
+    @load_on_startup.setter
+    def load_on_startup(self, load_on_startup):
+        """Sets the load_on_startup of this World.
+
+        True if this world is loaded when the server starts, false otherwise  # noqa: E501
+
+        :param load_on_startup: The load_on_startup of this World.  # noqa: E501
+        :type: bool
+        """
+        if load_on_startup is None:
+            raise ValueError("Invalid value for `load_on_startup`, must not be `None`")  # noqa: E501
+
+        self._load_on_startup = load_on_startup
+
+    @property
     def loaded(self):
         """Gets the loaded of this World.  # noqa: E501
 
@@ -107,6 +1447,31 @@ class World(object):
             raise ValueError("Invalid value for `loaded`, must not be `None`")  # noqa: E501
 
         self._loaded = loaded
+
+    @property
+    def map_features_enabled(self):
+        """Gets the map_features_enabled of this World.  # noqa: E501
+
+        True if map specific features are enabled for this world, false otherwise  # noqa: E501
+
+        :return: The map_features_enabled of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._map_features_enabled
+
+    @map_features_enabled.setter
+    def map_features_enabled(self, map_features_enabled):
+        """Sets the map_features_enabled of this World.
+
+        True if map specific features are enabled for this world, false otherwise  # noqa: E501
+
+        :param map_features_enabled: The map_features_enabled of this World.  # noqa: E501
+        :type: bool
+        """
+        if map_features_enabled is None:
+            raise ValueError("Invalid value for `map_features_enabled`, must not be `None`")  # noqa: E501
+
+        self._map_features_enabled = map_features_enabled
 
     @property
     def name(self):
@@ -134,6 +1499,77 @@ class World(object):
         self._name = name
 
     @property
+    def seed(self):
+        """Gets the seed of this World.  # noqa: E501
+
+        The seed of the world  # noqa: E501
+
+        :return: The seed of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._seed
+
+    @seed.setter
+    def seed(self, seed):
+        """Sets the seed of this World.
+
+        The seed of the world  # noqa: E501
+
+        :param seed: The seed of this World.  # noqa: E501
+        :type: int
+        """
+        if seed is None:
+            raise ValueError("Invalid value for `seed`, must not be `None`")  # noqa: E501
+
+        self._seed = seed
+
+    @property
+    def spawn(self):
+        """Gets the spawn of this World.  # noqa: E501
+
+
+        :return: The spawn of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._spawn
+
+    @spawn.setter
+    def spawn(self, spawn):
+        """Sets the spawn of this World.
+
+
+        :param spawn: The spawn of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._spawn = spawn
+
+    @property
+    def time(self):
+        """Gets the time of this World.  # noqa: E501
+
+        The current time in the world  # noqa: E501
+
+        :return: The time of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._time
+
+    @time.setter
+    def time(self, time):
+        """Sets the time of this World.
+
+        The current time in the world  # noqa: E501
+
+        :param time: The time of this World.  # noqa: E501
+        :type: int
+        """
+        if time is None:
+            raise ValueError("Invalid value for `time`, must not be `None`")  # noqa: E501
+
+        self._time = time
+
+    @property
     def uuid(self):
         """Gets the uuid of this World.  # noqa: E501
 
@@ -157,6 +1593,4109 @@ class World(object):
             raise ValueError("Invalid value for `uuid`, must not be `None`")  # noqa: E501
 
         self._uuid = uuid
+
+    @property
+    def weather(self):
+        """Gets the weather of this World.  # noqa: E501
+
+        The current weather in the world  # noqa: E501
+
+        :return: The weather of this World.  # noqa: E501
+        :rtype: CatalogTypeWeather
+        """
+        return self._weather
+
+    @weather.setter
+    def weather(self, weather):
+        """Sets the weather of this World.
+
+        The current weather in the world  # noqa: E501
+
+        :param weather: The weather of this World.  # noqa: E501
+        :type: CatalogTypeWeather
+        """
+        if weather is None:
+            raise ValueError("Invalid value for `weather`, must not be `None`")  # noqa: E501
+
+        self._weather = weather
+
+    @property
+    def absorption(self):
+        """Gets the absorption of this World.  # noqa: E501
+
+
+        :return: The absorption of this World.  # noqa: E501
+        :rtype: float
+        """
+        return self._absorption
+
+    @absorption.setter
+    def absorption(self, absorption):
+        """Sets the absorption of this World.
+
+
+        :param absorption: The absorption of this World.  # noqa: E501
+        :type: float
+        """
+
+        self._absorption = absorption
+
+    @property
+    def age(self):
+        """Gets the age of this World.  # noqa: E501
+
+
+        :return: The age of this World.  # noqa: E501
+        :rtype: AgeableData
+        """
+        return self._age
+
+    @age.setter
+    def age(self, age):
+        """Sets the age of this World.
+
+
+        :param age: The age of this World.  # noqa: E501
+        :type: AgeableData
+        """
+
+        self._age = age
+
+    @property
+    def aggressive(self):
+        """Gets the aggressive of this World.  # noqa: E501
+
+
+        :return: The aggressive of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._aggressive
+
+    @aggressive.setter
+    def aggressive(self, aggressive):
+        """Sets the aggressive of this World.
+
+
+        :param aggressive: The aggressive of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._aggressive = aggressive
+
+    @property
+    def ai_enabled(self):
+        """Gets the ai_enabled of this World.  # noqa: E501
+
+
+        :return: The ai_enabled of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ai_enabled
+
+    @ai_enabled.setter
+    def ai_enabled(self, ai_enabled):
+        """Sets the ai_enabled of this World.
+
+
+        :param ai_enabled: The ai_enabled of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._ai_enabled = ai_enabled
+
+    @property
+    def anger_level(self):
+        """Gets the anger_level of this World.  # noqa: E501
+
+
+        :return: The anger_level of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._anger_level
+
+    @anger_level.setter
+    def anger_level(self, anger_level):
+        """Sets the anger_level of this World.
+
+
+        :param anger_level: The anger_level of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._anger_level = anger_level
+
+    @property
+    def armor_stand(self):
+        """Gets the armor_stand of this World.  # noqa: E501
+
+
+        :return: The armor_stand of this World.  # noqa: E501
+        :rtype: ArmorStandData
+        """
+        return self._armor_stand
+
+    @armor_stand.setter
+    def armor_stand(self, armor_stand):
+        """Sets the armor_stand of this World.
+
+
+        :param armor_stand: The armor_stand of this World.  # noqa: E501
+        :type: ArmorStandData
+        """
+
+        self._armor_stand = armor_stand
+
+    @property
+    def art(self):
+        """Gets the art of this World.  # noqa: E501
+
+
+        :return: The art of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._art
+
+    @art.setter
+    def art(self, art):
+        """Sets the art of this World.
+
+
+        :param art: The art of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._art = art
+
+    @property
+    def attached(self):
+        """Gets the attached of this World.  # noqa: E501
+
+
+        :return: The attached of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._attached
+
+    @attached.setter
+    def attached(self, attached):
+        """Sets the attached of this World.
+
+
+        :param attached: The attached of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._attached = attached
+
+    @property
+    def author(self):
+        """Gets the author of this World.  # noqa: E501
+
+
+        :return: The author of this World.  # noqa: E501
+        :rtype: str
+        """
+        return self._author
+
+    @author.setter
+    def author(self, author):
+        """Sets the author of this World.
+
+
+        :param author: The author of this World.  # noqa: E501
+        :type: str
+        """
+
+        self._author = author
+
+    @property
+    def axis(self):
+        """Gets the axis of this World.  # noqa: E501
+
+
+        :return: The axis of this World.  # noqa: E501
+        :rtype: str
+        """
+        return self._axis
+
+    @axis.setter
+    def axis(self, axis):
+        """Sets the axis of this World.
+
+
+        :param axis: The axis of this World.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["X", "Y", "Z"]  # noqa: E501
+        if axis not in allowed_values:
+            raise ValueError(
+                "Invalid value for `axis` ({0}), must be one of {1}"  # noqa: E501
+                .format(axis, allowed_values)
+            )
+
+        self._axis = axis
+
+    @property
+    def banner(self):
+        """Gets the banner of this World.  # noqa: E501
+
+
+        :return: The banner of this World.  # noqa: E501
+        :rtype: BannerData
+        """
+        return self._banner
+
+    @banner.setter
+    def banner(self, banner):
+        """Sets the banner of this World.
+
+
+        :param banner: The banner of this World.  # noqa: E501
+        :type: BannerData
+        """
+
+        self._banner = banner
+
+    @property
+    def beacon(self):
+        """Gets the beacon of this World.  # noqa: E501
+
+
+        :return: The beacon of this World.  # noqa: E501
+        :rtype: BeaconData
+        """
+        return self._beacon
+
+    @beacon.setter
+    def beacon(self, beacon):
+        """Sets the beacon of this World.
+
+
+        :param beacon: The beacon of this World.  # noqa: E501
+        :type: BeaconData
+        """
+
+        self._beacon = beacon
+
+    @property
+    def big_mushroom(self):
+        """Gets the big_mushroom of this World.  # noqa: E501
+
+
+        :return: The big_mushroom of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._big_mushroom
+
+    @big_mushroom.setter
+    def big_mushroom(self, big_mushroom):
+        """Sets the big_mushroom of this World.
+
+
+        :param big_mushroom: The big_mushroom of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._big_mushroom = big_mushroom
+
+    @property
+    def block(self):
+        """Gets the block of this World.  # noqa: E501
+
+
+        :return: The block of this World.  # noqa: E501
+        :rtype: BlockState
+        """
+        return self._block
+
+    @block.setter
+    def block(self, block):
+        """Sets the block of this World.
+
+
+        :param block: The block of this World.  # noqa: E501
+        :type: BlockState
+        """
+
+        self._block = block
+
+    @property
+    def breathing(self):
+        """Gets the breathing of this World.  # noqa: E501
+
+
+        :return: The breathing of this World.  # noqa: E501
+        :rtype: BreathingData
+        """
+        return self._breathing
+
+    @breathing.setter
+    def breathing(self, breathing):
+        """Sets the breathing of this World.
+
+
+        :param breathing: The breathing of this World.  # noqa: E501
+        :type: BreathingData
+        """
+
+        self._breathing = breathing
+
+    @property
+    def breedable(self):
+        """Gets the breedable of this World.  # noqa: E501
+
+
+        :return: The breedable of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._breedable
+
+    @breedable.setter
+    def breedable(self, breedable):
+        """Sets the breedable of this World.
+
+
+        :param breedable: The breedable of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._breedable = breedable
+
+    @property
+    def brewing_stand(self):
+        """Gets the brewing_stand of this World.  # noqa: E501
+
+
+        :return: The brewing_stand of this World.  # noqa: E501
+        :rtype: BrewingStandData
+        """
+        return self._brewing_stand
+
+    @brewing_stand.setter
+    def brewing_stand(self, brewing_stand):
+        """Sets the brewing_stand of this World.
+
+
+        :param brewing_stand: The brewing_stand of this World.  # noqa: E501
+        :type: BrewingStandData
+        """
+
+        self._brewing_stand = brewing_stand
+
+    @property
+    def brick(self):
+        """Gets the brick of this World.  # noqa: E501
+
+
+        :return: The brick of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._brick
+
+    @brick.setter
+    def brick(self, brick):
+        """Sets the brick of this World.
+
+
+        :param brick: The brick of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._brick = brick
+
+    @property
+    def career(self):
+        """Gets the career of this World.  # noqa: E501
+
+
+        :return: The career of this World.  # noqa: E501
+        :rtype: Career
+        """
+        return self._career
+
+    @career.setter
+    def career(self, career):
+        """Sets the career of this World.
+
+
+        :param career: The career of this World.  # noqa: E501
+        :type: Career
+        """
+
+        self._career = career
+
+    @property
+    def charged(self):
+        """Gets the charged of this World.  # noqa: E501
+
+
+        :return: The charged of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._charged
+
+    @charged.setter
+    def charged(self, charged):
+        """Sets the charged of this World.
+
+
+        :param charged: The charged of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._charged = charged
+
+    @property
+    def coal(self):
+        """Gets the coal of this World.  # noqa: E501
+
+
+        :return: The coal of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._coal
+
+    @coal.setter
+    def coal(self, coal):
+        """Sets the coal of this World.
+
+
+        :param coal: The coal of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._coal = coal
+
+    @property
+    def color(self):
+        """Gets the color of this World.  # noqa: E501
+
+
+        :return: The color of this World.  # noqa: E501
+        :rtype: Color
+        """
+        return self._color
+
+    @color.setter
+    def color(self, color):
+        """Sets the color of this World.
+
+
+        :param color: The color of this World.  # noqa: E501
+        :type: Color
+        """
+
+        self._color = color
+
+    @property
+    def command(self):
+        """Gets the command of this World.  # noqa: E501
+
+
+        :return: The command of this World.  # noqa: E501
+        :rtype: CommandData
+        """
+        return self._command
+
+    @command.setter
+    def command(self, command):
+        """Sets the command of this World.
+
+
+        :param command: The command of this World.  # noqa: E501
+        :type: CommandData
+        """
+
+        self._command = command
+
+    @property
+    def comparator(self):
+        """Gets the comparator of this World.  # noqa: E501
+
+
+        :return: The comparator of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._comparator
+
+    @comparator.setter
+    def comparator(self, comparator):
+        """Sets the comparator of this World.
+
+
+        :param comparator: The comparator of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._comparator = comparator
+
+    @property
+    def connected_direction(self):
+        """Gets the connected_direction of this World.  # noqa: E501
+
+
+        :return: The connected_direction of this World.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._connected_direction
+
+    @connected_direction.setter
+    def connected_direction(self, connected_direction):
+        """Sets the connected_direction of this World.
+
+
+        :param connected_direction: The connected_direction of this World.  # noqa: E501
+        :type: list[str]
+        """
+        allowed_values = ["NORTH", "NORTH_NORTHEAST", "NORTHEAST", "EAST_NORTHEAST", "EAST", "EAST_SOUTHEAST", "SOUTHEAST", "SOUTH_SOUTHEAST", "SOUTH", "SOUTH_SOUTHWEST", "SOUTHWEST", "WEST_SOUTHWEST", "WEST", "WEST_NORTHWEST", "NORTHWEST", "NORTH_NORTHWEST", "UP", "DOWN", "NONE"]  # noqa: E501
+        if not set(connected_direction).issubset(set(allowed_values)):
+            raise ValueError(
+                "Invalid values for `connected_direction` [{0}], must be a subset of [{1}]"  # noqa: E501
+                .format(", ".join(map(str, set(connected_direction) - set(allowed_values))),  # noqa: E501
+                        ", ".join(map(str, allowed_values)))
+            )
+
+        self._connected_direction = connected_direction
+
+    @property
+    def cooked_fish(self):
+        """Gets the cooked_fish of this World.  # noqa: E501
+
+
+        :return: The cooked_fish of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._cooked_fish
+
+    @cooked_fish.setter
+    def cooked_fish(self, cooked_fish):
+        """Sets the cooked_fish of this World.
+
+
+        :param cooked_fish: The cooked_fish of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._cooked_fish = cooked_fish
+
+    @property
+    def cooldown(self):
+        """Gets the cooldown of this World.  # noqa: E501
+
+
+        :return: The cooldown of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._cooldown
+
+    @cooldown.setter
+    def cooldown(self, cooldown):
+        """Sets the cooldown of this World.
+
+
+        :param cooldown: The cooldown of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._cooldown = cooldown
+
+    @property
+    def critical_hit(self):
+        """Gets the critical_hit of this World.  # noqa: E501
+
+
+        :return: The critical_hit of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._critical_hit
+
+    @critical_hit.setter
+    def critical_hit(self, critical_hit):
+        """Sets the critical_hit of this World.
+
+
+        :param critical_hit: The critical_hit of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._critical_hit = critical_hit
+
+    @property
+    def custom_name(self):
+        """Gets the custom_name of this World.  # noqa: E501
+
+
+        :return: The custom_name of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._custom_name
+
+    @custom_name.setter
+    def custom_name(self, custom_name):
+        """Sets the custom_name of this World.
+
+
+        :param custom_name: The custom_name of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._custom_name = custom_name
+
+    @property
+    def damage(self):
+        """Gets the damage of this World.  # noqa: E501
+
+
+        :return: The damage of this World.  # noqa: E501
+        :rtype: float
+        """
+        return self._damage
+
+    @damage.setter
+    def damage(self, damage):
+        """Sets the damage of this World.
+
+
+        :param damage: The damage of this World.  # noqa: E501
+        :type: float
+        """
+
+        self._damage = damage
+
+    @property
+    def damageable(self):
+        """Gets the damageable of this World.  # noqa: E501
+
+
+        :return: The damageable of this World.  # noqa: E501
+        :rtype: DamageableData
+        """
+        return self._damageable
+
+    @damageable.setter
+    def damageable(self, damageable):
+        """Sets the damageable of this World.
+
+
+        :param damageable: The damageable of this World.  # noqa: E501
+        :type: DamageableData
+        """
+
+        self._damageable = damageable
+
+    @property
+    def decayable(self):
+        """Gets the decayable of this World.  # noqa: E501
+
+
+        :return: The decayable of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._decayable
+
+    @decayable.setter
+    def decayable(self, decayable):
+        """Sets the decayable of this World.
+
+
+        :param decayable: The decayable of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._decayable = decayable
+
+    @property
+    def delay(self):
+        """Gets the delay of this World.  # noqa: E501
+
+
+        :return: The delay of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._delay
+
+    @delay.setter
+    def delay(self, delay):
+        """Sets the delay of this World.
+
+
+        :param delay: The delay of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._delay = delay
+
+    @property
+    def despawn_delay(self):
+        """Gets the despawn_delay of this World.  # noqa: E501
+
+
+        :return: The despawn_delay of this World.  # noqa: E501
+        :rtype: DespawnDelayData
+        """
+        return self._despawn_delay
+
+    @despawn_delay.setter
+    def despawn_delay(self, despawn_delay):
+        """Sets the despawn_delay of this World.
+
+
+        :param despawn_delay: The despawn_delay of this World.  # noqa: E501
+        :type: DespawnDelayData
+        """
+
+        self._despawn_delay = despawn_delay
+
+    @property
+    def direction(self):
+        """Gets the direction of this World.  # noqa: E501
+
+
+        :return: The direction of this World.  # noqa: E501
+        :rtype: str
+        """
+        return self._direction
+
+    @direction.setter
+    def direction(self, direction):
+        """Sets the direction of this World.
+
+
+        :param direction: The direction of this World.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["NORTH", "NORTH_NORTHEAST", "NORTHEAST", "EAST_NORTHEAST", "EAST", "EAST_SOUTHEAST", "SOUTHEAST", "SOUTH_SOUTHEAST", "SOUTH", "SOUTH_SOUTHWEST", "SOUTHWEST", "WEST_SOUTHWEST", "WEST", "WEST_NORTHWEST", "NORTHWEST", "NORTH_NORTHWEST", "UP", "DOWN", "NONE"]  # noqa: E501
+        if direction not in allowed_values:
+            raise ValueError(
+                "Invalid value for `direction` ({0}), must be one of {1}"  # noqa: E501
+                .format(direction, allowed_values)
+            )
+
+        self._direction = direction
+
+    @property
+    def dirt(self):
+        """Gets the dirt of this World.  # noqa: E501
+
+
+        :return: The dirt of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._dirt
+
+    @dirt.setter
+    def dirt(self, dirt):
+        """Sets the dirt of this World.
+
+
+        :param dirt: The dirt of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._dirt = dirt
+
+    @property
+    def disarmed(self):
+        """Gets the disarmed of this World.  # noqa: E501
+
+
+        :return: The disarmed of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disarmed
+
+    @disarmed.setter
+    def disarmed(self, disarmed):
+        """Sets the disarmed of this World.
+
+
+        :param disarmed: The disarmed of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._disarmed = disarmed
+
+    @property
+    def disguised_block(self):
+        """Gets the disguised_block of this World.  # noqa: E501
+
+
+        :return: The disguised_block of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._disguised_block
+
+    @disguised_block.setter
+    def disguised_block(self, disguised_block):
+        """Sets the disguised_block of this World.
+
+
+        :param disguised_block: The disguised_block of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._disguised_block = disguised_block
+
+    @property
+    def display_name(self):
+        """Gets the display_name of this World.  # noqa: E501
+
+
+        :return: The display_name of this World.  # noqa: E501
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """Sets the display_name of this World.
+
+
+        :param display_name: The display_name of this World.  # noqa: E501
+        :type: str
+        """
+
+        self._display_name = display_name
+
+    @property
+    def dominant_hand(self):
+        """Gets the dominant_hand of this World.  # noqa: E501
+
+
+        :return: The dominant_hand of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._dominant_hand
+
+    @dominant_hand.setter
+    def dominant_hand(self, dominant_hand):
+        """Sets the dominant_hand of this World.
+
+
+        :param dominant_hand: The dominant_hand of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._dominant_hand = dominant_hand
+
+    @property
+    def double_plant(self):
+        """Gets the double_plant of this World.  # noqa: E501
+
+
+        :return: The double_plant of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._double_plant
+
+    @double_plant.setter
+    def double_plant(self, double_plant):
+        """Sets the double_plant of this World.
+
+
+        :param double_plant: The double_plant of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._double_plant = double_plant
+
+    @property
+    def drops(self):
+        """Gets the drops of this World.  # noqa: E501
+
+
+        :return: The drops of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._drops
+
+    @drops.setter
+    def drops(self, drops):
+        """Sets the drops of this World.
+
+
+        :param drops: The drops of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._drops = drops
+
+    @property
+    def durability(self):
+        """Gets the durability of this World.  # noqa: E501
+
+
+        :return: The durability of this World.  # noqa: E501
+        :rtype: DurabilityData
+        """
+        return self._durability
+
+    @durability.setter
+    def durability(self, durability):
+        """Sets the durability of this World.
+
+
+        :param durability: The durability of this World.  # noqa: E501
+        :type: DurabilityData
+        """
+
+        self._durability = durability
+
+    @property
+    def dye(self):
+        """Gets the dye of this World.  # noqa: E501
+
+
+        :return: The dye of this World.  # noqa: E501
+        :rtype: DyeColor
+        """
+        return self._dye
+
+    @dye.setter
+    def dye(self, dye):
+        """Sets the dye of this World.
+
+
+        :param dye: The dye of this World.  # noqa: E501
+        :type: DyeColor
+        """
+
+        self._dye = dye
+
+    @property
+    def enchantments(self):
+        """Gets the enchantments of this World.  # noqa: E501
+
+
+        :return: The enchantments of this World.  # noqa: E501
+        :rtype: list[Enchantment]
+        """
+        return self._enchantments
+
+    @enchantments.setter
+    def enchantments(self, enchantments):
+        """Sets the enchantments of this World.
+
+
+        :param enchantments: The enchantments of this World.  # noqa: E501
+        :type: list[Enchantment]
+        """
+
+        self._enchantments = enchantments
+
+    @property
+    def end_gateway(self):
+        """Gets the end_gateway of this World.  # noqa: E501
+
+
+        :return: The end_gateway of this World.  # noqa: E501
+        :rtype: EndGatewayData
+        """
+        return self._end_gateway
+
+    @end_gateway.setter
+    def end_gateway(self, end_gateway):
+        """Sets the end_gateway of this World.
+
+
+        :param end_gateway: The end_gateway of this World.  # noqa: E501
+        :type: EndGatewayData
+        """
+
+        self._end_gateway = end_gateway
+
+    @property
+    def exp_orb(self):
+        """Gets the exp_orb of this World.  # noqa: E501
+
+
+        :return: The exp_orb of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._exp_orb
+
+    @exp_orb.setter
+    def exp_orb(self, exp_orb):
+        """Sets the exp_orb of this World.
+
+
+        :param exp_orb: The exp_orb of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._exp_orb = exp_orb
+
+    @property
+    def experience(self):
+        """Gets the experience of this World.  # noqa: E501
+
+
+        :return: The experience of this World.  # noqa: E501
+        :rtype: ExperienceHolderData
+        """
+        return self._experience
+
+    @experience.setter
+    def experience(self, experience):
+        """Sets the experience of this World.
+
+
+        :param experience: The experience of this World.  # noqa: E501
+        :type: ExperienceHolderData
+        """
+
+        self._experience = experience
+
+    @property
+    def expire_ticks(self):
+        """Gets the expire_ticks of this World.  # noqa: E501
+
+
+        :return: The expire_ticks of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._expire_ticks
+
+    @expire_ticks.setter
+    def expire_ticks(self, expire_ticks):
+        """Sets the expire_ticks of this World.
+
+
+        :param expire_ticks: The expire_ticks of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._expire_ticks = expire_ticks
+
+    @property
+    def explosion_radius(self):
+        """Gets the explosion_radius of this World.  # noqa: E501
+
+
+        :return: The explosion_radius of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._explosion_radius
+
+    @explosion_radius.setter
+    def explosion_radius(self, explosion_radius):
+        """Sets the explosion_radius of this World.
+
+
+        :param explosion_radius: The explosion_radius of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._explosion_radius = explosion_radius
+
+    @property
+    def extended(self):
+        """Gets the extended of this World.  # noqa: E501
+
+
+        :return: The extended of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._extended
+
+    @extended.setter
+    def extended(self, extended):
+        """Sets the extended of this World.
+
+
+        :param extended: The extended of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._extended = extended
+
+    @property
+    def fall_distance(self):
+        """Gets the fall_distance of this World.  # noqa: E501
+
+
+        :return: The fall_distance of this World.  # noqa: E501
+        :rtype: float
+        """
+        return self._fall_distance
+
+    @fall_distance.setter
+    def fall_distance(self, fall_distance):
+        """Sets the fall_distance of this World.
+
+
+        :param fall_distance: The fall_distance of this World.  # noqa: E501
+        :type: float
+        """
+
+        self._fall_distance = fall_distance
+
+    @property
+    def falling_block(self):
+        """Gets the falling_block of this World.  # noqa: E501
+
+
+        :return: The falling_block of this World.  # noqa: E501
+        :rtype: FallingBlockData
+        """
+        return self._falling_block
+
+    @falling_block.setter
+    def falling_block(self, falling_block):
+        """Sets the falling_block of this World.
+
+
+        :param falling_block: The falling_block of this World.  # noqa: E501
+        :type: FallingBlockData
+        """
+
+        self._falling_block = falling_block
+
+    @property
+    def filled(self):
+        """Gets the filled of this World.  # noqa: E501
+
+
+        :return: The filled of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._filled
+
+    @filled.setter
+    def filled(self, filled):
+        """Sets the filled of this World.
+
+
+        :param filled: The filled of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._filled = filled
+
+    @property
+    def firework_effects(self):
+        """Gets the firework_effects of this World.  # noqa: E501
+
+
+        :return: The firework_effects of this World.  # noqa: E501
+        :rtype: list[FireworkEffect]
+        """
+        return self._firework_effects
+
+    @firework_effects.setter
+    def firework_effects(self, firework_effects):
+        """Sets the firework_effects of this World.
+
+
+        :param firework_effects: The firework_effects of this World.  # noqa: E501
+        :type: list[FireworkEffect]
+        """
+
+        self._firework_effects = firework_effects
+
+    @property
+    def firework_rocket(self):
+        """Gets the firework_rocket of this World.  # noqa: E501
+
+
+        :return: The firework_rocket of this World.  # noqa: E501
+        :rtype: FireworkRocketData
+        """
+        return self._firework_rocket
+
+    @firework_rocket.setter
+    def firework_rocket(self, firework_rocket):
+        """Sets the firework_rocket of this World.
+
+
+        :param firework_rocket: The firework_rocket of this World.  # noqa: E501
+        :type: FireworkRocketData
+        """
+
+        self._firework_rocket = firework_rocket
+
+    @property
+    def fish(self):
+        """Gets the fish of this World.  # noqa: E501
+
+
+        :return: The fish of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._fish
+
+    @fish.setter
+    def fish(self, fish):
+        """Sets the fish of this World.
+
+
+        :param fish: The fish of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._fish = fish
+
+    @property
+    def flammable(self):
+        """Gets the flammable of this World.  # noqa: E501
+
+
+        :return: The flammable of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._flammable
+
+    @flammable.setter
+    def flammable(self, flammable):
+        """Sets the flammable of this World.
+
+
+        :param flammable: The flammable of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._flammable = flammable
+
+    @property
+    def fluid(self):
+        """Gets the fluid of this World.  # noqa: E501
+
+
+        :return: The fluid of this World.  # noqa: E501
+        :rtype: FluidStack
+        """
+        return self._fluid
+
+    @fluid.setter
+    def fluid(self, fluid):
+        """Sets the fluid of this World.
+
+
+        :param fluid: The fluid of this World.  # noqa: E501
+        :type: FluidStack
+        """
+
+        self._fluid = fluid
+
+    @property
+    def fluid_level(self):
+        """Gets the fluid_level of this World.  # noqa: E501
+
+
+        :return: The fluid_level of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._fluid_level
+
+    @fluid_level.setter
+    def fluid_level(self, fluid_level):
+        """Sets the fluid_level of this World.
+
+
+        :param fluid_level: The fluid_level of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._fluid_level = fluid_level
+
+    @property
+    def fluid_tanks(self):
+        """Gets the fluid_tanks of this World.  # noqa: E501
+
+
+        :return: The fluid_tanks of this World.  # noqa: E501
+        :rtype: dict(str, list[FluidStack])
+        """
+        return self._fluid_tanks
+
+    @fluid_tanks.setter
+    def fluid_tanks(self, fluid_tanks):
+        """Sets the fluid_tanks of this World.
+
+
+        :param fluid_tanks: The fluid_tanks of this World.  # noqa: E501
+        :type: dict(str, list[FluidStack])
+        """
+
+        self._fluid_tanks = fluid_tanks
+
+    @property
+    def flying(self):
+        """Gets the flying of this World.  # noqa: E501
+
+
+        :return: The flying of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._flying
+
+    @flying.setter
+    def flying(self, flying):
+        """Sets the flying of this World.
+
+
+        :param flying: The flying of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._flying = flying
+
+    @property
+    def flying_ability(self):
+        """Gets the flying_ability of this World.  # noqa: E501
+
+
+        :return: The flying_ability of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._flying_ability
+
+    @flying_ability.setter
+    def flying_ability(self, flying_ability):
+        """Sets the flying_ability of this World.
+
+
+        :param flying_ability: The flying_ability of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._flying_ability = flying_ability
+
+    @property
+    def food(self):
+        """Gets the food of this World.  # noqa: E501
+
+
+        :return: The food of this World.  # noqa: E501
+        :rtype: FoodData
+        """
+        return self._food
+
+    @food.setter
+    def food(self, food):
+        """Sets the food of this World.
+
+
+        :param food: The food of this World.  # noqa: E501
+        :type: FoodData
+        """
+
+        self._food = food
+
+    @property
+    def furnace(self):
+        """Gets the furnace of this World.  # noqa: E501
+
+
+        :return: The furnace of this World.  # noqa: E501
+        :rtype: FurnaceData
+        """
+        return self._furnace
+
+    @furnace.setter
+    def furnace(self, furnace):
+        """Sets the furnace of this World.
+
+
+        :param furnace: The furnace of this World.  # noqa: E501
+        :type: FurnaceData
+        """
+
+        self._furnace = furnace
+
+    @property
+    def fuse(self):
+        """Gets the fuse of this World.  # noqa: E501
+
+
+        :return: The fuse of this World.  # noqa: E501
+        :rtype: FuseData
+        """
+        return self._fuse
+
+    @fuse.setter
+    def fuse(self, fuse):
+        """Sets the fuse of this World.
+
+
+        :param fuse: The fuse of this World.  # noqa: E501
+        :type: FuseData
+        """
+
+        self._fuse = fuse
+
+    @property
+    def generation(self):
+        """Gets the generation of this World.  # noqa: E501
+
+
+        :return: The generation of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._generation
+
+    @generation.setter
+    def generation(self, generation):
+        """Sets the generation of this World.
+
+
+        :param generation: The generation of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._generation = generation
+
+    @property
+    def glowing(self):
+        """Gets the glowing of this World.  # noqa: E501
+
+
+        :return: The glowing of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._glowing
+
+    @glowing.setter
+    def glowing(self, glowing):
+        """Sets the glowing of this World.
+
+
+        :param glowing: The glowing of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._glowing = glowing
+
+    @property
+    def golden_apple(self):
+        """Gets the golden_apple of this World.  # noqa: E501
+
+
+        :return: The golden_apple of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._golden_apple
+
+    @golden_apple.setter
+    def golden_apple(self, golden_apple):
+        """Sets the golden_apple of this World.
+
+
+        :param golden_apple: The golden_apple of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._golden_apple = golden_apple
+
+    @property
+    def griefs(self):
+        """Gets the griefs of this World.  # noqa: E501
+
+
+        :return: The griefs of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._griefs
+
+    @griefs.setter
+    def griefs(self, griefs):
+        """Sets the griefs of this World.
+
+
+        :param griefs: The griefs of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._griefs = griefs
+
+    @property
+    def growth(self):
+        """Gets the growth of this World.  # noqa: E501
+
+
+        :return: The growth of this World.  # noqa: E501
+        :rtype: GrowthData
+        """
+        return self._growth
+
+    @growth.setter
+    def growth(self, growth):
+        """Sets the growth of this World.
+
+
+        :param growth: The growth of this World.  # noqa: E501
+        :type: GrowthData
+        """
+
+        self._growth = growth
+
+    @property
+    def health(self):
+        """Gets the health of this World.  # noqa: E501
+
+
+        :return: The health of this World.  # noqa: E501
+        :rtype: HealthData
+        """
+        return self._health
+
+    @health.setter
+    def health(self, health):
+        """Sets the health of this World.
+
+
+        :param health: The health of this World.  # noqa: E501
+        :type: HealthData
+        """
+
+        self._health = health
+
+    @property
+    def hide(self):
+        """Gets the hide of this World.  # noqa: E501
+
+
+        :return: The hide of this World.  # noqa: E501
+        :rtype: HideData
+        """
+        return self._hide
+
+    @hide.setter
+    def hide(self, hide):
+        """Sets the hide of this World.
+
+
+        :param hide: The hide of this World.  # noqa: E501
+        :type: HideData
+        """
+
+        self._hide = hide
+
+    @property
+    def hinge(self):
+        """Gets the hinge of this World.  # noqa: E501
+
+
+        :return: The hinge of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._hinge
+
+    @hinge.setter
+    def hinge(self, hinge):
+        """Sets the hinge of this World.
+
+
+        :param hinge: The hinge of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._hinge = hinge
+
+    @property
+    def horse(self):
+        """Gets the horse of this World.  # noqa: E501
+
+
+        :return: The horse of this World.  # noqa: E501
+        :rtype: HorseData
+        """
+        return self._horse
+
+    @horse.setter
+    def horse(self, horse):
+        """Sets the horse of this World.
+
+
+        :param horse: The horse of this World.  # noqa: E501
+        :type: HorseData
+        """
+
+        self._horse = horse
+
+    @property
+    def igniteable(self):
+        """Gets the igniteable of this World.  # noqa: E501
+
+
+        :return: The igniteable of this World.  # noqa: E501
+        :rtype: IgniteableData
+        """
+        return self._igniteable
+
+    @igniteable.setter
+    def igniteable(self, igniteable):
+        """Sets the igniteable of this World.
+
+
+        :param igniteable: The igniteable of this World.  # noqa: E501
+        :type: IgniteableData
+        """
+
+        self._igniteable = igniteable
+
+    @property
+    def in_wall(self):
+        """Gets the in_wall of this World.  # noqa: E501
+
+
+        :return: The in_wall of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._in_wall
+
+    @in_wall.setter
+    def in_wall(self, in_wall):
+        """Sets the in_wall of this World.
+
+
+        :param in_wall: The in_wall of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._in_wall = in_wall
+
+    @property
+    def inventory(self):
+        """Gets the inventory of this World.  # noqa: E501
+
+
+        :return: The inventory of this World.  # noqa: E501
+        :rtype: Inventory
+        """
+        return self._inventory
+
+    @inventory.setter
+    def inventory(self, inventory):
+        """Sets the inventory of this World.
+
+
+        :param inventory: The inventory of this World.  # noqa: E501
+        :type: Inventory
+        """
+
+        self._inventory = inventory
+
+    @property
+    def invisibility(self):
+        """Gets the invisibility of this World.  # noqa: E501
+
+
+        :return: The invisibility of this World.  # noqa: E501
+        :rtype: InvisibilityData
+        """
+        return self._invisibility
+
+    @invisibility.setter
+    def invisibility(self, invisibility):
+        """Sets the invisibility of this World.
+
+
+        :param invisibility: The invisibility of this World.  # noqa: E501
+        :type: InvisibilityData
+        """
+
+        self._invisibility = invisibility
+
+    @property
+    def invulnerability(self):
+        """Gets the invulnerability of this World.  # noqa: E501
+
+
+        :return: The invulnerability of this World.  # noqa: E501
+        :rtype: InvulnerabilityData
+        """
+        return self._invulnerability
+
+    @invulnerability.setter
+    def invulnerability(self, invulnerability):
+        """Sets the invulnerability of this World.
+
+
+        :param invulnerability: The invulnerability of this World.  # noqa: E501
+        :type: InvulnerabilityData
+        """
+
+        self._invulnerability = invulnerability
+
+    @property
+    def joined(self):
+        """Gets the joined of this World.  # noqa: E501
+
+
+        :return: The joined of this World.  # noqa: E501
+        :rtype: JoinData
+        """
+        return self._joined
+
+    @joined.setter
+    def joined(self, joined):
+        """Sets the joined of this World.
+
+
+        :param joined: The joined of this World.  # noqa: E501
+        :type: JoinData
+        """
+
+        self._joined = joined
+
+    @property
+    def knockback(self):
+        """Gets the knockback of this World.  # noqa: E501
+
+
+        :return: The knockback of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._knockback
+
+    @knockback.setter
+    def knockback(self, knockback):
+        """Sets the knockback of this World.
+
+
+        :param knockback: The knockback of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._knockback = knockback
+
+    @property
+    def layer(self):
+        """Gets the layer of this World.  # noqa: E501
+
+
+        :return: The layer of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._layer
+
+    @layer.setter
+    def layer(self, layer):
+        """Sets the layer of this World.
+
+
+        :param layer: The layer of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._layer = layer
+
+    @property
+    def leash(self):
+        """Gets the leash of this World.  # noqa: E501
+
+
+        :return: The leash of this World.  # noqa: E501
+        :rtype: LeashData
+        """
+        return self._leash
+
+    @leash.setter
+    def leash(self, leash):
+        """Sets the leash of this World.
+
+
+        :param leash: The leash of this World.  # noqa: E501
+        :type: LeashData
+        """
+
+        self._leash = leash
+
+    @property
+    def lock_token(self):
+        """Gets the lock_token of this World.  # noqa: E501
+
+
+        :return: The lock_token of this World.  # noqa: E501
+        :rtype: str
+        """
+        return self._lock_token
+
+    @lock_token.setter
+    def lock_token(self, lock_token):
+        """Sets the lock_token of this World.
+
+
+        :param lock_token: The lock_token of this World.  # noqa: E501
+        :type: str
+        """
+
+        self._lock_token = lock_token
+
+    @property
+    def log_axis(self):
+        """Gets the log_axis of this World.  # noqa: E501
+
+
+        :return: The log_axis of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._log_axis
+
+    @log_axis.setter
+    def log_axis(self, log_axis):
+        """Sets the log_axis of this World.
+
+
+        :param log_axis: The log_axis of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._log_axis = log_axis
+
+    @property
+    def lore(self):
+        """Gets the lore of this World.  # noqa: E501
+
+
+        :return: The lore of this World.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._lore
+
+    @lore.setter
+    def lore(self, lore):
+        """Sets the lore of this World.
+
+
+        :param lore: The lore of this World.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._lore = lore
+
+    @property
+    def minecart_block(self):
+        """Gets the minecart_block of this World.  # noqa: E501
+
+
+        :return: The minecart_block of this World.  # noqa: E501
+        :rtype: MinecartBlockData
+        """
+        return self._minecart_block
+
+    @minecart_block.setter
+    def minecart_block(self, minecart_block):
+        """Sets the minecart_block of this World.
+
+
+        :param minecart_block: The minecart_block of this World.  # noqa: E501
+        :type: MinecartBlockData
+        """
+
+        self._minecart_block = minecart_block
+
+    @property
+    def mob_spawner(self):
+        """Gets the mob_spawner of this World.  # noqa: E501
+
+
+        :return: The mob_spawner of this World.  # noqa: E501
+        :rtype: MobSpawnerData
+        """
+        return self._mob_spawner
+
+    @mob_spawner.setter
+    def mob_spawner(self, mob_spawner):
+        """Sets the mob_spawner of this World.
+
+
+        :param mob_spawner: The mob_spawner of this World.  # noqa: E501
+        :type: MobSpawnerData
+        """
+
+        self._mob_spawner = mob_spawner
+
+    @property
+    def moisture(self):
+        """Gets the moisture of this World.  # noqa: E501
+
+
+        :return: The moisture of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._moisture
+
+    @moisture.setter
+    def moisture(self, moisture):
+        """Sets the moisture of this World.
+
+
+        :param moisture: The moisture of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._moisture = moisture
+
+    @property
+    def note(self):
+        """Gets the note of this World.  # noqa: E501
+
+
+        :return: The note of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._note
+
+    @note.setter
+    def note(self, note):
+        """Sets the note of this World.
+
+
+        :param note: The note of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._note = note
+
+    @property
+    def occupied(self):
+        """Gets the occupied of this World.  # noqa: E501
+
+
+        :return: The occupied of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._occupied
+
+    @occupied.setter
+    def occupied(self, occupied):
+        """Sets the occupied of this World.
+
+
+        :param occupied: The occupied of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._occupied = occupied
+
+    @property
+    def ocelot(self):
+        """Gets the ocelot of this World.  # noqa: E501
+
+
+        :return: The ocelot of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._ocelot
+
+    @ocelot.setter
+    def ocelot(self, ocelot):
+        """Sets the ocelot of this World.
+
+
+        :param ocelot: The ocelot of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._ocelot = ocelot
+
+    @property
+    def open(self):
+        """Gets the open of this World.  # noqa: E501
+
+
+        :return: The open of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._open
+
+    @open.setter
+    def open(self, open):
+        """Sets the open of this World.
+
+
+        :param open: The open of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._open = open
+
+    @property
+    def pages(self):
+        """Gets the pages of this World.  # noqa: E501
+
+
+        :return: The pages of this World.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._pages
+
+    @pages.setter
+    def pages(self, pages):
+        """Sets the pages of this World.
+
+
+        :param pages: The pages of this World.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._pages = pages
+
+    @property
+    def passengers(self):
+        """Gets the passengers of this World.  # noqa: E501
+
+
+        :return: The passengers of this World.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._passengers
+
+    @passengers.setter
+    def passengers(self, passengers):
+        """Sets the passengers of this World.
+
+
+        :param passengers: The passengers of this World.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._passengers = passengers
+
+    @property
+    def persists(self):
+        """Gets the persists of this World.  # noqa: E501
+
+
+        :return: The persists of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._persists
+
+    @persists.setter
+    def persists(self, persists):
+        """Sets the persists of this World.
+
+
+        :param persists: The persists of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._persists = persists
+
+    @property
+    def pickup_delay(self):
+        """Gets the pickup_delay of this World.  # noqa: E501
+
+
+        :return: The pickup_delay of this World.  # noqa: E501
+        :rtype: PickupDelayData
+        """
+        return self._pickup_delay
+
+    @pickup_delay.setter
+    def pickup_delay(self, pickup_delay):
+        """Sets the pickup_delay of this World.
+
+
+        :param pickup_delay: The pickup_delay of this World.  # noqa: E501
+        :type: PickupDelayData
+        """
+
+        self._pickup_delay = pickup_delay
+
+    @property
+    def pickup_rule(self):
+        """Gets the pickup_rule of this World.  # noqa: E501
+
+
+        :return: The pickup_rule of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._pickup_rule
+
+    @pickup_rule.setter
+    def pickup_rule(self, pickup_rule):
+        """Sets the pickup_rule of this World.
+
+
+        :param pickup_rule: The pickup_rule of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._pickup_rule = pickup_rule
+
+    @property
+    def pig_saddle(self):
+        """Gets the pig_saddle of this World.  # noqa: E501
+
+
+        :return: The pig_saddle of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._pig_saddle
+
+    @pig_saddle.setter
+    def pig_saddle(self, pig_saddle):
+        """Sets the pig_saddle of this World.
+
+
+        :param pig_saddle: The pig_saddle of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._pig_saddle = pig_saddle
+
+    @property
+    def piston(self):
+        """Gets the piston of this World.  # noqa: E501
+
+
+        :return: The piston of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._piston
+
+    @piston.setter
+    def piston(self, piston):
+        """Sets the piston of this World.
+
+
+        :param piston: The piston of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._piston = piston
+
+    @property
+    def placeable_on(self):
+        """Gets the placeable_on of this World.  # noqa: E501
+
+
+        :return: The placeable_on of this World.  # noqa: E501
+        :rtype: list[CatalogType]
+        """
+        return self._placeable_on
+
+    @placeable_on.setter
+    def placeable_on(self, placeable_on):
+        """Sets the placeable_on of this World.
+
+
+        :param placeable_on: The placeable_on of this World.  # noqa: E501
+        :type: list[CatalogType]
+        """
+
+        self._placeable_on = placeable_on
+
+    @property
+    def plant(self):
+        """Gets the plant of this World.  # noqa: E501
+
+
+        :return: The plant of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._plant
+
+    @plant.setter
+    def plant(self, plant):
+        """Sets the plant of this World.
+
+
+        :param plant: The plant of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._plant = plant
+
+    @property
+    def player_created(self):
+        """Gets the player_created of this World.  # noqa: E501
+
+
+        :return: The player_created of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._player_created
+
+    @player_created.setter
+    def player_created(self, player_created):
+        """Sets the player_created of this World.
+
+
+        :param player_created: The player_created of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._player_created = player_created
+
+    @property
+    def playing(self):
+        """Gets the playing of this World.  # noqa: E501
+
+
+        :return: The playing of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._playing
+
+    @playing.setter
+    def playing(self, playing):
+        """Sets the playing of this World.
+
+
+        :param playing: The playing of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._playing = playing
+
+    @property
+    def portion(self):
+        """Gets the portion of this World.  # noqa: E501
+
+
+        :return: The portion of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._portion
+
+    @portion.setter
+    def portion(self, portion):
+        """Sets the portion of this World.
+
+
+        :param portion: The portion of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._portion = portion
+
+    @property
+    def potion_effects(self):
+        """Gets the potion_effects of this World.  # noqa: E501
+
+
+        :return: The potion_effects of this World.  # noqa: E501
+        :rtype: list[PotionEffect]
+        """
+        return self._potion_effects
+
+    @potion_effects.setter
+    def potion_effects(self, potion_effects):
+        """Sets the potion_effects of this World.
+
+
+        :param potion_effects: The potion_effects of this World.  # noqa: E501
+        :type: list[PotionEffect]
+        """
+
+        self._potion_effects = potion_effects
+
+    @property
+    def powered(self):
+        """Gets the powered of this World.  # noqa: E501
+
+
+        :return: The powered of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._powered
+
+    @powered.setter
+    def powered(self, powered):
+        """Sets the powered of this World.
+
+
+        :param powered: The powered of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._powered = powered
+
+    @property
+    def prismarine(self):
+        """Gets the prismarine of this World.  # noqa: E501
+
+
+        :return: The prismarine of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._prismarine
+
+    @prismarine.setter
+    def prismarine(self, prismarine):
+        """Sets the prismarine of this World.
+
+
+        :param prismarine: The prismarine of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._prismarine = prismarine
+
+    @property
+    def quartz(self):
+        """Gets the quartz of this World.  # noqa: E501
+
+
+        :return: The quartz of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._quartz
+
+    @quartz.setter
+    def quartz(self, quartz):
+        """Sets the quartz of this World.
+
+
+        :param quartz: The quartz of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._quartz = quartz
+
+    @property
+    def rabbit(self):
+        """Gets the rabbit of this World.  # noqa: E501
+
+
+        :return: The rabbit of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._rabbit
+
+    @rabbit.setter
+    def rabbit(self, rabbit):
+        """Sets the rabbit of this World.
+
+
+        :param rabbit: The rabbit of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._rabbit = rabbit
+
+    @property
+    def rail_direction(self):
+        """Gets the rail_direction of this World.  # noqa: E501
+
+
+        :return: The rail_direction of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._rail_direction
+
+    @rail_direction.setter
+    def rail_direction(self, rail_direction):
+        """Sets the rail_direction of this World.
+
+
+        :param rail_direction: The rail_direction of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._rail_direction = rail_direction
+
+    @property
+    def redstone_power(self):
+        """Gets the redstone_power of this World.  # noqa: E501
+
+
+        :return: The redstone_power of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._redstone_power
+
+    @redstone_power.setter
+    def redstone_power(self, redstone_power):
+        """Sets the redstone_power of this World.
+
+
+        :param redstone_power: The redstone_power of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._redstone_power = redstone_power
+
+    @property
+    def represented_item(self):
+        """Gets the represented_item of this World.  # noqa: E501
+
+
+        :return: The represented_item of this World.  # noqa: E501
+        :rtype: ItemStack
+        """
+        return self._represented_item
+
+    @represented_item.setter
+    def represented_item(self, represented_item):
+        """Sets the represented_item of this World.
+
+
+        :param represented_item: The represented_item of this World.  # noqa: E501
+        :type: ItemStack
+        """
+
+        self._represented_item = represented_item
+
+    @property
+    def represented_player(self):
+        """Gets the represented_player of this World.  # noqa: E501
+
+
+        :return: The represented_player of this World.  # noqa: E501
+        :rtype: str
+        """
+        return self._represented_player
+
+    @represented_player.setter
+    def represented_player(self, represented_player):
+        """Sets the represented_player of this World.
+
+
+        :param represented_player: The represented_player of this World.  # noqa: E501
+        :type: str
+        """
+
+        self._represented_player = represented_player
+
+    @property
+    def respawn_locations(self):
+        """Gets the respawn_locations of this World.  # noqa: E501
+
+
+        :return: The respawn_locations of this World.  # noqa: E501
+        :rtype: dict(str, Location)
+        """
+        return self._respawn_locations
+
+    @respawn_locations.setter
+    def respawn_locations(self, respawn_locations):
+        """Sets the respawn_locations of this World.
+
+
+        :param respawn_locations: The respawn_locations of this World.  # noqa: E501
+        :type: dict(str, Location)
+        """
+
+        self._respawn_locations = respawn_locations
+
+    @property
+    def sand(self):
+        """Gets the sand of this World.  # noqa: E501
+
+
+        :return: The sand of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._sand
+
+    @sand.setter
+    def sand(self, sand):
+        """Sets the sand of this World.
+
+
+        :param sand: The sand of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._sand = sand
+
+    @property
+    def sand_stone(self):
+        """Gets the sand_stone of this World.  # noqa: E501
+
+
+        :return: The sand_stone of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._sand_stone
+
+    @sand_stone.setter
+    def sand_stone(self, sand_stone):
+        """Sets the sand_stone of this World.
+
+
+        :param sand_stone: The sand_stone of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._sand_stone = sand_stone
+
+    @property
+    def screaming(self):
+        """Gets the screaming of this World.  # noqa: E501
+
+
+        :return: The screaming of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._screaming
+
+    @screaming.setter
+    def screaming(self, screaming):
+        """Sets the screaming of this World.
+
+
+        :param screaming: The screaming of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._screaming = screaming
+
+    @property
+    def seamless(self):
+        """Gets the seamless of this World.  # noqa: E501
+
+
+        :return: The seamless of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._seamless
+
+    @seamless.setter
+    def seamless(self, seamless):
+        """Sets the seamless of this World.
+
+
+        :param seamless: The seamless of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._seamless = seamless
+
+    @property
+    def shatters(self):
+        """Gets the shatters of this World.  # noqa: E501
+
+
+        :return: The shatters of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._shatters
+
+    @shatters.setter
+    def shatters(self, shatters):
+        """Sets the shatters of this World.
+
+
+        :param shatters: The shatters of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._shatters = shatters
+
+    @property
+    def sheared(self):
+        """Gets the sheared of this World.  # noqa: E501
+
+
+        :return: The sheared of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sheared
+
+    @sheared.setter
+    def sheared(self, sheared):
+        """Sets the sheared of this World.
+
+
+        :param sheared: The sheared of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._sheared = sheared
+
+    @property
+    def shrub(self):
+        """Gets the shrub of this World.  # noqa: E501
+
+
+        :return: The shrub of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._shrub
+
+    @shrub.setter
+    def shrub(self, shrub):
+        """Sets the shrub of this World.
+
+
+        :param shrub: The shrub of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._shrub = shrub
+
+    @property
+    def sign(self):
+        """Gets the sign of this World.  # noqa: E501
+
+
+        :return: The sign of this World.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._sign
+
+    @sign.setter
+    def sign(self, sign):
+        """Sets the sign of this World.
+
+
+        :param sign: The sign of this World.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._sign = sign
+
+    @property
+    def silent(self):
+        """Gets the silent of this World.  # noqa: E501
+
+
+        :return: The silent of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._silent
+
+    @silent.setter
+    def silent(self, silent):
+        """Sets the silent of this World.
+
+
+        :param silent: The silent of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._silent = silent
+
+    @property
+    def sitting(self):
+        """Gets the sitting of this World.  # noqa: E501
+
+
+        :return: The sitting of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sitting
+
+    @sitting.setter
+    def sitting(self, sitting):
+        """Sets the sitting of this World.
+
+
+        :param sitting: The sitting of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._sitting = sitting
+
+    @property
+    def skin(self):
+        """Gets the skin of this World.  # noqa: E501
+
+
+        :return: The skin of this World.  # noqa: E501
+        :rtype: str
+        """
+        return self._skin
+
+    @skin.setter
+    def skin(self, skin):
+        """Sets the skin of this World.
+
+
+        :param skin: The skin of this World.  # noqa: E501
+        :type: str
+        """
+
+        self._skin = skin
+
+    @property
+    def skull(self):
+        """Gets the skull of this World.  # noqa: E501
+
+
+        :return: The skull of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._skull
+
+    @skull.setter
+    def skull(self, skull):
+        """Sets the skull of this World.
+
+
+        :param skull: The skull of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._skull = skull
+
+    @property
+    def slab(self):
+        """Gets the slab of this World.  # noqa: E501
+
+
+        :return: The slab of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._slab
+
+    @slab.setter
+    def slab(self, slab):
+        """Sets the slab of this World.
+
+
+        :param slab: The slab of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._slab = slab
+
+    @property
+    def sleeping(self):
+        """Gets the sleeping of this World.  # noqa: E501
+
+
+        :return: The sleeping of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sleeping
+
+    @sleeping.setter
+    def sleeping(self, sleeping):
+        """Sets the sleeping of this World.
+
+
+        :param sleeping: The sleeping of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._sleeping = sleeping
+
+    @property
+    def slime(self):
+        """Gets the slime of this World.  # noqa: E501
+
+
+        :return: The slime of this World.  # noqa: E501
+        :rtype: SlimeData
+        """
+        return self._slime
+
+    @slime.setter
+    def slime(self, slime):
+        """Sets the slime of this World.
+
+
+        :param slime: The slime of this World.  # noqa: E501
+        :type: SlimeData
+        """
+
+        self._slime = slime
+
+    @property
+    def sneaking(self):
+        """Gets the sneaking of this World.  # noqa: E501
+
+
+        :return: The sneaking of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sneaking
+
+    @sneaking.setter
+    def sneaking(self, sneaking):
+        """Sets the sneaking of this World.
+
+
+        :param sneaking: The sneaking of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._sneaking = sneaking
+
+    @property
+    def snow(self):
+        """Gets the snow of this World.  # noqa: E501
+
+
+        :return: The snow of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._snow
+
+    @snow.setter
+    def snow(self, snow):
+        """Sets the snow of this World.
+
+
+        :param snow: The snow of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._snow = snow
+
+    @property
+    def sprinting(self):
+        """Gets the sprinting of this World.  # noqa: E501
+
+
+        :return: The sprinting of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sprinting
+
+    @sprinting.setter
+    def sprinting(self, sprinting):
+        """Sets the sprinting of this World.
+
+
+        :param sprinting: The sprinting of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._sprinting = sprinting
+
+    @property
+    def stair_shape(self):
+        """Gets the stair_shape of this World.  # noqa: E501
+
+
+        :return: The stair_shape of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._stair_shape
+
+    @stair_shape.setter
+    def stair_shape(self, stair_shape):
+        """Sets the stair_shape of this World.
+
+
+        :param stair_shape: The stair_shape of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._stair_shape = stair_shape
+
+    @property
+    def statistics(self):
+        """Gets the statistics of this World.  # noqa: E501
+
+
+        :return: The statistics of this World.  # noqa: E501
+        :rtype: list[Stat]
+        """
+        return self._statistics
+
+    @statistics.setter
+    def statistics(self, statistics):
+        """Sets the statistics of this World.
+
+
+        :param statistics: The statistics of this World.  # noqa: E501
+        :type: list[Stat]
+        """
+
+        self._statistics = statistics
+
+    @property
+    def stone(self):
+        """Gets the stone of this World.  # noqa: E501
+
+
+        :return: The stone of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._stone
+
+    @stone.setter
+    def stone(self, stone):
+        """Sets the stone of this World.
+
+
+        :param stone: The stone of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._stone = stone
+
+    @property
+    def stored_enchantments(self):
+        """Gets the stored_enchantments of this World.  # noqa: E501
+
+
+        :return: The stored_enchantments of this World.  # noqa: E501
+        :rtype: list[Enchantment]
+        """
+        return self._stored_enchantments
+
+    @stored_enchantments.setter
+    def stored_enchantments(self, stored_enchantments):
+        """Sets the stored_enchantments of this World.
+
+
+        :param stored_enchantments: The stored_enchantments of this World.  # noqa: E501
+        :type: list[Enchantment]
+        """
+
+        self._stored_enchantments = stored_enchantments
+
+    @property
+    def structure(self):
+        """Gets the structure of this World.  # noqa: E501
+
+
+        :return: The structure of this World.  # noqa: E501
+        :rtype: StructureData
+        """
+        return self._structure
+
+    @structure.setter
+    def structure(self, structure):
+        """Sets the structure of this World.
+
+
+        :param structure: The structure of this World.  # noqa: E501
+        :type: StructureData
+        """
+
+        self._structure = structure
+
+    @property
+    def stuck_arrows(self):
+        """Gets the stuck_arrows of this World.  # noqa: E501
+
+
+        :return: The stuck_arrows of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._stuck_arrows
+
+    @stuck_arrows.setter
+    def stuck_arrows(self, stuck_arrows):
+        """Sets the stuck_arrows of this World.
+
+
+        :param stuck_arrows: The stuck_arrows of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._stuck_arrows = stuck_arrows
+
+    @property
+    def tamed(self):
+        """Gets the tamed of this World.  # noqa: E501
+
+
+        :return: The tamed of this World.  # noqa: E501
+        :rtype: TameableData
+        """
+        return self._tamed
+
+    @tamed.setter
+    def tamed(self, tamed):
+        """Sets the tamed of this World.
+
+
+        :param tamed: The tamed of this World.  # noqa: E501
+        :type: TameableData
+        """
+
+        self._tamed = tamed
+
+    @property
+    def target(self):
+        """Gets the target of this World.  # noqa: E501
+
+
+        :return: The target of this World.  # noqa: E501
+        :rtype: Vector3d
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        """Sets the target of this World.
+
+
+        :param target: The target of this World.  # noqa: E501
+        :type: Vector3d
+        """
+
+        self._target = target
+
+    @property
+    def trades(self):
+        """Gets the trades of this World.  # noqa: E501
+
+
+        :return: The trades of this World.  # noqa: E501
+        :rtype: list[TradeOffer]
+        """
+        return self._trades
+
+    @trades.setter
+    def trades(self, trades):
+        """Sets the trades of this World.
+
+
+        :param trades: The trades of this World.  # noqa: E501
+        :type: list[TradeOffer]
+        """
+
+        self._trades = trades
+
+    @property
+    def tree(self):
+        """Gets the tree of this World.  # noqa: E501
+
+
+        :return: The tree of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._tree
+
+    @tree.setter
+    def tree(self, tree):
+        """Sets the tree of this World.
+
+
+        :param tree: The tree of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._tree = tree
+
+    @property
+    def vehicle(self):
+        """Gets the vehicle of this World.  # noqa: E501
+
+
+        :return: The vehicle of this World.  # noqa: E501
+        :rtype: VehicleData
+        """
+        return self._vehicle
+
+    @vehicle.setter
+    def vehicle(self, vehicle):
+        """Sets the vehicle of this World.
+
+
+        :param vehicle: The vehicle of this World.  # noqa: E501
+        :type: VehicleData
+        """
+
+        self._vehicle = vehicle
+
+    @property
+    def wall(self):
+        """Gets the wall of this World.  # noqa: E501
+
+
+        :return: The wall of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._wall
+
+    @wall.setter
+    def wall(self, wall):
+        """Sets the wall of this World.
+
+
+        :param wall: The wall of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._wall = wall
+
+    @property
+    def wet(self):
+        """Gets the wet of this World.  # noqa: E501
+
+
+        :return: The wet of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._wet
+
+    @wet.setter
+    def wet(self, wet):
+        """Sets the wet of this World.
+
+
+        :param wet: The wet of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._wet = wet
+
+    @property
+    def wires(self):
+        """Gets the wires of this World.  # noqa: E501
+
+
+        :return: The wires of this World.  # noqa: E501
+        :rtype: WireAttachmentData
+        """
+        return self._wires
+
+    @wires.setter
+    def wires(self, wires):
+        """Sets the wires of this World.
+
+
+        :param wires: The wires of this World.  # noqa: E501
+        :type: WireAttachmentData
+        """
+
+        self._wires = wires
+
+    @property
+    def accepts_items(self):
+        """Gets the accepts_items of this World.  # noqa: E501
+
+
+        :return: The accepts_items of this World.  # noqa: E501
+        :rtype: AcceptsItems
+        """
+        return self._accepts_items
+
+    @accepts_items.setter
+    def accepts_items(self, accepts_items):
+        """Sets the accepts_items of this World.
+
+
+        :param accepts_items: The accepts_items of this World.  # noqa: E501
+        :type: AcceptsItems
+        """
+
+        self._accepts_items = accepts_items
+
+    @property
+    def applicable_effect(self):
+        """Gets the applicable_effect of this World.  # noqa: E501
+
+
+        :return: The applicable_effect of this World.  # noqa: E501
+        :rtype: list[PotionEffect]
+        """
+        return self._applicable_effect
+
+    @applicable_effect.setter
+    def applicable_effect(self, applicable_effect):
+        """Sets the applicable_effect of this World.
+
+
+        :param applicable_effect: The applicable_effect of this World.  # noqa: E501
+        :type: list[PotionEffect]
+        """
+
+        self._applicable_effect = applicable_effect
+
+    @property
+    def armor_slot_type(self):
+        """Gets the armor_slot_type of this World.  # noqa: E501
+
+
+        :return: The armor_slot_type of this World.  # noqa: E501
+        :rtype: ArmorSlotType
+        """
+        return self._armor_slot_type
+
+    @armor_slot_type.setter
+    def armor_slot_type(self, armor_slot_type):
+        """Sets the armor_slot_type of this World.
+
+
+        :param armor_slot_type: The armor_slot_type of this World.  # noqa: E501
+        :type: ArmorSlotType
+        """
+
+        self._armor_slot_type = armor_slot_type
+
+    @property
+    def armor_type(self):
+        """Gets the armor_type of this World.  # noqa: E501
+
+
+        :return: The armor_type of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._armor_type
+
+    @armor_type.setter
+    def armor_type(self, armor_type):
+        """Sets the armor_type of this World.
+
+
+        :param armor_type: The armor_type of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._armor_type = armor_type
+
+    @property
+    def blast_resistance(self):
+        """Gets the blast_resistance of this World.  # noqa: E501
+
+
+        :return: The blast_resistance of this World.  # noqa: E501
+        :rtype: float
+        """
+        return self._blast_resistance
+
+    @blast_resistance.setter
+    def blast_resistance(self, blast_resistance):
+        """Sets the blast_resistance of this World.
+
+
+        :param blast_resistance: The blast_resistance of this World.  # noqa: E501
+        :type: float
+        """
+
+        self._blast_resistance = blast_resistance
+
+    @property
+    def burning_fuel(self):
+        """Gets the burning_fuel of this World.  # noqa: E501
+
+
+        :return: The burning_fuel of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._burning_fuel
+
+    @burning_fuel.setter
+    def burning_fuel(self, burning_fuel):
+        """Sets the burning_fuel of this World.
+
+
+        :param burning_fuel: The burning_fuel of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._burning_fuel = burning_fuel
+
+    @property
+    def damage_absorption(self):
+        """Gets the damage_absorption of this World.  # noqa: E501
+
+
+        :return: The damage_absorption of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._damage_absorption
+
+    @damage_absorption.setter
+    def damage_absorption(self, damage_absorption):
+        """Sets the damage_absorption of this World.
+
+
+        :param damage_absorption: The damage_absorption of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._damage_absorption = damage_absorption
+
+    @property
+    def efficiency(self):
+        """Gets the efficiency of this World.  # noqa: E501
+
+
+        :return: The efficiency of this World.  # noqa: E501
+        :rtype: float
+        """
+        return self._efficiency
+
+    @efficiency.setter
+    def efficiency(self, efficiency):
+        """Sets the efficiency of this World.
+
+
+        :param efficiency: The efficiency of this World.  # noqa: E501
+        :type: float
+        """
+
+        self._efficiency = efficiency
+
+    @property
+    def equipment_type(self):
+        """Gets the equipment_type of this World.  # noqa: E501
+
+
+        :return: The equipment_type of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._equipment_type
+
+    @equipment_type.setter
+    def equipment_type(self, equipment_type):
+        """Sets the equipment_type of this World.
+
+
+        :param equipment_type: The equipment_type of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._equipment_type = equipment_type
+
+    @property
+    def equiptment_slot_type(self):
+        """Gets the equiptment_slot_type of this World.  # noqa: E501
+
+
+        :return: The equiptment_slot_type of this World.  # noqa: E501
+        :rtype: EquipmentSlotType
+        """
+        return self._equiptment_slot_type
+
+    @equiptment_slot_type.setter
+    def equiptment_slot_type(self, equiptment_slot_type):
+        """Sets the equiptment_slot_type of this World.
+
+
+        :param equiptment_slot_type: The equiptment_slot_type of this World.  # noqa: E501
+        :type: EquipmentSlotType
+        """
+
+        self._equiptment_slot_type = equiptment_slot_type
+
+    @property
+    def eye_height(self):
+        """Gets the eye_height of this World.  # noqa: E501
+
+
+        :return: The eye_height of this World.  # noqa: E501
+        :rtype: float
+        """
+        return self._eye_height
+
+    @eye_height.setter
+    def eye_height(self, eye_height):
+        """Sets the eye_height of this World.
+
+
+        :param eye_height: The eye_height of this World.  # noqa: E501
+        :type: float
+        """
+
+        self._eye_height = eye_height
+
+    @property
+    def eye_location(self):
+        """Gets the eye_location of this World.  # noqa: E501
+
+
+        :return: The eye_location of this World.  # noqa: E501
+        :rtype: Vector3d
+        """
+        return self._eye_location
+
+    @eye_location.setter
+    def eye_location(self, eye_location):
+        """Sets the eye_location of this World.
+
+
+        :param eye_location: The eye_location of this World.  # noqa: E501
+        :type: Vector3d
+        """
+
+        self._eye_location = eye_location
+
+    @property
+    def fluid_temperature(self):
+        """Gets the fluid_temperature of this World.  # noqa: E501
+
+
+        :return: The fluid_temperature of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._fluid_temperature
+
+    @fluid_temperature.setter
+    def fluid_temperature(self, fluid_temperature):
+        """Sets the fluid_temperature of this World.
+
+
+        :param fluid_temperature: The fluid_temperature of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._fluid_temperature = fluid_temperature
+
+    @property
+    def fluid_viscosity(self):
+        """Gets the fluid_viscosity of this World.  # noqa: E501
+
+
+        :return: The fluid_viscosity of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._fluid_viscosity
+
+    @fluid_viscosity.setter
+    def fluid_viscosity(self, fluid_viscosity):
+        """Sets the fluid_viscosity of this World.
+
+
+        :param fluid_viscosity: The fluid_viscosity of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._fluid_viscosity = fluid_viscosity
+
+    @property
+    def food_restoration(self):
+        """Gets the food_restoration of this World.  # noqa: E501
+
+
+        :return: The food_restoration of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._food_restoration
+
+    @food_restoration.setter
+    def food_restoration(self, food_restoration):
+        """Sets the food_restoration of this World.
+
+
+        :param food_restoration: The food_restoration of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._food_restoration = food_restoration
+
+    @property
+    def full_block_selection_box(self):
+        """Gets the full_block_selection_box of this World.  # noqa: E501
+
+
+        :return: The full_block_selection_box of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._full_block_selection_box
+
+    @full_block_selection_box.setter
+    def full_block_selection_box(self, full_block_selection_box):
+        """Sets the full_block_selection_box of this World.
+
+
+        :param full_block_selection_box: The full_block_selection_box of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._full_block_selection_box = full_block_selection_box
+
+    @property
+    def gravity_affected(self):
+        """Gets the gravity_affected of this World.  # noqa: E501
+
+
+        :return: The gravity_affected of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._gravity_affected
+
+    @gravity_affected.setter
+    def gravity_affected(self, gravity_affected):
+        """Sets the gravity_affected of this World.
+
+
+        :param gravity_affected: The gravity_affected of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._gravity_affected = gravity_affected
+
+    @property
+    def ground_luminance(self):
+        """Gets the ground_luminance of this World.  # noqa: E501
+
+
+        :return: The ground_luminance of this World.  # noqa: E501
+        :rtype: float
+        """
+        return self._ground_luminance
+
+    @ground_luminance.setter
+    def ground_luminance(self, ground_luminance):
+        """Sets the ground_luminance of this World.
+
+
+        :param ground_luminance: The ground_luminance of this World.  # noqa: E501
+        :type: float
+        """
+
+        self._ground_luminance = ground_luminance
+
+    @property
+    def gui_id(self):
+        """Gets the gui_id of this World.  # noqa: E501
+
+
+        :return: The gui_id of this World.  # noqa: E501
+        :rtype: GuiIdProperty
+        """
+        return self._gui_id
+
+    @gui_id.setter
+    def gui_id(self, gui_id):
+        """Sets the gui_id of this World.
+
+
+        :param gui_id: The gui_id of this World.  # noqa: E501
+        :type: GuiIdProperty
+        """
+
+        self._gui_id = gui_id
+
+    @property
+    def hardness(self):
+        """Gets the hardness of this World.  # noqa: E501
+
+
+        :return: The hardness of this World.  # noqa: E501
+        :rtype: float
+        """
+        return self._hardness
+
+    @hardness.setter
+    def hardness(self, hardness):
+        """Sets the hardness of this World.
+
+
+        :param hardness: The hardness of this World.  # noqa: E501
+        :type: float
+        """
+
+        self._hardness = hardness
+
+    @property
+    def held_item(self):
+        """Gets the held_item of this World.  # noqa: E501
+
+
+        :return: The held_item of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._held_item
+
+    @held_item.setter
+    def held_item(self, held_item):
+        """Sets the held_item of this World.
+
+
+        :param held_item: The held_item of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._held_item = held_item
+
+    @property
+    def identifiable(self):
+        """Gets the identifiable of this World.  # noqa: E501
+
+
+        :return: The identifiable of this World.  # noqa: E501
+        :rtype: Identifiable
+        """
+        return self._identifiable
+
+    @identifiable.setter
+    def identifiable(self, identifiable):
+        """Sets the identifiable of this World.
+
+
+        :param identifiable: The identifiable of this World.  # noqa: E501
+        :type: Identifiable
+        """
+
+        self._identifiable = identifiable
+
+    @property
+    def indirectly_powered(self):
+        """Gets the indirectly_powered of this World.  # noqa: E501
+
+
+        :return: The indirectly_powered of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._indirectly_powered
+
+    @indirectly_powered.setter
+    def indirectly_powered(self, indirectly_powered):
+        """Sets the indirectly_powered of this World.
+
+
+        :param indirectly_powered: The indirectly_powered of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._indirectly_powered = indirectly_powered
+
+    @property
+    def instrument(self):
+        """Gets the instrument of this World.  # noqa: E501
+
+
+        :return: The instrument of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._instrument
+
+    @instrument.setter
+    def instrument(self, instrument):
+        """Sets the instrument of this World.
+
+
+        :param instrument: The instrument of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._instrument = instrument
+
+    @property
+    def inventory_capacity(self):
+        """Gets the inventory_capacity of this World.  # noqa: E501
+
+
+        :return: The inventory_capacity of this World.  # noqa: E501
+        :rtype: InventoryCapacity
+        """
+        return self._inventory_capacity
+
+    @inventory_capacity.setter
+    def inventory_capacity(self, inventory_capacity):
+        """Sets the inventory_capacity of this World.
+
+
+        :param inventory_capacity: The inventory_capacity of this World.  # noqa: E501
+        :type: InventoryCapacity
+        """
+
+        self._inventory_capacity = inventory_capacity
+
+    @property
+    def inventory_dimension(self):
+        """Gets the inventory_dimension of this World.  # noqa: E501
+
+
+        :return: The inventory_dimension of this World.  # noqa: E501
+        :rtype: InventoryDimension
+        """
+        return self._inventory_dimension
+
+    @inventory_dimension.setter
+    def inventory_dimension(self, inventory_dimension):
+        """Sets the inventory_dimension of this World.
+
+
+        :param inventory_dimension: The inventory_dimension of this World.  # noqa: E501
+        :type: InventoryDimension
+        """
+
+        self._inventory_dimension = inventory_dimension
+
+    @property
+    def inventory_title(self):
+        """Gets the inventory_title of this World.  # noqa: E501
+
+
+        :return: The inventory_title of this World.  # noqa: E501
+        :rtype: InventoryTitle
+        """
+        return self._inventory_title
+
+    @inventory_title.setter
+    def inventory_title(self, inventory_title):
+        """Sets the inventory_title of this World.
+
+
+        :param inventory_title: The inventory_title of this World.  # noqa: E501
+        :type: InventoryTitle
+        """
+
+        self._inventory_title = inventory_title
+
+    @property
+    def light_emission(self):
+        """Gets the light_emission of this World.  # noqa: E501
+
+
+        :return: The light_emission of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._light_emission
+
+    @light_emission.setter
+    def light_emission(self, light_emission):
+        """Sets the light_emission of this World.
+
+
+        :param light_emission: The light_emission of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._light_emission = light_emission
+
+    @property
+    def matter(self):
+        """Gets the matter of this World.  # noqa: E501
+
+
+        :return: The matter of this World.  # noqa: E501
+        :rtype: str
+        """
+        return self._matter
+
+    @matter.setter
+    def matter(self, matter):
+        """Sets the matter of this World.
+
+
+        :param matter: The matter of this World.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["SOLID", "LIQUID", "GAS"]  # noqa: E501
+        if matter not in allowed_values:
+            raise ValueError(
+                "Invalid value for `matter` ({0}), must be one of {1}"  # noqa: E501
+                .format(matter, allowed_values)
+            )
+
+        self._matter = matter
+
+    @property
+    def passable(self):
+        """Gets the passable of this World.  # noqa: E501
+
+
+        :return: The passable of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._passable
+
+    @passable.setter
+    def passable(self, passable):
+        """Sets the passable of this World.
+
+
+        :param passable: The passable of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._passable = passable
+
+    @property
+    def record(self):
+        """Gets the record of this World.  # noqa: E501
+
+
+        :return: The record of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._record
+
+    @record.setter
+    def record(self, record):
+        """Sets the record of this World.
+
+
+        :param record: The record of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._record = record
+
+    @property
+    def replaceable(self):
+        """Gets the replaceable of this World.  # noqa: E501
+
+
+        :return: The replaceable of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._replaceable
+
+    @replaceable.setter
+    def replaceable(self, replaceable):
+        """Sets the replaceable of this World.
+
+
+        :param replaceable: The replaceable of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._replaceable = replaceable
+
+    @property
+    def saturation_property(self):
+        """Gets the saturation_property of this World.  # noqa: E501
+
+
+        :return: The saturation_property of this World.  # noqa: E501
+        :rtype: float
+        """
+        return self._saturation_property
+
+    @saturation_property.setter
+    def saturation_property(self, saturation_property):
+        """Sets the saturation_property of this World.
+
+
+        :param saturation_property: The saturation_property of this World.  # noqa: E501
+        :type: float
+        """
+
+        self._saturation_property = saturation_property
+
+    @property
+    def sky_luminance(self):
+        """Gets the sky_luminance of this World.  # noqa: E501
+
+
+        :return: The sky_luminance of this World.  # noqa: E501
+        :rtype: float
+        """
+        return self._sky_luminance
+
+    @sky_luminance.setter
+    def sky_luminance(self, sky_luminance):
+        """Sets the sky_luminance of this World.
+
+
+        :param sky_luminance: The sky_luminance of this World.  # noqa: E501
+        :type: float
+        """
+
+        self._sky_luminance = sky_luminance
+
+    @property
+    def slot_index(self):
+        """Gets the slot_index of this World.  # noqa: E501
+
+
+        :return: The slot_index of this World.  # noqa: E501
+        :rtype: SlotIndex
+        """
+        return self._slot_index
+
+    @slot_index.setter
+    def slot_index(self, slot_index):
+        """Sets the slot_index of this World.
+
+
+        :param slot_index: The slot_index of this World.  # noqa: E501
+        :type: SlotIndex
+        """
+
+        self._slot_index = slot_index
+
+    @property
+    def slot_pos(self):
+        """Gets the slot_pos of this World.  # noqa: E501
+
+
+        :return: The slot_pos of this World.  # noqa: E501
+        :rtype: SlotPos
+        """
+        return self._slot_pos
+
+    @slot_pos.setter
+    def slot_pos(self, slot_pos):
+        """Sets the slot_pos of this World.
+
+
+        :param slot_pos: The slot_pos of this World.  # noqa: E501
+        :type: SlotPos
+        """
+
+        self._slot_pos = slot_pos
+
+    @property
+    def slot_side(self):
+        """Gets the slot_side of this World.  # noqa: E501
+
+
+        :return: The slot_side of this World.  # noqa: E501
+        :rtype: SlotSide
+        """
+        return self._slot_side
+
+    @slot_side.setter
+    def slot_side(self, slot_side):
+        """Sets the slot_side of this World.
+
+
+        :param slot_side: The slot_side of this World.  # noqa: E501
+        :type: SlotSide
+        """
+
+        self._slot_side = slot_side
+
+    @property
+    def smeltable(self):
+        """Gets the smeltable of this World.  # noqa: E501
+
+
+        :return: The smeltable of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._smeltable
+
+    @smeltable.setter
+    def smeltable(self, smeltable):
+        """Sets the smeltable of this World.
+
+
+        :param smeltable: The smeltable of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._smeltable = smeltable
+
+    @property
+    def solid_cube(self):
+        """Gets the solid_cube of this World.  # noqa: E501
+
+
+        :return: The solid_cube of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._solid_cube
+
+    @solid_cube.setter
+    def solid_cube(self, solid_cube):
+        """Sets the solid_cube of this World.
+
+
+        :param solid_cube: The solid_cube of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._solid_cube = solid_cube
+
+    @property
+    def statistics_tracked(self):
+        """Gets the statistics_tracked of this World.  # noqa: E501
+
+
+        :return: The statistics_tracked of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._statistics_tracked
+
+    @statistics_tracked.setter
+    def statistics_tracked(self, statistics_tracked):
+        """Sets the statistics_tracked of this World.
+
+
+        :param statistics_tracked: The statistics_tracked of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._statistics_tracked = statistics_tracked
+
+    @property
+    def surrogate_block(self):
+        """Gets the surrogate_block of this World.  # noqa: E501
+
+
+        :return: The surrogate_block of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._surrogate_block
+
+    @surrogate_block.setter
+    def surrogate_block(self, surrogate_block):
+        """Sets the surrogate_block of this World.
+
+
+        :param surrogate_block: The surrogate_block of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._surrogate_block = surrogate_block
+
+    @property
+    def temperature(self):
+        """Gets the temperature of this World.  # noqa: E501
+
+
+        :return: The temperature of this World.  # noqa: E501
+        :rtype: float
+        """
+        return self._temperature
+
+    @temperature.setter
+    def temperature(self, temperature):
+        """Sets the temperature of this World.
+
+
+        :param temperature: The temperature of this World.  # noqa: E501
+        :type: float
+        """
+
+        self._temperature = temperature
+
+    @property
+    def tool_type(self):
+        """Gets the tool_type of this World.  # noqa: E501
+
+
+        :return: The tool_type of this World.  # noqa: E501
+        :rtype: CatalogType
+        """
+        return self._tool_type
+
+    @tool_type.setter
+    def tool_type(self, tool_type):
+        """Sets the tool_type of this World.
+
+
+        :param tool_type: The tool_type of this World.  # noqa: E501
+        :type: CatalogType
+        """
+
+        self._tool_type = tool_type
+
+    @property
+    def unbreakable(self):
+        """Gets the unbreakable of this World.  # noqa: E501
+
+
+        :return: The unbreakable of this World.  # noqa: E501
+        :rtype: bool
+        """
+        return self._unbreakable
+
+    @unbreakable.setter
+    def unbreakable(self, unbreakable):
+        """Sets the unbreakable of this World.
+
+
+        :param unbreakable: The unbreakable of this World.  # noqa: E501
+        :type: bool
+        """
+
+        self._unbreakable = unbreakable
+
+    @property
+    def use_limit(self):
+        """Gets the use_limit of this World.  # noqa: E501
+
+
+        :return: The use_limit of this World.  # noqa: E501
+        :rtype: int
+        """
+        return self._use_limit
+
+    @use_limit.setter
+    def use_limit(self, use_limit):
+        """Sets the use_limit of this World.
+
+
+        :param use_limit: The use_limit of this World.  # noqa: E501
+        :type: int
+        """
+
+        self._use_limit = use_limit
 
     def to_dict(self):
         """Returns the model properties as a dict"""

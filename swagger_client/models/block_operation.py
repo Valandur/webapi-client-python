@@ -35,7 +35,6 @@ class BlockOperation(object):
     """
     swagger_types = {
         'error': 'str',
-        'errored': 'bool',
         'estimated_seconds_remaining': 'float',
         'link': 'str',
         'max': 'Vector3i',
@@ -49,7 +48,6 @@ class BlockOperation(object):
 
     attribute_map = {
         'error': 'error',
-        'errored': 'errored',
         'estimated_seconds_remaining': 'estimatedSecondsRemaining',
         'link': 'link',
         'max': 'max',
@@ -61,11 +59,15 @@ class BlockOperation(object):
         'world': 'world'
     }
 
-    def __init__(self, error=None, errored=None, estimated_seconds_remaining=None, link=None, max=None, min=None, progress=None, status=None, type=None, uuid=None, world=None):  # noqa: E501
+    discriminator_value_class_map = {
+        'BlockChangeOperation': 'BlockChangeOperation',
+        'BlockGetOperation': 'BlockGetOperation'
+    }
+
+    def __init__(self, error=None, estimated_seconds_remaining=None, link=None, max=None, min=None, progress=None, status=None, type=None, uuid=None, world=None):  # noqa: E501
         """BlockOperation - a model defined in Swagger"""  # noqa: E501
 
         self._error = None
-        self._errored = None
         self._estimated_seconds_remaining = None
         self._link = None
         self._max = None
@@ -75,10 +77,9 @@ class BlockOperation(object):
         self._type = None
         self._uuid = None
         self._world = None
-        self.discriminator = None
+        self.discriminator = 'type'
 
         self.error = error
-        self.errored = errored
         self.estimated_seconds_remaining = estimated_seconds_remaining
         self.link = link
         self.max = max
@@ -113,31 +114,6 @@ class BlockOperation(object):
             raise ValueError("Invalid value for `error`, must not be `None`")  # noqa: E501
 
         self._error = error
-
-    @property
-    def errored(self):
-        """Gets the errored of this BlockOperation.  # noqa: E501
-
-        True if this block operation produced errors, false otherwise.  # noqa: E501
-
-        :return: The errored of this BlockOperation.  # noqa: E501
-        :rtype: bool
-        """
-        return self._errored
-
-    @errored.setter
-    def errored(self, errored):
-        """Sets the errored of this BlockOperation.
-
-        True if this block operation produced errors, false otherwise.  # noqa: E501
-
-        :param errored: The errored of this BlockOperation.  # noqa: E501
-        :type: bool
-        """
-        if errored is None:
-            raise ValueError("Invalid value for `errored`, must not be `None`")  # noqa: E501
-
-        self._errored = errored
 
     @property
     def estimated_seconds_remaining(self):
@@ -375,6 +351,11 @@ class BlockOperation(object):
             raise ValueError("Invalid value for `world`, must not be `None`")  # noqa: E501
 
         self._world = world
+
+    def get_real_child_model(self, data):
+        """Returns the real base class specified by the discriminator"""
+        discriminator_value = data[self.discriminator].lower()
+        return self.discriminator_value_class_map.get(discriminator_value)
 
     def to_dict(self):
         """Returns the model properties as a dict"""

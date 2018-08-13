@@ -84,7 +84,7 @@ class InteractiveMessage(object):
     def id(self):
         """Gets the id of this InteractiveMessage.  # noqa: E501
 
-        The id of the message. Used for sender of the message to identify responses.  # noqa: E501
+        The id of the message. Used to identify responses.  # noqa: E501
 
         :return: The id of this InteractiveMessage.  # noqa: E501
         :rtype: str
@@ -95,7 +95,7 @@ class InteractiveMessage(object):
     def id(self, id):
         """Sets the id of this InteractiveMessage.
 
-        The id of the message. Used for sender of the message to identify responses.  # noqa: E501
+        The id of the message. Used to identify responses.  # noqa: E501
 
         :param id: The id of this InteractiveMessage.  # noqa: E501
         :type: str

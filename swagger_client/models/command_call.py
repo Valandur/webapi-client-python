@@ -38,7 +38,6 @@ class CommandCall(object):
         'cancelled': 'bool',
         'cause': 'Cause',
         'command': 'str',
-        'link': 'str',
         'result': 'CommandResult',
         'timestamp': 'int'
     }
@@ -48,19 +47,17 @@ class CommandCall(object):
         'cancelled': 'cancelled',
         'cause': 'cause',
         'command': 'command',
-        'link': 'link',
         'result': 'result',
         'timestamp': 'timestamp'
     }
 
-    def __init__(self, args=None, cancelled=None, cause=None, command=None, link=None, result=None, timestamp=None):  # noqa: E501
+    def __init__(self, args=None, cancelled=None, cause=None, command=None, result=None, timestamp=None):  # noqa: E501
         """CommandCall - a model defined in Swagger"""  # noqa: E501
 
         self._args = None
         self._cancelled = None
         self._cause = None
         self._command = None
-        self._link = None
         self._result = None
         self._timestamp = None
         self.discriminator = None
@@ -69,7 +66,6 @@ class CommandCall(object):
         self.cancelled = cancelled
         self.cause = cause
         self.command = command
-        self.link = link
         self.result = result
         self.timestamp = timestamp
 
@@ -172,31 +168,6 @@ class CommandCall(object):
             raise ValueError("Invalid value for `command`, must not be `None`")  # noqa: E501
 
         self._command = command
-
-    @property
-    def link(self):
-        """Gets the link of this CommandCall.  # noqa: E501
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :return: The link of this CommandCall.  # noqa: E501
-        :rtype: str
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this CommandCall.
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :param link: The link of this CommandCall.  # noqa: E501
-        :type: str
-        """
-        if link is None:
-            raise ValueError("Invalid value for `link`, must not be `None`")  # noqa: E501
-
-        self._link = link
 
     @property
     def result(self):

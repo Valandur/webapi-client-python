@@ -37,7 +37,6 @@ class WorldBorder(object):
         'damage_amount': 'float',
         'damage_threshold': 'float',
         'diameter': 'float',
-        'link': 'str',
         'new_diameter': 'float',
         'time_remaining': 'int',
         'warning_distance': 'int',
@@ -49,21 +48,19 @@ class WorldBorder(object):
         'damage_amount': 'damageAmount',
         'damage_threshold': 'damageThreshold',
         'diameter': 'diameter',
-        'link': 'link',
         'new_diameter': 'newDiameter',
         'time_remaining': 'timeRemaining',
         'warning_distance': 'warningDistance',
         'warning_time': 'warningTime'
     }
 
-    def __init__(self, center=None, damage_amount=None, damage_threshold=None, diameter=None, link=None, new_diameter=None, time_remaining=None, warning_distance=None, warning_time=None):  # noqa: E501
+    def __init__(self, center=None, damage_amount=None, damage_threshold=None, diameter=None, new_diameter=None, time_remaining=None, warning_distance=None, warning_time=None):  # noqa: E501
         """WorldBorder - a model defined in Swagger"""  # noqa: E501
 
         self._center = None
         self._damage_amount = None
         self._damage_threshold = None
         self._diameter = None
-        self._link = None
         self._new_diameter = None
         self._time_remaining = None
         self._warning_distance = None
@@ -74,7 +71,6 @@ class WorldBorder(object):
         self.damage_amount = damage_amount
         self.damage_threshold = damage_threshold
         self.diameter = diameter
-        self.link = link
         self.new_diameter = new_diameter
         self.time_remaining = time_remaining
         self.warning_distance = warning_distance
@@ -179,31 +175,6 @@ class WorldBorder(object):
             raise ValueError("Invalid value for `diameter`, must not be `None`")  # noqa: E501
 
         self._diameter = diameter
-
-    @property
-    def link(self):
-        """Gets the link of this WorldBorder.  # noqa: E501
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :return: The link of this WorldBorder.  # noqa: E501
-        :rtype: str
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this WorldBorder.
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :param link: The link of this WorldBorder.  # noqa: E501
-        :type: str
-        """
-        if link is None:
-            raise ValueError("Invalid value for `link`, must not be `None`")  # noqa: E501
-
-        self._link = link
 
     @property
     def new_diameter(self):

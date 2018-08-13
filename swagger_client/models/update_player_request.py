@@ -17,7 +17,7 @@ import re  # noqa: F401
 import six
 
 from swagger_client.models.damage_request import DamageRequest  # noqa: F401,E501
-from swagger_client.models.item_stack import ItemStack  # noqa: F401,E501
+from swagger_client.models.slot_request import SlotRequest  # noqa: F401,E501
 from swagger_client.models.vector3d import Vector3d  # noqa: F401,E501
 
 
@@ -39,8 +39,9 @@ class UpdatePlayerRequest(object):
         'exhaustion': 'float',
         'experience_since_level': 'int',
         'food_level': 'int',
+        'game_mode': 'str',
         'health': 'float',
-        'inventory': 'list[ItemStack]',
+        'inventory': 'list[SlotRequest]',
         'level': 'int',
         'max_health': 'float',
         'position': 'Vector3d',
@@ -57,6 +58,7 @@ class UpdatePlayerRequest(object):
         'exhaustion': 'exhaustion',
         'experience_since_level': 'experienceSinceLevel',
         'food_level': 'foodLevel',
+        'game_mode': 'gameMode',
         'health': 'health',
         'inventory': 'inventory',
         'level': 'level',
@@ -70,13 +72,14 @@ class UpdatePlayerRequest(object):
         'world': 'world'
     }
 
-    def __init__(self, damage=None, exhaustion=None, experience_since_level=None, food_level=None, health=None, inventory=None, level=None, max_health=None, position=None, rotation=None, saturation=None, scale=None, total_experience=None, velocity=None, world=None):  # noqa: E501
+    def __init__(self, damage=None, exhaustion=None, experience_since_level=None, food_level=None, game_mode=None, health=None, inventory=None, level=None, max_health=None, position=None, rotation=None, saturation=None, scale=None, total_experience=None, velocity=None, world=None):  # noqa: E501
         """UpdatePlayerRequest - a model defined in Swagger"""  # noqa: E501
 
         self._damage = None
         self._exhaustion = None
         self._experience_since_level = None
         self._food_level = None
+        self._game_mode = None
         self._health = None
         self._inventory = None
         self._level = None
@@ -98,6 +101,8 @@ class UpdatePlayerRequest(object):
             self.experience_since_level = experience_since_level
         if food_level is not None:
             self.food_level = food_level
+        if game_mode is not None:
+            self.game_mode = game_mode
         if health is not None:
             self.health = health
         if inventory is not None:
@@ -214,6 +219,29 @@ class UpdatePlayerRequest(object):
         self._food_level = food_level
 
     @property
+    def game_mode(self):
+        """Gets the game_mode of this UpdatePlayerRequest.  # noqa: E501
+
+        The game mode of the player  # noqa: E501
+
+        :return: The game_mode of this UpdatePlayerRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._game_mode
+
+    @game_mode.setter
+    def game_mode(self, game_mode):
+        """Sets the game_mode of this UpdatePlayerRequest.
+
+        The game mode of the player  # noqa: E501
+
+        :param game_mode: The game_mode of this UpdatePlayerRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._game_mode = game_mode
+
+    @property
     def health(self):
         """Gets the health of this UpdatePlayerRequest.  # noqa: E501
 
@@ -240,10 +268,10 @@ class UpdatePlayerRequest(object):
     def inventory(self):
         """Gets the inventory of this UpdatePlayerRequest.  # noqa: E501
 
-        The ItemStacks in the inventory of the entity  # noqa: E501
+        The slots in the inventory of the entity to modify  # noqa: E501
 
         :return: The inventory of this UpdatePlayerRequest.  # noqa: E501
-        :rtype: list[ItemStack]
+        :rtype: list[SlotRequest]
         """
         return self._inventory
 
@@ -251,10 +279,10 @@ class UpdatePlayerRequest(object):
     def inventory(self, inventory):
         """Sets the inventory of this UpdatePlayerRequest.
 
-        The ItemStacks in the inventory of the entity  # noqa: E501
+        The slots in the inventory of the entity to modify  # noqa: E501
 
         :param inventory: The inventory of this UpdatePlayerRequest.  # noqa: E501
-        :type: list[ItemStack]
+        :type: list[SlotRequest]
         """
 
         self._inventory = inventory

@@ -29,10 +29,31 @@ class TestUserApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_get_user_details(self):
-        """Test case for get_user_details
+    def test_create_user(self):
+        """Test case for create_user
+
+        Create a user  # noqa: E501
+        """
+        pass
+
+    def test_delete_user(self):
+        """Test case for delete_user
+
+        Delete a user  # noqa: E501
+        """
+        pass
+
+    def test_get_me(self):
+        """Test case for get_me
 
         Check info  # noqa: E501
+        """
+        pass
+
+    def test_get_users(self):
+        """Test case for get_users
+
+        List users  # noqa: E501
         """
         pass
 
@@ -47,6 +68,19 @@ class TestUserApi(unittest.TestCase):
         """Test case for logout
 
         Logout  # noqa: E501
+        """
+        pass
+
+    def test_logout_redirect(self):
+        """Test case for logout_redirect
+
+        """
+        pass
+
+    def test_modify_user(self):
+        """Test case for modify_user
+
+        Update a user  # noqa: E501
         """
         pass
 

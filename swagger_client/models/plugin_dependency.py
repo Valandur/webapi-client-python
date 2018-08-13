@@ -32,7 +32,6 @@ class PluginDependency(object):
     """
     swagger_types = {
         'id': 'str',
-        'link': 'str',
         'load_order': 'str',
         'optional': 'bool',
         'version': 'str'
@@ -40,24 +39,21 @@ class PluginDependency(object):
 
     attribute_map = {
         'id': 'id',
-        'link': 'link',
         'load_order': 'loadOrder',
         'optional': 'optional',
         'version': 'version'
     }
 
-    def __init__(self, id=None, link=None, load_order=None, optional=None, version=None):  # noqa: E501
+    def __init__(self, id=None, load_order=None, optional=None, version=None):  # noqa: E501
         """PluginDependency - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
-        self._link = None
         self._load_order = None
         self._optional = None
         self._version = None
         self.discriminator = None
 
         self.id = id
-        self.link = link
         self.load_order = load_order
         self.optional = optional
         self.version = version
@@ -86,31 +82,6 @@ class PluginDependency(object):
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
-
-    @property
-    def link(self):
-        """Gets the link of this PluginDependency.  # noqa: E501
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :return: The link of this PluginDependency.  # noqa: E501
-        :rtype: str
-        """
-        return self._link
-
-    @link.setter
-    def link(self, link):
-        """Sets the link of this PluginDependency.
-
-        The API link that can be used to obtain more information about this object  # noqa: E501
-
-        :param link: The link of this PluginDependency.  # noqa: E501
-        :type: str
-        """
-        if link is None:
-            raise ValueError("Invalid value for `link`, must not be `None`")  # noqa: E501
-
-        self._link = link
 
     @property
     def load_order(self):

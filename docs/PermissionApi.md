@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 Get subject
 
-Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.list**   
+Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.one**   
 
 ### Example
 ```python

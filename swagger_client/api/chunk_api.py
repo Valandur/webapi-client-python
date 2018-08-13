@@ -36,7 +36,7 @@ class ChunkApi(object):
     def create_chunk_at(self, world, x, z, **kwargs):  # noqa: E501
         """Load &amp; Generate a chunk  # noqa: E501
 
-        Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.chunk.create**     # noqa: E501
+        Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.create_chunk_at(world, x, z, async=True)
@@ -63,7 +63,7 @@ class ChunkApi(object):
     def create_chunk_at_with_http_info(self, world, x, z, **kwargs):  # noqa: E501
         """Load &amp; Generate a chunk  # noqa: E501
 
-        Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.chunk.create**     # noqa: E501
+        Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.create_chunk_at_with_http_info(world, x, z, async=True)
@@ -163,7 +163,7 @@ class ChunkApi(object):
     def get_chunk_at(self, world, x, z, **kwargs):  # noqa: E501
         """Get a chunk  # noqa: E501
 
-        Get detailed information about a chunk     **Required permissions:**    - **chunk.chunk.one **     # noqa: E501
+        Get detailed information about a chunk     **Required permissions:**    - **chunk.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_chunk_at(world, x, z, async=True)
@@ -190,7 +190,7 @@ class ChunkApi(object):
     def get_chunk_at_with_http_info(self, world, x, z, **kwargs):  # noqa: E501
         """Get a chunk  # noqa: E501
 
-        Get detailed information about a chunk     **Required permissions:**    - **chunk.chunk.one **     # noqa: E501
+        Get detailed information about a chunk     **Required permissions:**    - **chunk.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.get_chunk_at_with_http_info(world, x, z, async=True)
@@ -290,7 +290,7 @@ class ChunkApi(object):
     def list_chunks(self, world, **kwargs):  # noqa: E501
         """List chunks  # noqa: E501
 
-        Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.chunk.list**     # noqa: E501
+        Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.list_chunks(world, async=True)
@@ -315,7 +315,7 @@ class ChunkApi(object):
     def list_chunks_with_http_info(self, world, **kwargs):  # noqa: E501
         """List chunks  # noqa: E501
 
-        Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.chunk.list**     # noqa: E501
+        Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.list_chunks_with_http_info(world, async=True)

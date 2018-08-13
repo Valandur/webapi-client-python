@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create_world**
-> WorldFull create_world(body=body, details=details, accept=accept, pretty=pretty)
+> World create_world(body=body, details=details, accept=accept, pretty=pretty)
 
 Create a world
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorldFull**](WorldFull.md)
+[**World**](World.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_world**
-> WorldFull delete_world(world, details=details, accept=accept, pretty=pretty)
+> World delete_world(world, details=details, accept=accept, pretty=pretty)
 
 Delete a world
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorldFull**](WorldFull.md)
+[**World**](World.md)
 
 ### Authorization
 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_world**
-> WorldFull get_world(world, details=details, accept=accept, pretty=pretty)
+> World get_world(world, details=details, accept=accept, pretty=pretty)
 
 Get a world
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorldFull**](WorldFull.md)
+[**World**](World.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_worlds**
-> list[WorldFull] list_worlds(details=details, accept=accept, pretty=pretty)
+> list[World] list_worlds(details=details, accept=accept, pretty=pretty)
 
 List worlds
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[WorldFull]**](WorldFull.md)
+[**list[World]**](World.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **modify_world**
-> WorldFull modify_world(world, body=body, details=details, accept=accept, pretty=pretty)
+> World modify_world(world, body=body, details=details, accept=accept, pretty=pretty)
 
 Modify a world
 
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorldFull**](WorldFull.md)
+[**World**](World.md)
 
 ### Authorization
 

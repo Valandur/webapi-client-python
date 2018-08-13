@@ -1,27 +1,9 @@
-# WorldFull
+# Slot
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**link** | **str** | The API link that can be used to obtain more information about this object | 
-**loaded** | **bool** | True if the world is loaded, false otherwise | 
-**name** | **str** | The name of this world | 
-**uuid** | **str** | The unique UUID that identifies this world | 
-**map_features_enabled** | **bool** | True if map specific features are enabled for this world, false otherwise | 
-**border** | [**WorldBorder**](WorldBorder.md) | The border of the world | 
-**spawn** | [**CatalogType**](CatalogType.md) |  | [optional] 
-**load_on_startup** | **bool** | True if this world is loaded when the server starts, false otherwise | 
-**keep_spawn_loaded** | **bool** | True if the spawn of this world is always kept loaded, false otherwise | 
-**allow_commands** | **bool** | True if commands are allowed to be executed in this world, false otherwise | 
-**generate_bonus_chests** | **bool** | True if bonus chests are generated for this world, false otherwise | 
-**time** | **int** | The current time in the world | 
-**seed** | **int** | The seed of the world | 
-**difficulty** | [**CatalogTypeDifficulty**](CatalogTypeDifficulty.md) | The difficulty of the world | 
-**game_rules** | **dict(str, str)** | A map of world rule names to values | 
-**weather** | [**CatalogTypeWeather**](CatalogTypeWeather.md) | The current weather in the world | 
-**game_mode** | [**GameMode**](GameMode.md) |  | [optional] 
-**generator_type** | [**CatalogTypeGeneratorType**](CatalogTypeGeneratorType.md) | The generator type used for this world | 
-**dimension_type** | [**CatalogTypeDimensionType**](CatalogTypeDimensionType.md) | The dimension of the world | 
+**stack** | [**ItemStack**](ItemStack.md) | The item stack that is in this slot | 
 **absorption** | **float** |  | [optional] 
 **age** | [**AgeableData**](AgeableData.md) |  | [optional] 
 **aggressive** | **bool** |  | [optional] 
@@ -88,6 +70,7 @@ Name | Type | Description | Notes
 **food** | [**FoodData**](FoodData.md) |  | [optional] 
 **furnace** | [**FurnaceData**](FurnaceData.md) |  | [optional] 
 **fuse** | [**FuseData**](FuseData.md) |  | [optional] 
+**game_mode** | [**GameMode**](GameMode.md) |  | [optional] 
 **generation** | **int** |  | [optional] 
 **glowing** | **bool** |  | [optional] 
 **golden_apple** | [**CatalogType**](CatalogType.md) |  | [optional] 
@@ -155,6 +138,7 @@ Name | Type | Description | Notes
 **slime** | [**SlimeData**](SlimeData.md) |  | [optional] 
 **sneaking** | **bool** |  | [optional] 
 **snow** | **bool** |  | [optional] 
+**spawn** | [**CatalogType**](CatalogType.md) |  | [optional] 
 **sprinting** | **bool** |  | [optional] 
 **stair_shape** | [**CatalogType**](CatalogType.md) |  | [optional] 
 **statistics** | [**list[Stat]**](Stat.md) |  | [optional] 
