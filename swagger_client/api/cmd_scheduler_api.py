@@ -38,11 +38,11 @@ class CmdSchedulerApi(object):
 
         Deletes a task.     **Required permissions:**    - **cmd-scheduler.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_task(name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_task(name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: The name of the task (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -52,7 +52,7 @@ class CmdSchedulerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_task_with_http_info(name, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_task_with_http_info(name, **kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class CmdSchedulerApi(object):
 
         Deletes a task.     **Required permissions:**    - **cmd-scheduler.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_task_with_http_info(name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_task_with_http_info(name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: The name of the task (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -78,7 +78,7 @@ class CmdSchedulerApi(object):
         """
 
         all_params = ['name', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -138,7 +138,7 @@ class CmdSchedulerApi(object):
             files=local_var_files,
             response_type='CommandTask',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -149,11 +149,11 @@ class CmdSchedulerApi(object):
 
         Gets a list of all the registered tasks.     **Required permissions:**    - **cmd-scheduler.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_tasks(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_tasks(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -162,7 +162,7 @@ class CmdSchedulerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_tasks_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_tasks_with_http_info(**kwargs)  # noqa: E501
@@ -173,11 +173,11 @@ class CmdSchedulerApi(object):
 
         Gets a list of all the registered tasks.     **Required permissions:**    - **cmd-scheduler.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_tasks_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_tasks_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -187,7 +187,7 @@ class CmdSchedulerApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -241,7 +241,7 @@ class CmdSchedulerApi(object):
             files=local_var_files,
             response_type='list[CommandTask]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

@@ -120,6 +120,9 @@ class TameableData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(TameableData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

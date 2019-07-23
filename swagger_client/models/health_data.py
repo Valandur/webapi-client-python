@@ -121,6 +121,9 @@ class HealthData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(HealthData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

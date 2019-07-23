@@ -38,11 +38,11 @@ class UserApi(object):
 
         Creates a new Web-API user with the specified username and password.     **Required permissions:**    - **user.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_user(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_user(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param CreateUserRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -52,7 +52,7 @@ class UserApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_user_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.create_user_with_http_info(**kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class UserApi(object):
 
         Creates a new Web-API user with the specified username and password.     **Required permissions:**    - **user.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_user_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_user_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param CreateUserRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -78,7 +78,7 @@ class UserApi(object):
         """
 
         all_params = ['body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -134,7 +134,7 @@ class UserApi(object):
             files=local_var_files,
             response_type='UserPermissionStruct',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -145,11 +145,11 @@ class UserApi(object):
 
         Removes a Web-API user.     **Required permissions:**    - **user.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_user(name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_user(name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: The username of the user to delete (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -159,7 +159,7 @@ class UserApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_user_with_http_info(name, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_user_with_http_info(name, **kwargs)  # noqa: E501
@@ -170,11 +170,11 @@ class UserApi(object):
 
         Removes a Web-API user.     **Required permissions:**    - **user.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_user_with_http_info(name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_user_with_http_info(name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: The username of the user to delete (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -185,7 +185,7 @@ class UserApi(object):
         """
 
         all_params = ['name', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -245,7 +245,7 @@ class UserApi(object):
             files=local_var_files,
             response_type='UserPermissionStruct',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -256,11 +256,11 @@ class UserApi(object):
 
         Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_me(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_me(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -269,7 +269,7 @@ class UserApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_me_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_me_with_http_info(**kwargs)  # noqa: E501
@@ -280,11 +280,11 @@ class UserApi(object):
 
         Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_me_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_me_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -294,7 +294,7 @@ class UserApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -348,7 +348,7 @@ class UserApi(object):
             files=local_var_files,
             response_type='PermissionStruct',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -359,11 +359,11 @@ class UserApi(object):
 
         Gets a list of all the Web-API users.     **Required permissions:**    - **user.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_users(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_users(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -372,7 +372,7 @@ class UserApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_users_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_users_with_http_info(**kwargs)  # noqa: E501
@@ -383,11 +383,11 @@ class UserApi(object):
 
         Gets a list of all the Web-API users.     **Required permissions:**    - **user.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_users_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_users_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -397,7 +397,7 @@ class UserApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -451,7 +451,7 @@ class UserApi(object):
             files=local_var_files,
             response_type='list[UserPermissionStruct]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -462,11 +462,11 @@ class UserApi(object):
 
         Tries to acquire an api key with the passed credentials.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.login(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.login(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param AuthenticationRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -476,7 +476,7 @@ class UserApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.login_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.login_with_http_info(**kwargs)  # noqa: E501
@@ -487,11 +487,11 @@ class UserApi(object):
 
         Tries to acquire an api key with the passed credentials.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.login_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.login_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param AuthenticationRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -502,7 +502,7 @@ class UserApi(object):
         """
 
         all_params = ['body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -558,7 +558,7 @@ class UserApi(object):
             files=local_var_files,
             response_type='PermissionStruct',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -569,11 +569,11 @@ class UserApi(object):
 
         Invalidate the current API key, logging out the active user.     **Required permissions:**    - **user.**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logout(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logout(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -582,7 +582,7 @@ class UserApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.logout_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.logout_with_http_info(**kwargs)  # noqa: E501
@@ -593,11 +593,11 @@ class UserApi(object):
 
         Invalidate the current API key, logging out the active user.     **Required permissions:**    - **user.**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logout_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logout_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -607,7 +607,7 @@ class UserApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -661,7 +661,7 @@ class UserApi(object):
             files=local_var_files,
             response_type='PermissionStruct',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -672,11 +672,11 @@ class UserApi(object):
 
         null     **Required permissions:**    - **user.**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logout_redirect(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logout_redirect(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str redirect: The URL the client should be redirect to after logout
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -686,7 +686,7 @@ class UserApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.logout_redirect_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.logout_redirect_with_http_info(**kwargs)  # noqa: E501
@@ -697,11 +697,11 @@ class UserApi(object):
 
         null     **Required permissions:**    - **user.**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.logout_redirect_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.logout_redirect_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str redirect: The URL the client should be redirect to after logout
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -712,7 +712,7 @@ class UserApi(object):
         """
 
         all_params = ['redirect', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -768,7 +768,7 @@ class UserApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -779,11 +779,11 @@ class UserApi(object):
 
         Changes the properties of a Web-API user     **Required permissions:**    - **user.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_user(name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_user(name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: The username of the user to delete (required)
         :param ModifyUserRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -794,7 +794,7 @@ class UserApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.modify_user_with_http_info(name, **kwargs)  # noqa: E501
         else:
             (data) = self.modify_user_with_http_info(name, **kwargs)  # noqa: E501
@@ -805,11 +805,11 @@ class UserApi(object):
 
         Changes the properties of a Web-API user     **Required permissions:**    - **user.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_user_with_http_info(name, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_user_with_http_info(name, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: The username of the user to delete (required)
         :param ModifyUserRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -821,7 +821,7 @@ class UserApi(object):
         """
 
         all_params = ['name', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -883,7 +883,7 @@ class UserApi(object):
             files=local_var_files,
             response_type='UserPermissionStruct',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

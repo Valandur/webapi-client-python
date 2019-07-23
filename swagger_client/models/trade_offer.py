@@ -267,6 +267,9 @@ class TradeOffer(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(TradeOffer, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

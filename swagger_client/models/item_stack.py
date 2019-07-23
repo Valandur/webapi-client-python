@@ -5278,6 +5278,9 @@ class ItemStack(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ItemStack, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

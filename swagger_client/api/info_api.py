@@ -38,11 +38,11 @@ class InfoApi(object):
 
         Get general information about the Minecraft server.     **Required permissions:**    - **info.info**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -51,7 +51,7 @@ class InfoApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_info_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_info_with_http_info(**kwargs)  # noqa: E501
@@ -62,11 +62,11 @@ class InfoApi(object):
 
         Get general information about the Minecraft server.     **Required permissions:**    - **info.info**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_info_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_info_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -76,7 +76,7 @@ class InfoApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -130,7 +130,7 @@ class InfoApi(object):
             files=local_var_files,
             response_type='ServerInfo',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -141,11 +141,11 @@ class InfoApi(object):
 
         Get statistical information about the server, such as player count, cpu and memory usage over time.     **Required permissions:**    - **info.stats**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stats(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_stats(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int limit:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -155,7 +155,7 @@ class InfoApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_stats_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.get_stats_with_http_info(**kwargs)  # noqa: E501
@@ -166,11 +166,11 @@ class InfoApi(object):
 
         Get statistical information about the server, such as player count, cpu and memory usage over time.     **Required permissions:**    - **info.stats**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_stats_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_stats_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param int limit:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -181,7 +181,7 @@ class InfoApi(object):
         """
 
         all_params = ['limit', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -237,7 +237,7 @@ class InfoApi(object):
             files=local_var_files,
             response_type='ServerStats',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -248,11 +248,11 @@ class InfoApi(object):
 
         Lists all the active servlets running in the Web-API     **Required permissions:**    - **info.servlets**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_servlets(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_servlets(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -261,7 +261,7 @@ class InfoApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_servlets_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_servlets_with_http_info(**kwargs)  # noqa: E501
@@ -272,11 +272,11 @@ class InfoApi(object):
 
         Lists all the active servlets running in the Web-API     **Required permissions:**    - **info.servlets**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_servlets_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_servlets_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -286,7 +286,7 @@ class InfoApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -340,7 +340,7 @@ class InfoApi(object):
             files=local_var_files,
             response_type='dict(str, str)',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

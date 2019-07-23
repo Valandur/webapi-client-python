@@ -38,11 +38,11 @@ class BlockApi(object):
 
         Start a request to get or change blocks on the server.     **Required permissions:**    - **block.op.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_block_operation(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_block_operation(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param CreateBlockOperationRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -52,7 +52,7 @@ class BlockApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_block_operation_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.create_block_operation_with_http_info(**kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class BlockApi(object):
 
         Start a request to get or change blocks on the server.     **Required permissions:**    - **block.op.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_block_operation_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_block_operation_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param CreateBlockOperationRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -78,7 +78,7 @@ class BlockApi(object):
         """
 
         all_params = ['body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -134,7 +134,7 @@ class BlockApi(object):
             files=local_var_files,
             response_type='BlockOperation',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -145,11 +145,11 @@ class BlockApi(object):
 
         Cancel a pending or running block operation. **THIS DOES NOT UNDO THE BLOCK CHANGES**     **Required permissions:**    - **block.op.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_block_operation(uuid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_block_operation(uuid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str uuid: The uuid of the block operation (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -159,7 +159,7 @@ class BlockApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_block_operation_with_http_info(uuid, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_block_operation_with_http_info(uuid, **kwargs)  # noqa: E501
@@ -170,11 +170,11 @@ class BlockApi(object):
 
         Cancel a pending or running block operation. **THIS DOES NOT UNDO THE BLOCK CHANGES**     **Required permissions:**    - **block.op.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_block_operation_with_http_info(uuid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_block_operation_with_http_info(uuid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str uuid: The uuid of the block operation (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -185,7 +185,7 @@ class BlockApi(object):
         """
 
         all_params = ['uuid', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -245,7 +245,7 @@ class BlockApi(object):
             files=local_var_files,
             response_type='BlockOperation',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -256,11 +256,11 @@ class BlockApi(object):
 
         Gets information about one block in the world.     **Required permissions:**    - **block.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_block(world, x, y, z, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_block(world, x, y, z, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The uuid of the world to get the block from (required)
         :param int x: The x-coordinate of the block (required)
         :param int y: The y-coordinate of the block (required)
@@ -273,7 +273,7 @@ class BlockApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_block_with_http_info(world, x, y, z, **kwargs)  # noqa: E501
         else:
             (data) = self.get_block_with_http_info(world, x, y, z, **kwargs)  # noqa: E501
@@ -284,11 +284,11 @@ class BlockApi(object):
 
         Gets information about one block in the world.     **Required permissions:**    - **block.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_block_with_http_info(world, x, y, z, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_block_with_http_info(world, x, y, z, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The uuid of the world to get the block from (required)
         :param int x: The x-coordinate of the block (required)
         :param int y: The y-coordinate of the block (required)
@@ -302,7 +302,7 @@ class BlockApi(object):
         """
 
         all_params = ['world', 'x', 'y', 'z', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -380,7 +380,7 @@ class BlockApi(object):
             files=local_var_files,
             response_type='BlockState',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -391,11 +391,11 @@ class BlockApi(object):
 
         Gets details about a specific block operation     **Required permissions:**    - **block.op.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_block_operation(uuid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_block_operation(uuid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str uuid: The uuid of the block operation (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -405,7 +405,7 @@ class BlockApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_block_operation_with_http_info(uuid, **kwargs)  # noqa: E501
         else:
             (data) = self.get_block_operation_with_http_info(uuid, **kwargs)  # noqa: E501
@@ -416,11 +416,11 @@ class BlockApi(object):
 
         Gets details about a specific block operation     **Required permissions:**    - **block.op.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_block_operation_with_http_info(uuid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_block_operation_with_http_info(uuid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str uuid: The uuid of the block operation (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -431,7 +431,7 @@ class BlockApi(object):
         """
 
         all_params = ['uuid', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -491,7 +491,7 @@ class BlockApi(object):
             files=local_var_files,
             response_type='BlockOperation',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -502,11 +502,11 @@ class BlockApi(object):
 
         Returns a list of all the currently running block operations.     **Required permissions:**    - **block.op.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_block_operations(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_block_operations(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -515,7 +515,7 @@ class BlockApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_block_operations_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_block_operations_with_http_info(**kwargs)  # noqa: E501
@@ -526,11 +526,11 @@ class BlockApi(object):
 
         Returns a list of all the currently running block operations.     **Required permissions:**    - **block.op.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_block_operations_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_block_operations_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -540,7 +540,7 @@ class BlockApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -594,7 +594,7 @@ class BlockApi(object):
             files=local_var_files,
             response_type='list[BlockOperation]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -605,11 +605,11 @@ class BlockApi(object):
 
         Modify an existing block operation to either pause or continue it.     **Required permissions:**    - **block.op.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_block_operation(uuid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_block_operation(uuid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str uuid: The uuid of the block operation (required)
         :param ModifyBlockOperationRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -620,7 +620,7 @@ class BlockApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.modify_block_operation_with_http_info(uuid, **kwargs)  # noqa: E501
         else:
             (data) = self.modify_block_operation_with_http_info(uuid, **kwargs)  # noqa: E501
@@ -631,11 +631,11 @@ class BlockApi(object):
 
         Modify an existing block operation to either pause or continue it.     **Required permissions:**    - **block.op.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_block_operation_with_http_info(uuid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_block_operation_with_http_info(uuid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str uuid: The uuid of the block operation (required)
         :param ModifyBlockOperationRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -647,7 +647,7 @@ class BlockApi(object):
         """
 
         all_params = ['uuid', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -709,7 +709,7 @@ class BlockApi(object):
             files=local_var_files,
             response_type='BlockOperation',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

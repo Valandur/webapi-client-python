@@ -38,11 +38,11 @@ class PermissionApi(object):
 
         Gets a specific subject collection     **Required permissions:**    - **permission.collection.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_collection(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_collection(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -52,7 +52,7 @@ class PermissionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_collection_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_collection_with_http_info(id, **kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class PermissionApi(object):
 
         Gets a specific subject collection     **Required permissions:**    - **permission.collection.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_collection_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_collection_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -78,7 +78,7 @@ class PermissionApi(object):
         """
 
         all_params = ['id', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -138,7 +138,7 @@ class PermissionApi(object):
             files=local_var_files,
             response_type='SubjectCollection',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -149,11 +149,11 @@ class PermissionApi(object):
 
         Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subject(id, sub_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subject(id, sub_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str sub_id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -164,7 +164,7 @@ class PermissionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_subject_with_http_info(id, sub_id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_subject_with_http_info(id, sub_id, **kwargs)  # noqa: E501
@@ -175,11 +175,11 @@ class PermissionApi(object):
 
         Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_subject_with_http_info(id, sub_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_subject_with_http_info(id, sub_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str sub_id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -191,7 +191,7 @@ class PermissionApi(object):
         """
 
         all_params = ['id', 'sub_id', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -257,7 +257,7 @@ class PermissionApi(object):
             files=local_var_files,
             response_type='Subject',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -268,11 +268,11 @@ class PermissionApi(object):
 
         Gets a list of all the subject collections, for example groups, users, etc.     **Required permissions:**    - **permission.collection.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_collections(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_collections(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -281,7 +281,7 @@ class PermissionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_collections_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_collections_with_http_info(**kwargs)  # noqa: E501
@@ -292,11 +292,11 @@ class PermissionApi(object):
 
         Gets a list of all the subject collections, for example groups, users, etc.     **Required permissions:**    - **permission.collection.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_collections_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_collections_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -306,7 +306,7 @@ class PermissionApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -360,7 +360,7 @@ class PermissionApi(object):
             files=local_var_files,
             response_type='list[SubjectCollection]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -371,11 +371,11 @@ class PermissionApi(object):
 
         List all subjects belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_subjects(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_subjects(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -385,7 +385,7 @@ class PermissionApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_subjects_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.list_subjects_with_http_info(id, **kwargs)  # noqa: E501
@@ -396,11 +396,11 @@ class PermissionApi(object):
 
         List all subjects belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_subjects_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_subjects_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -411,7 +411,7 @@ class PermissionApi(object):
         """
 
         all_params = ['id', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -471,7 +471,7 @@ class PermissionApi(object):
             files=local_var_files,
             response_type='list[Subject]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

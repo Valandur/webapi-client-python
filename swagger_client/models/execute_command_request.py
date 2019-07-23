@@ -204,6 +204,9 @@ class ExecuteCommandRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ExecuteCommandRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

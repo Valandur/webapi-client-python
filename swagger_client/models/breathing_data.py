@@ -121,6 +121,9 @@ class BreathingData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(BreathingData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

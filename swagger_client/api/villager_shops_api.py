@@ -38,11 +38,11 @@ class VillagerShopsApi(object):
 
         Add a item to the shops listing     **Required permissions:**    - **vshop.vshop.item.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_shop_item(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_shop_item(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param VillagerShopsStockItem body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -53,7 +53,7 @@ class VillagerShopsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.add_shop_item_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.add_shop_item_with_http_info(id, **kwargs)  # noqa: E501
@@ -64,11 +64,11 @@ class VillagerShopsApi(object):
 
         Add a item to the shops listing     **Required permissions:**    - **vshop.vshop.item.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_shop_item_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_shop_item_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param VillagerShopsStockItem body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -80,7 +80,7 @@ class VillagerShopsApi(object):
         """
 
         all_params = ['id', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -142,7 +142,7 @@ class VillagerShopsApi(object):
             files=local_var_files,
             response_type='VillagerShopsStockItem',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -153,11 +153,11 @@ class VillagerShopsApi(object):
 
         Spawn a new shop with base values; Some values are only set by update     **Required permissions:**    - **vshop.vshop.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_shop(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_shop(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param VillagerShopsShop body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -167,7 +167,7 @@ class VillagerShopsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_shop_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.create_shop_with_http_info(**kwargs)  # noqa: E501
@@ -178,11 +178,11 @@ class VillagerShopsApi(object):
 
         Spawn a new shop with base values; Some values are only set by update     **Required permissions:**    - **vshop.vshop.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_shop_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_shop_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param VillagerShopsShop body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -193,7 +193,7 @@ class VillagerShopsApi(object):
         """
 
         all_params = ['body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -249,7 +249,7 @@ class VillagerShopsApi(object):
             files=local_var_files,
             response_type='VillagerShopsShop',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -260,11 +260,11 @@ class VillagerShopsApi(object):
 
         Permanently delete a shop from the server     **Required permissions:**    - **vshop.vshop.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_shop(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_shop(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -274,7 +274,7 @@ class VillagerShopsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_shop_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_shop_with_http_info(id, **kwargs)  # noqa: E501
@@ -285,11 +285,11 @@ class VillagerShopsApi(object):
 
         Permanently delete a shop from the server     **Required permissions:**    - **vshop.vshop.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_shop_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_shop_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -300,7 +300,7 @@ class VillagerShopsApi(object):
         """
 
         all_params = ['id', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -360,7 +360,7 @@ class VillagerShopsApi(object):
             files=local_var_files,
             response_type='VillagerShopsShop',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -371,11 +371,11 @@ class VillagerShopsApi(object):
 
         Remove an item from this shop     **Required permissions:**    - **vshop.vshop.item.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_shop_item(id, item, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_shop_item(id, item, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param int item: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -386,7 +386,7 @@ class VillagerShopsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_shop_item_with_http_info(id, item, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_shop_item_with_http_info(id, item, **kwargs)  # noqa: E501
@@ -397,11 +397,11 @@ class VillagerShopsApi(object):
 
         Remove an item from this shop     **Required permissions:**    - **vshop.vshop.item.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_shop_item_with_http_info(id, item, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_shop_item_with_http_info(id, item, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param int item: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -413,7 +413,7 @@ class VillagerShopsApi(object):
         """
 
         all_params = ['id', 'item', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -479,7 +479,7 @@ class VillagerShopsApi(object):
             files=local_var_files,
             response_type='VillagerShopsShop',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -490,11 +490,11 @@ class VillagerShopsApi(object):
 
         Get detailed information about a shop     **Required permissions:**    - **vshop.vshop.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_shop(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_shop(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -504,7 +504,7 @@ class VillagerShopsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_shop_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_shop_with_http_info(id, **kwargs)  # noqa: E501
@@ -515,11 +515,11 @@ class VillagerShopsApi(object):
 
         Get detailed information about a shop     **Required permissions:**    - **vshop.vshop.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_shop_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_shop_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -530,7 +530,7 @@ class VillagerShopsApi(object):
         """
 
         all_params = ['id', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -590,7 +590,7 @@ class VillagerShopsApi(object):
             files=local_var_files,
             response_type='VillagerShopsShop',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -601,11 +601,11 @@ class VillagerShopsApi(object):
 
         Get detailed information about a shop item     **Required permissions:**    - **vshop.vshop.item.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_shop_item(id, item, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_shop_item(id, item, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param int item: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -616,7 +616,7 @@ class VillagerShopsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_shop_item_with_http_info(id, item, **kwargs)  # noqa: E501
         else:
             (data) = self.get_shop_item_with_http_info(id, item, **kwargs)  # noqa: E501
@@ -627,11 +627,11 @@ class VillagerShopsApi(object):
 
         Get detailed information about a shop item     **Required permissions:**    - **vshop.vshop.item.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_shop_item_with_http_info(id, item, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_shop_item_with_http_info(id, item, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param int item: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -643,7 +643,7 @@ class VillagerShopsApi(object):
         """
 
         all_params = ['id', 'item', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -709,7 +709,7 @@ class VillagerShopsApi(object):
             files=local_var_files,
             response_type='VillagerShopsStockItem',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -720,11 +720,11 @@ class VillagerShopsApi(object):
 
         Return a list of all shops items     **Required permissions:**    - **vshop.vshop.item.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_shop_items(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_shop_items(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -734,7 +734,7 @@ class VillagerShopsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_shop_items_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.list_shop_items_with_http_info(id, **kwargs)  # noqa: E501
@@ -745,11 +745,11 @@ class VillagerShopsApi(object):
 
         Return a list of all shops items     **Required permissions:**    - **vshop.vshop.item.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_shop_items_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_shop_items_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -760,7 +760,7 @@ class VillagerShopsApi(object):
         """
 
         all_params = ['id', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -820,7 +820,7 @@ class VillagerShopsApi(object):
             files=local_var_files,
             response_type='list[VillagerShopsStockItem]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -831,11 +831,11 @@ class VillagerShopsApi(object):
 
         Return a list of all shops     **Required permissions:**    - **vshop.vshop.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_shops(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_shops(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -844,7 +844,7 @@ class VillagerShopsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_shops_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_shops_with_http_info(**kwargs)  # noqa: E501
@@ -855,11 +855,11 @@ class VillagerShopsApi(object):
 
         Return a list of all shops     **Required permissions:**    - **vshop.vshop.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_shops_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_shops_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -869,7 +869,7 @@ class VillagerShopsApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -923,7 +923,7 @@ class VillagerShopsApi(object):
             files=local_var_files,
             response_type='list[VillagerShopsShop]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -934,11 +934,11 @@ class VillagerShopsApi(object):
 
         Modifies values for this shop, but items     **Required permissions:**    - **vshop.vshop.edit**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_shop(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_shop(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param VillagerShopsShop body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -949,7 +949,7 @@ class VillagerShopsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.update_shop_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.update_shop_with_http_info(id, **kwargs)  # noqa: E501
@@ -960,11 +960,11 @@ class VillagerShopsApi(object):
 
         Modifies values for this shop, but items     **Required permissions:**    - **vshop.vshop.edit**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_shop_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_shop_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param VillagerShopsShop body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -976,7 +976,7 @@ class VillagerShopsApi(object):
         """
 
         all_params = ['id', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1038,7 +1038,7 @@ class VillagerShopsApi(object):
             files=local_var_files,
             response_type='VillagerShopsShop',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1049,11 +1049,11 @@ class VillagerShopsApi(object):
 
         Modifies values for this shop item     **Required permissions:**    - **vshop.vshop.item.edit**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_shop_item(id, item, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_shop_item(id, item, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param int item: (required)
         :param VillagerShopsStockItem body:
@@ -1065,7 +1065,7 @@ class VillagerShopsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.update_shop_item_with_http_info(id, item, **kwargs)  # noqa: E501
         else:
             (data) = self.update_shop_item_with_http_info(id, item, **kwargs)  # noqa: E501
@@ -1076,11 +1076,11 @@ class VillagerShopsApi(object):
 
         Modifies values for this shop item     **Required permissions:**    - **vshop.vshop.item.edit**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_shop_item_with_http_info(id, item, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_shop_item_with_http_info(id, item, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param int item: (required)
         :param VillagerShopsStockItem body:
@@ -1093,7 +1093,7 @@ class VillagerShopsApi(object):
         """
 
         all_params = ['id', 'item', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1161,7 +1161,7 @@ class VillagerShopsApi(object):
             files=local_var_files,
             response_type='VillagerShopsStockItem',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

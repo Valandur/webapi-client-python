@@ -121,6 +121,9 @@ class AgeableData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(AgeableData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

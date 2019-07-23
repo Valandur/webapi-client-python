@@ -5423,6 +5423,9 @@ class Entity(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Entity, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

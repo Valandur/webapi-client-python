@@ -149,6 +149,9 @@ class GuiIdProperty(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GuiIdProperty, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

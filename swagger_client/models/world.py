@@ -5718,6 +5718,9 @@ class World(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(World, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

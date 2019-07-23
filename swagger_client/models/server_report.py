@@ -222,6 +222,9 @@ class ServerReport(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ServerReport, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

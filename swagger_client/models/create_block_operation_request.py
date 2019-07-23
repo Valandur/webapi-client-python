@@ -244,6 +244,9 @@ class CreateBlockOperationRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CreateBlockOperationRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

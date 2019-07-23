@@ -38,11 +38,11 @@ class InteractiveMessageApi(object):
 
         Get detailed information about a message.     **Required permissions:**    - **interactive-message.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_message(uuid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_message(uuid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str uuid: The uuid of the sent message (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -52,7 +52,7 @@ class InteractiveMessageApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_message_with_http_info(uuid, **kwargs)  # noqa: E501
         else:
             (data) = self.get_message_with_http_info(uuid, **kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class InteractiveMessageApi(object):
 
         Get detailed information about a message.     **Required permissions:**    - **interactive-message.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_message_with_http_info(uuid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_message_with_http_info(uuid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str uuid: The uuid of the sent message (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -78,7 +78,7 @@ class InteractiveMessageApi(object):
         """
 
         all_params = ['uuid', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -138,7 +138,7 @@ class InteractiveMessageApi(object):
             files=local_var_files,
             response_type='InteractiveMessage',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -149,11 +149,11 @@ class InteractiveMessageApi(object):
 
         Get a list of all the messages that were sent through the message endpoint since the server started.     **Required permissions:**    - **interactive-message.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_messages(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_messages(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -162,7 +162,7 @@ class InteractiveMessageApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_messages_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_messages_with_http_info(**kwargs)  # noqa: E501
@@ -173,11 +173,11 @@ class InteractiveMessageApi(object):
 
         Get a list of all the messages that were sent through the message endpoint since the server started.     **Required permissions:**    - **interactive-message.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_messages_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_messages_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -187,7 +187,7 @@ class InteractiveMessageApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -241,7 +241,7 @@ class InteractiveMessageApi(object):
             files=local_var_files,
             response_type='list[InteractiveMessage]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -252,11 +252,11 @@ class InteractiveMessageApi(object):
 
         Send an interactive message to a player. Make sure to have an event hook for \"custom_message\" to receive the response.     **Required permissions:**    - **interactive-message.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_message(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.send_message(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param InteractiveMessage body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -266,7 +266,7 @@ class InteractiveMessageApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.send_message_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.send_message_with_http_info(**kwargs)  # noqa: E501
@@ -277,11 +277,11 @@ class InteractiveMessageApi(object):
 
         Send an interactive message to a player. Make sure to have an event hook for \"custom_message\" to receive the response.     **Required permissions:**    - **interactive-message.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_message_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.send_message_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param InteractiveMessage body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -292,7 +292,7 @@ class InteractiveMessageApi(object):
         """
 
         all_params = ['body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -348,7 +348,7 @@ class InteractiveMessageApi(object):
             files=local_var_files,
             response_type='InteractiveMessage',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

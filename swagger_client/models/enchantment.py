@@ -147,6 +147,9 @@ class Enchantment(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Enchantment, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

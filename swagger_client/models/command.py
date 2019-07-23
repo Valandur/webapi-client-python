@@ -237,6 +237,9 @@ class Command(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Command, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

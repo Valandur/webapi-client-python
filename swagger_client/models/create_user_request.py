@@ -121,6 +121,9 @@ class CreateUserRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CreateUserRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -147,6 +147,9 @@ class Identifiable(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Identifiable, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

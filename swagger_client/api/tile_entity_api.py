@@ -38,11 +38,11 @@ class TileEntityApi(object):
 
         Provides direct access to the underlaying tile entity object and can execute any method on it.     **Required permissions:**    - **tile-entity.method**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.execute_method(world, x, y, z, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.execute_method(world, x, y, z, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The world the tile entity is in (required)
         :param int x: The x-coordinate of the tile-entity (required)
         :param int y: The x-coordinate of the tile-entity (required)
@@ -56,7 +56,7 @@ class TileEntityApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.execute_method_with_http_info(world, x, y, z, **kwargs)  # noqa: E501
         else:
             (data) = self.execute_method_with_http_info(world, x, y, z, **kwargs)  # noqa: E501
@@ -67,11 +67,11 @@ class TileEntityApi(object):
 
         Provides direct access to the underlaying tile entity object and can execute any method on it.     **Required permissions:**    - **tile-entity.method**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.execute_method_with_http_info(world, x, y, z, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.execute_method_with_http_info(world, x, y, z, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The world the tile entity is in (required)
         :param int x: The x-coordinate of the tile-entity (required)
         :param int y: The x-coordinate of the tile-entity (required)
@@ -86,7 +86,7 @@ class TileEntityApi(object):
         """
 
         all_params = ['world', 'x', 'y', 'z', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -166,7 +166,7 @@ class TileEntityApi(object):
             files=local_var_files,
             response_type='ExecuteMethodResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -177,11 +177,11 @@ class TileEntityApi(object):
 
         Get detailed information about a tile entity.     **Required permissions:**    - **tile-entity.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_tile_entity(world, x, y, z, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_tile_entity(world, x, y, z, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The world the tile entity is in (required)
         :param int x: The x-coordinate of the tile-entity (required)
         :param int y: The y-coordinate of the tile-entity (required)
@@ -194,7 +194,7 @@ class TileEntityApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_tile_entity_with_http_info(world, x, y, z, **kwargs)  # noqa: E501
         else:
             (data) = self.get_tile_entity_with_http_info(world, x, y, z, **kwargs)  # noqa: E501
@@ -205,11 +205,11 @@ class TileEntityApi(object):
 
         Get detailed information about a tile entity.     **Required permissions:**    - **tile-entity.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_tile_entity_with_http_info(world, x, y, z, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_tile_entity_with_http_info(world, x, y, z, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The world the tile entity is in (required)
         :param int x: The x-coordinate of the tile-entity (required)
         :param int y: The y-coordinate of the tile-entity (required)
@@ -223,7 +223,7 @@ class TileEntityApi(object):
         """
 
         all_params = ['world', 'x', 'y', 'z', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -301,7 +301,7 @@ class TileEntityApi(object):
             files=local_var_files,
             response_type='TileEntity',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -312,11 +312,11 @@ class TileEntityApi(object):
 
         Get a list of all tile entities on the server (in all worlds, unless specified).     **Required permissions:**    - **tile-entity.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_tile_entities(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_tile_entities(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The world to filter tile entities by
         :param str type: The type if of tile entities to filter by
         :param str min: The minimum coordinates at which the tile entity must be, min=x|y|z
@@ -330,7 +330,7 @@ class TileEntityApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_tile_entities_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_tile_entities_with_http_info(**kwargs)  # noqa: E501
@@ -341,11 +341,11 @@ class TileEntityApi(object):
 
         Get a list of all tile entities on the server (in all worlds, unless specified).     **Required permissions:**    - **tile-entity.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_tile_entities_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_tile_entities_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The world to filter tile entities by
         :param str type: The type if of tile entities to filter by
         :param str min: The minimum coordinates at which the tile entity must be, min=x|y|z
@@ -360,7 +360,7 @@ class TileEntityApi(object):
         """
 
         all_params = ['world', 'type', 'min', 'max', 'limit', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -424,7 +424,7 @@ class TileEntityApi(object):
             files=local_var_files,
             response_type='list[TileEntity]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -435,11 +435,11 @@ class TileEntityApi(object):
 
         Modify the properties of an existing tile entity.     **Required permissions:**    - **tile-entity.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_tile_entity(world, x, y, z, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_tile_entity(world, x, y, z, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The world the tile entity is in (required)
         :param int x: The x-coordinate of the tile-entity (required)
         :param int y: The y-coordinate of the tile-entity (required)
@@ -453,7 +453,7 @@ class TileEntityApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.modify_tile_entity_with_http_info(world, x, y, z, **kwargs)  # noqa: E501
         else:
             (data) = self.modify_tile_entity_with_http_info(world, x, y, z, **kwargs)  # noqa: E501
@@ -464,11 +464,11 @@ class TileEntityApi(object):
 
         Modify the properties of an existing tile entity.     **Required permissions:**    - **tile-entity.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_tile_entity_with_http_info(world, x, y, z, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_tile_entity_with_http_info(world, x, y, z, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The world the tile entity is in (required)
         :param int x: The x-coordinate of the tile-entity (required)
         :param int y: The y-coordinate of the tile-entity (required)
@@ -483,7 +483,7 @@ class TileEntityApi(object):
         """
 
         all_params = ['world', 'x', 'y', 'z', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -563,7 +563,7 @@ class TileEntityApi(object):
             files=local_var_files,
             response_type='TileEntity',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

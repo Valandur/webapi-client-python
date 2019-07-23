@@ -38,11 +38,11 @@ class MegaMenusApi(object):
 
         Adds an element to the menu     **Required permissions:**    - **megamenus.megamenus.menu.edit**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_element(mid, page, y, x, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_element(mid, page, y, x, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param int page: (required)
         :param int y: (required)
@@ -56,7 +56,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.add_element_with_http_info(mid, page, y, x, **kwargs)  # noqa: E501
         else:
             (data) = self.add_element_with_http_info(mid, page, y, x, **kwargs)  # noqa: E501
@@ -67,11 +67,11 @@ class MegaMenusApi(object):
 
         Adds an element to the menu     **Required permissions:**    - **megamenus.megamenus.menu.edit**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_element_with_http_info(mid, page, y, x, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_element_with_http_info(mid, page, y, x, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param int page: (required)
         :param int y: (required)
@@ -86,7 +86,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'page', 'y', 'x', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -166,7 +166,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MegaMenusElement',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -177,11 +177,11 @@ class MegaMenusApi(object):
 
         Close the renderer for this viewer     **Required permissions:**    - **megamenus.megamenus.renderer.close**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.close_renderer(mid, viewer, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.close_renderer(mid, viewer, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param str viewer: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -192,7 +192,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.close_renderer_with_http_info(mid, viewer, **kwargs)  # noqa: E501
         else:
             (data) = self.close_renderer_with_http_info(mid, viewer, **kwargs)  # noqa: E501
@@ -203,11 +203,11 @@ class MegaMenusApi(object):
 
         Close the renderer for this viewer     **Required permissions:**    - **megamenus.megamenus.renderer.close**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.close_renderer_with_http_info(mid, viewer, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.close_renderer_with_http_info(mid, viewer, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param str viewer: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -219,7 +219,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'viewer', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -285,7 +285,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MegaMenusRenderer',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -296,11 +296,11 @@ class MegaMenusApi(object):
 
         Creates a new menu     **Required permissions:**    - **megamenus.megamenus.menu.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_menu(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_menu(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param MenuMenusMenu body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -310,7 +310,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_menu_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.create_menu_with_http_info(**kwargs)  # noqa: E501
@@ -321,11 +321,11 @@ class MegaMenusApi(object):
 
         Creates a new menu     **Required permissions:**    - **megamenus.megamenus.menu.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_menu_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_menu_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param MenuMenusMenu body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -336,7 +336,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -392,7 +392,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MenuMenusMenu',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -403,11 +403,11 @@ class MegaMenusApi(object):
 
         Creates a new menu     **Required permissions:**    - **megamenus.megamenus.renderer.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_renderer(mid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_renderer(mid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param MegaMenusRenderer body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -418,7 +418,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_renderer_with_http_info(mid, **kwargs)  # noqa: E501
         else:
             (data) = self.create_renderer_with_http_info(mid, **kwargs)  # noqa: E501
@@ -429,11 +429,11 @@ class MegaMenusApi(object):
 
         Creates a new menu     **Required permissions:**    - **megamenus.megamenus.renderer.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_renderer_with_http_info(mid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_renderer_with_http_info(mid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param MegaMenusRenderer body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -445,7 +445,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -507,7 +507,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MegaMenusRenderer',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -518,11 +518,11 @@ class MegaMenusApi(object):
 
         Deletes a menu element     **Required permissions:**    - **megamenus.megamenus.menu.edit**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_element(mid, page, x, y, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_element(mid, page, x, y, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param int page: (required)
         :param int x: (required)
@@ -535,7 +535,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_element_with_http_info(mid, page, x, y, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_element_with_http_info(mid, page, x, y, **kwargs)  # noqa: E501
@@ -546,11 +546,11 @@ class MegaMenusApi(object):
 
         Deletes a menu element     **Required permissions:**    - **megamenus.megamenus.menu.edit**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_element_with_http_info(mid, page, x, y, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_element_with_http_info(mid, page, x, y, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param int page: (required)
         :param int x: (required)
@@ -564,7 +564,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'page', 'x', 'y', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -642,7 +642,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MegaMenusElement',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -653,11 +653,11 @@ class MegaMenusApi(object):
 
         Deletes a menu     **Required permissions:**    - **megamenus.megamenus.menu.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_menu(mid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_menu(mid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -667,7 +667,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_menu_with_http_info(mid, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_menu_with_http_info(mid, **kwargs)  # noqa: E501
@@ -678,11 +678,11 @@ class MegaMenusApi(object):
 
         Deletes a menu     **Required permissions:**    - **megamenus.megamenus.menu.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_menu_with_http_info(mid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_menu_with_http_info(mid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -693,7 +693,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -753,7 +753,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MenuMenusMenu',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -764,11 +764,11 @@ class MegaMenusApi(object):
 
              **Required permissions:**    - **megamenus.megamenus.menu.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_page(mid, page, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_page(mid, page, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param int page: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -779,7 +779,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_page_with_http_info(mid, page, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_page_with_http_info(mid, page, **kwargs)  # noqa: E501
@@ -790,11 +790,11 @@ class MegaMenusApi(object):
 
              **Required permissions:**    - **megamenus.megamenus.menu.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_page_with_http_info(mid, page, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_page_with_http_info(mid, page, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param int page: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -806,7 +806,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'page', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -872,7 +872,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MenuMenusMenu',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -883,11 +883,11 @@ class MegaMenusApi(object):
 
         Closes this renderer for all currently active viewers     **Required permissions:**    - **megamenus.megamenus.renderer.close**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_renderer(mid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_renderer(mid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -897,7 +897,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_renderer_with_http_info(mid, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_renderer_with_http_info(mid, **kwargs)  # noqa: E501
@@ -908,11 +908,11 @@ class MegaMenusApi(object):
 
         Closes this renderer for all currently active viewers     **Required permissions:**    - **megamenus.megamenus.renderer.close**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_renderer_with_http_info(mid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_renderer_with_http_info(mid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -923,7 +923,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -983,7 +983,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MegaMenusRenderer',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -994,11 +994,11 @@ class MegaMenusApi(object):
 
         Returns the renderer the viewer is currently subject to     **Required permissions:**    - **megamenus.megamenus.renderer.get**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.find_renderer(viewer, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.find_renderer(viewer, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str viewer: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -1008,7 +1008,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.find_renderer_with_http_info(viewer, **kwargs)  # noqa: E501
         else:
             (data) = self.find_renderer_with_http_info(viewer, **kwargs)  # noqa: E501
@@ -1019,11 +1019,11 @@ class MegaMenusApi(object):
 
         Returns the renderer the viewer is currently subject to     **Required permissions:**    - **megamenus.megamenus.renderer.get**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.find_renderer_with_http_info(viewer, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.find_renderer_with_http_info(viewer, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str viewer: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -1034,7 +1034,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['viewer', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1094,7 +1094,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MegaMenusRenderer',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1105,11 +1105,11 @@ class MegaMenusApi(object):
 
         Read a menu with all elements     **Required permissions:**    - **megamenus.megamenus.menu.edit**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_element(mid, page, x, y, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_element(mid, page, x, y, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param int page: (required)
         :param int x: (required)
@@ -1122,7 +1122,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_element_with_http_info(mid, page, x, y, **kwargs)  # noqa: E501
         else:
             (data) = self.get_element_with_http_info(mid, page, x, y, **kwargs)  # noqa: E501
@@ -1133,11 +1133,11 @@ class MegaMenusApi(object):
 
         Read a menu with all elements     **Required permissions:**    - **megamenus.megamenus.menu.edit**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_element_with_http_info(mid, page, x, y, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_element_with_http_info(mid, page, x, y, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param int page: (required)
         :param int x: (required)
@@ -1151,7 +1151,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'page', 'x', 'y', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1229,7 +1229,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MegaMenusElement',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1240,11 +1240,11 @@ class MegaMenusApi(object):
 
         Read a menu with all elements     **Required permissions:**    - **megamenus.megamenus.menu.get**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_menu(mid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_menu(mid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -1254,7 +1254,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_menu_with_http_info(mid, **kwargs)  # noqa: E501
         else:
             (data) = self.get_menu_with_http_info(mid, **kwargs)  # noqa: E501
@@ -1265,11 +1265,11 @@ class MegaMenusApi(object):
 
         Read a menu with all elements     **Required permissions:**    - **megamenus.megamenus.menu.get**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_menu_with_http_info(mid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_menu_with_http_info(mid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -1280,7 +1280,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1340,7 +1340,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MenuMenusMenu',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1351,11 +1351,11 @@ class MegaMenusApi(object):
 
              **Required permissions:**    - **megamenus.megamenus.menu.get**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_page(mid, page, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_page(mid, page, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param int page: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -1366,7 +1366,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_page_with_http_info(mid, page, **kwargs)  # noqa: E501
         else:
             (data) = self.get_page_with_http_info(mid, page, **kwargs)  # noqa: E501
@@ -1377,11 +1377,11 @@ class MegaMenusApi(object):
 
              **Required permissions:**    - **megamenus.megamenus.menu.get**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_page_with_http_info(mid, page, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_page_with_http_info(mid, page, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param int page: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -1393,7 +1393,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'page', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1459,7 +1459,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='list[MegaMenusElement]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1470,11 +1470,11 @@ class MegaMenusApi(object):
 
              **Required permissions:**    - **megamenus.megamenus.renderer.get**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_renderer(mid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_renderer(mid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -1484,7 +1484,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_renderer_with_http_info(mid, **kwargs)  # noqa: E501
         else:
             (data) = self.get_renderer_with_http_info(mid, **kwargs)  # noqa: E501
@@ -1495,11 +1495,11 @@ class MegaMenusApi(object):
 
              **Required permissions:**    - **megamenus.megamenus.renderer.get**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_renderer_with_http_info(mid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_renderer_with_http_info(mid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -1510,7 +1510,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1570,7 +1570,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MegaMenusRenderer',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1581,11 +1581,11 @@ class MegaMenusApi(object):
 
         Returns a list of all menus     **Required permissions:**    - **megamenus.megamenus.menu.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_menus(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_menus(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -1594,7 +1594,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_menus_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_menus_with_http_info(**kwargs)  # noqa: E501
@@ -1605,11 +1605,11 @@ class MegaMenusApi(object):
 
         Returns a list of all menus     **Required permissions:**    - **megamenus.megamenus.menu.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_menus_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_menus_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -1619,7 +1619,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1673,7 +1673,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='list[MenuMenusMenu]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1684,11 +1684,11 @@ class MegaMenusApi(object):
 
         Returns a list of all renderer for menus created with WebAPI     **Required permissions:**    - **megamenus.megamenus.renderer.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_renderer(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_renderer(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -1697,7 +1697,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_renderer_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_renderer_with_http_info(**kwargs)  # noqa: E501
@@ -1708,11 +1708,11 @@ class MegaMenusApi(object):
 
         Returns a list of all renderer for menus created with WebAPI     **Required permissions:**    - **megamenus.megamenus.renderer.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_renderer_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_renderer_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -1722,7 +1722,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1776,7 +1776,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='list[MegaMenusRenderer]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1787,11 +1787,11 @@ class MegaMenusApi(object):
 
         Opens the renderer to viewer, effectively opening the menu     **Required permissions:**    - **megamenus.megamenus.renderer.open**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.open_renderer(mid, viewer, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.open_renderer(mid, viewer, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param str viewer: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -1802,7 +1802,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.open_renderer_with_http_info(mid, viewer, **kwargs)  # noqa: E501
         else:
             (data) = self.open_renderer_with_http_info(mid, viewer, **kwargs)  # noqa: E501
@@ -1813,11 +1813,11 @@ class MegaMenusApi(object):
 
         Opens the renderer to viewer, effectively opening the menu     **Required permissions:**    - **megamenus.megamenus.renderer.open**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.open_renderer_with_http_info(mid, viewer, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.open_renderer_with_http_info(mid, viewer, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param str viewer: (required)
         :param bool details: Add to include additional details, omit or false otherwise
@@ -1829,7 +1829,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'viewer', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1895,7 +1895,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MegaMenusRenderer',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1906,11 +1906,11 @@ class MegaMenusApi(object):
 
         Update a menu element     **Required permissions:**    - **megamenus.megamenus.menu.edit**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_element(mid, page, x, y, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_element(mid, page, x, y, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param int page: (required)
         :param int x: (required)
@@ -1924,7 +1924,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.set_element_with_http_info(mid, page, x, y, **kwargs)  # noqa: E501
         else:
             (data) = self.set_element_with_http_info(mid, page, x, y, **kwargs)  # noqa: E501
@@ -1935,11 +1935,11 @@ class MegaMenusApi(object):
 
         Update a menu element     **Required permissions:**    - **megamenus.megamenus.menu.edit**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_element_with_http_info(mid, page, x, y, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_element_with_http_info(mid, page, x, y, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param int page: (required)
         :param int x: (required)
@@ -1954,7 +1954,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'page', 'x', 'y', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2034,7 +2034,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MegaMenusElement',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -2045,11 +2045,11 @@ class MegaMenusApi(object):
 
         This will only update the title, elements have to be addressed through the respective endpoints     **Required permissions:**    - **megamenus.megamenus.menu.update**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_menu(mid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_menu(mid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param MenuMenusMenu body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -2060,7 +2060,7 @@ class MegaMenusApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.set_menu_with_http_info(mid, **kwargs)  # noqa: E501
         else:
             (data) = self.set_menu_with_http_info(mid, **kwargs)  # noqa: E501
@@ -2071,11 +2071,11 @@ class MegaMenusApi(object):
 
         This will only update the title, elements have to be addressed through the respective endpoints     **Required permissions:**    - **megamenus.megamenus.menu.update**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.set_menu_with_http_info(mid, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.set_menu_with_http_info(mid, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str mid: (required)
         :param MenuMenusMenu body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -2087,7 +2087,7 @@ class MegaMenusApi(object):
         """
 
         all_params = ['mid', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -2149,7 +2149,7 @@ class MegaMenusApi(object):
             files=local_var_files,
             response_type='MenuMenusMenu',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

@@ -119,6 +119,9 @@ class TimeHolder(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(TimeHolder, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

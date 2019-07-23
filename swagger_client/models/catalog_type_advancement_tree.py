@@ -121,6 +121,9 @@ class CatalogTypeAdvancementTree(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CatalogTypeAdvancementTree, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

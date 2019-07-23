@@ -219,6 +219,9 @@ class Currency(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Currency, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

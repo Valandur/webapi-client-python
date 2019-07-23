@@ -240,6 +240,9 @@ class UniversalMarketItem(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(UniversalMarketItem, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

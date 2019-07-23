@@ -38,11 +38,11 @@ class PlayerApi(object):
 
         Provides direct access to the underlying player object and can execute any method on it.     **Required permissions:**    - **player.method**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.execute_method(player, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.execute_method(player, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str player: The uuid of the player (required)
         :param ExecuteMethodRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -53,7 +53,7 @@ class PlayerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.execute_method_with_http_info(player, **kwargs)  # noqa: E501
         else:
             (data) = self.execute_method_with_http_info(player, **kwargs)  # noqa: E501
@@ -64,11 +64,11 @@ class PlayerApi(object):
 
         Provides direct access to the underlying player object and can execute any method on it.     **Required permissions:**    - **player.method**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.execute_method_with_http_info(player, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.execute_method_with_http_info(player, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str player: The uuid of the player (required)
         :param ExecuteMethodRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -80,7 +80,7 @@ class PlayerApi(object):
         """
 
         all_params = ['player', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -142,7 +142,7 @@ class PlayerApi(object):
             files=local_var_files,
             response_type='ExecuteMethodResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -153,11 +153,11 @@ class PlayerApi(object):
 
         Get detailed information about a player.     **Required permissions:**    - **player.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_player(player, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_player(player, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str player: The uuid of the player (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -167,7 +167,7 @@ class PlayerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_player_with_http_info(player, **kwargs)  # noqa: E501
         else:
             (data) = self.get_player_with_http_info(player, **kwargs)  # noqa: E501
@@ -178,11 +178,11 @@ class PlayerApi(object):
 
         Get detailed information about a player.     **Required permissions:**    - **player.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_player_with_http_info(player, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_player_with_http_info(player, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str player: The uuid of the player (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -193,7 +193,7 @@ class PlayerApi(object):
         """
 
         all_params = ['player', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -253,7 +253,7 @@ class PlayerApi(object):
             files=local_var_files,
             response_type='Player',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -264,11 +264,11 @@ class PlayerApi(object):
 
         Get a list of all the players on the server.     **Required permissions:**    - **player.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_players(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_players(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -277,7 +277,7 @@ class PlayerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_players_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_players_with_http_info(**kwargs)  # noqa: E501
@@ -288,11 +288,11 @@ class PlayerApi(object):
 
         Get a list of all the players on the server.     **Required permissions:**    - **player.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_players_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_players_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -302,7 +302,7 @@ class PlayerApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -356,7 +356,7 @@ class PlayerApi(object):
             files=local_var_files,
             response_type='list[Player]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -367,11 +367,11 @@ class PlayerApi(object):
 
         Modify the properties of an existing player.     **Required permissions:**    - **player.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_player(player, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_player(player, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str player: The uuid of the player (required)
         :param UpdatePlayerRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -382,7 +382,7 @@ class PlayerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.modify_player_with_http_info(player, **kwargs)  # noqa: E501
         else:
             (data) = self.modify_player_with_http_info(player, **kwargs)  # noqa: E501
@@ -393,11 +393,11 @@ class PlayerApi(object):
 
         Modify the properties of an existing player.     **Required permissions:**    - **player.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_player_with_http_info(player, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_player_with_http_info(player, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str player: The uuid of the player (required)
         :param UpdatePlayerRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -409,7 +409,7 @@ class PlayerApi(object):
         """
 
         all_params = ['player', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -471,7 +471,7 @@ class PlayerApi(object):
             files=local_var_files,
             response_type='Player',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

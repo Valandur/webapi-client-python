@@ -185,6 +185,9 @@ class PluginDependency(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(PluginDependency, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

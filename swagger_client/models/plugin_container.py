@@ -392,6 +392,9 @@ class PluginContainer(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(PluginContainer, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

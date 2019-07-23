@@ -167,6 +167,9 @@ class Vector2i(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Vector2i, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

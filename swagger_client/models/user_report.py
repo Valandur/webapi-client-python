@@ -274,6 +274,9 @@ class UserReport(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(UserReport, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

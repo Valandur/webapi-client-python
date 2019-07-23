@@ -38,11 +38,11 @@ class RedProtectApi(object):
 
         Create a new region at a specified location     **Required permissions:**    - **red-protect.region.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_region(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_region(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param RedProtectRegion body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -52,7 +52,7 @@ class RedProtectApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_region_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.create_region_with_http_info(**kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class RedProtectApi(object):
 
         Create a new region at a specified location     **Required permissions:**    - **red-protect.region.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_region_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_region_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param RedProtectRegion body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -78,7 +78,7 @@ class RedProtectApi(object):
         """
 
         all_params = ['body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -134,7 +134,7 @@ class RedProtectApi(object):
             files=local_var_files,
             response_type='RedProtectRegion',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -145,11 +145,11 @@ class RedProtectApi(object):
 
         Remove the specified protected region     **Required permissions:**    - **red-protect.region.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_region(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_region(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -159,7 +159,7 @@ class RedProtectApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_region_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_region_with_http_info(id, **kwargs)  # noqa: E501
@@ -170,11 +170,11 @@ class RedProtectApi(object):
 
         Remove the specified protected region     **Required permissions:**    - **red-protect.region.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_region_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_region_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -185,7 +185,7 @@ class RedProtectApi(object):
         """
 
         all_params = ['id', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -245,7 +245,7 @@ class RedProtectApi(object):
             files=local_var_files,
             response_type='RedProtectRegion',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -256,11 +256,11 @@ class RedProtectApi(object):
 
         Get details for a specific protected region     **Required permissions:**    - **red-protect.region.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_region(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_region(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -270,7 +270,7 @@ class RedProtectApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_region_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_region_with_http_info(id, **kwargs)  # noqa: E501
@@ -281,11 +281,11 @@ class RedProtectApi(object):
 
         Get details for a specific protected region     **Required permissions:**    - **red-protect.region.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_region_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_region_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -296,7 +296,7 @@ class RedProtectApi(object):
         """
 
         all_params = ['id', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -356,7 +356,7 @@ class RedProtectApi(object):
             files=local_var_files,
             response_type='RedProtectRegion',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -367,11 +367,11 @@ class RedProtectApi(object):
 
         Lists all the regions being protected     **Required permissions:**    - **red-protect.region.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_regions(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_regions(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -381,7 +381,7 @@ class RedProtectApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_regions_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_regions_with_http_info(**kwargs)  # noqa: E501
@@ -392,11 +392,11 @@ class RedProtectApi(object):
 
         Lists all the regions being protected     **Required permissions:**    - **red-protect.region.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_regions_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_regions_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -407,7 +407,7 @@ class RedProtectApi(object):
         """
 
         all_params = ['world', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -463,7 +463,7 @@ class RedProtectApi(object):
             files=local_var_files,
             response_type='list[RedProtectRegion]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -474,11 +474,11 @@ class RedProtectApi(object):
 
         Update the details for a specific protected region     **Required permissions:**    - **red-protect.region.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_region(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_region(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param RedProtectRegion body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -489,7 +489,7 @@ class RedProtectApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.modify_region_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.modify_region_with_http_info(id, **kwargs)  # noqa: E501
@@ -500,11 +500,11 @@ class RedProtectApi(object):
 
         Update the details for a specific protected region     **Required permissions:**    - **red-protect.region.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_region_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_region_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param RedProtectRegion body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -516,7 +516,7 @@ class RedProtectApi(object):
         """
 
         all_params = ['id', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -578,7 +578,7 @@ class RedProtectApi(object):
             files=local_var_files,
             response_type='RedProtectRegion',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

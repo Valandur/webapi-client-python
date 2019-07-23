@@ -208,6 +208,9 @@ class WebBooksBook(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(WebBooksBook, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

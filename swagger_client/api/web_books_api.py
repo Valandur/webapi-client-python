@@ -38,11 +38,11 @@ class WebBooksApi(object):
 
         Create a new web book from the specified data.     **Required permissions:**    - **web-books.book.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_web_book(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_web_book(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param WebBooksBook body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -52,7 +52,7 @@ class WebBooksApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_web_book_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.create_web_book_with_http_info(**kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class WebBooksApi(object):
 
         Create a new web book from the specified data.     **Required permissions:**    - **web-books.book.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_web_book_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_web_book_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param WebBooksBook body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -78,7 +78,7 @@ class WebBooksApi(object):
         """
 
         all_params = ['body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -134,7 +134,7 @@ class WebBooksApi(object):
             files=local_var_files,
             response_type='WebBooksBook',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -145,11 +145,11 @@ class WebBooksApi(object):
 
         Delete a web book.     **Required permissions:**    - **web-books.book.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_web_book(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_web_book(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -159,7 +159,7 @@ class WebBooksApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.delete_web_book_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.delete_web_book_with_http_info(id, **kwargs)  # noqa: E501
@@ -170,11 +170,11 @@ class WebBooksApi(object):
 
         Delete a web book.     **Required permissions:**    - **web-books.book.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_web_book_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_web_book_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -185,7 +185,7 @@ class WebBooksApi(object):
         """
 
         all_params = ['id', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -245,7 +245,7 @@ class WebBooksApi(object):
             files=local_var_files,
             response_type='WebBooksBook',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -256,11 +256,11 @@ class WebBooksApi(object):
 
         Get detailed information about a web book.     **Required permissions:**    - **web-books.book.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_web_book(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_web_book(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -270,7 +270,7 @@ class WebBooksApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_web_book_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_web_book_with_http_info(id, **kwargs)  # noqa: E501
@@ -281,11 +281,11 @@ class WebBooksApi(object):
 
         Get detailed information about a web book.     **Required permissions:**    - **web-books.book.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_web_book_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_web_book_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -296,7 +296,7 @@ class WebBooksApi(object):
         """
 
         all_params = ['id', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -356,7 +356,7 @@ class WebBooksApi(object):
             files=local_var_files,
             response_type='WebBooksBook',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -367,11 +367,11 @@ class WebBooksApi(object):
 
         Get the web book content as HTML.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_web_book_content(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_web_book_content(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -381,7 +381,7 @@ class WebBooksApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_web_book_content_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_web_book_content_with_http_info(id, **kwargs)  # noqa: E501
@@ -392,11 +392,11 @@ class WebBooksApi(object):
 
         Get the web book content as HTML.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_web_book_content_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_web_book_content_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -407,7 +407,7 @@ class WebBooksApi(object):
         """
 
         all_params = ['id', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -467,7 +467,7 @@ class WebBooksApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -478,11 +478,11 @@ class WebBooksApi(object):
 
         Get the web book content as HTML.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_web_book_content_post(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_web_book_content_post(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -492,7 +492,7 @@ class WebBooksApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_web_book_content_post_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.get_web_book_content_post_with_http_info(id, **kwargs)  # noqa: E501
@@ -503,11 +503,11 @@ class WebBooksApi(object):
 
         Get the web book content as HTML.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_web_book_content_post_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_web_book_content_post_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -518,7 +518,7 @@ class WebBooksApi(object):
         """
 
         all_params = ['id', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -578,7 +578,7 @@ class WebBooksApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -589,11 +589,11 @@ class WebBooksApi(object):
 
         Get a list of all the web books on the server.     **Required permissions:**    - **web-books.book.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_web_books(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_web_books(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -602,7 +602,7 @@ class WebBooksApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_web_books_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_web_books_with_http_info(**kwargs)  # noqa: E501
@@ -613,11 +613,11 @@ class WebBooksApi(object):
 
         Get a list of all the web books on the server.     **Required permissions:**    - **web-books.book.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_web_books_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_web_books_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -627,7 +627,7 @@ class WebBooksApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -681,7 +681,7 @@ class WebBooksApi(object):
             files=local_var_files,
             response_type='list[WebBooksBook]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -692,11 +692,11 @@ class WebBooksApi(object):
 
         Modify an existing book.     **Required permissions:**    - **web-books.book.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_web_book(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_web_book(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param WebBooksBook body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -707,7 +707,7 @@ class WebBooksApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.modify_web_book_with_http_info(id, **kwargs)  # noqa: E501
         else:
             (data) = self.modify_web_book_with_http_info(id, **kwargs)  # noqa: E501
@@ -718,11 +718,11 @@ class WebBooksApi(object):
 
         Modify an existing book.     **Required permissions:**    - **web-books.book.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_web_book_with_http_info(id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_web_book_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param WebBooksBook body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -734,7 +734,7 @@ class WebBooksApi(object):
         """
 
         all_params = ['id', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -796,7 +796,7 @@ class WebBooksApi(object):
             files=local_var_files,
             response_type='WebBooksBook',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

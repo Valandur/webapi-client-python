@@ -150,6 +150,9 @@ class Vector3i(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Vector3i, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

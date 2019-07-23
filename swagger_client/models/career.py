@@ -152,6 +152,9 @@ class Career(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Career, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

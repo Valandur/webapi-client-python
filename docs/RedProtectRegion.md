@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **world** | [**World**](World.md) | The world this region is located in | 
 **admins** | [**list[Player]**](Player.md) | A list of players that are admins of this region | [optional] 
 **can_delete** | **bool** | True if this region can be deleted, false otherwise | [optional] 
-**date** | **str** | The date this region was created? | [optional] 
+**_date** | **str** | The date this region was created? | [optional] 
 **flags** | **dict(str, object)** | A map of flags applicable to this region | [optional] 
 **leaders** | [**list[Player]**](Player.md) | A list of players that are leaders of this region | [optional] 
 **members** | [**list[Player]**](Player.md) | A list of players that are members of this region | [optional] 

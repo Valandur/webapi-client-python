@@ -92,6 +92,9 @@ class FireworkRocketData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(FireworkRocketData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

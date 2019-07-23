@@ -38,11 +38,11 @@ class PluginApi(object):
 
         Allows changing the config files of plugin. Send a map from config filename to file contents. **This does not reload the plugin**, you can do that with `sponge plugins reload`, but not all plugins implement the reload event.     **Required permissions:**    - **plugin.config.modify**   - **plugin.config.modify.[plugin]**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.change_plugin_config(plugin, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.change_plugin_config(plugin, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str plugin: The id of the plugin (required)
         :param object body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -53,7 +53,7 @@ class PluginApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.change_plugin_config_with_http_info(plugin, **kwargs)  # noqa: E501
         else:
             (data) = self.change_plugin_config_with_http_info(plugin, **kwargs)  # noqa: E501
@@ -64,11 +64,11 @@ class PluginApi(object):
 
         Allows changing the config files of plugin. Send a map from config filename to file contents. **This does not reload the plugin**, you can do that with `sponge plugins reload`, but not all plugins implement the reload event.     **Required permissions:**    - **plugin.config.modify**   - **plugin.config.modify.[plugin]**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.change_plugin_config_with_http_info(plugin, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.change_plugin_config_with_http_info(plugin, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str plugin: The id of the plugin (required)
         :param object body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -80,7 +80,7 @@ class PluginApi(object):
         """
 
         all_params = ['plugin', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -142,7 +142,7 @@ class PluginApi(object):
             files=local_var_files,
             response_type='dict(str, object)',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -153,11 +153,11 @@ class PluginApi(object):
 
         Gets detailed information about a plugin.     **Required permissions:**    - **plugin.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_plugin(plugin, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_plugin(plugin, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str plugin: The id of the plugin (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -167,7 +167,7 @@ class PluginApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_plugin_with_http_info(plugin, **kwargs)  # noqa: E501
         else:
             (data) = self.get_plugin_with_http_info(plugin, **kwargs)  # noqa: E501
@@ -178,11 +178,11 @@ class PluginApi(object):
 
         Gets detailed information about a plugin.     **Required permissions:**    - **plugin.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_plugin_with_http_info(plugin, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_plugin_with_http_info(plugin, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str plugin: The id of the plugin (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -193,7 +193,7 @@ class PluginApi(object):
         """
 
         all_params = ['plugin', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -253,7 +253,7 @@ class PluginApi(object):
             files=local_var_files,
             response_type='PluginContainer',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -264,11 +264,11 @@ class PluginApi(object):
 
         Gets a map containing the plugin config file names as keys, and their config file contents as their values.     **Required permissions:**    - **plugin.config.get**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_plugin_config(plugin, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_plugin_config(plugin, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str plugin: The id of the plugin (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -278,7 +278,7 @@ class PluginApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_plugin_config_with_http_info(plugin, **kwargs)  # noqa: E501
         else:
             (data) = self.get_plugin_config_with_http_info(plugin, **kwargs)  # noqa: E501
@@ -289,11 +289,11 @@ class PluginApi(object):
 
         Gets a map containing the plugin config file names as keys, and their config file contents as their values.     **Required permissions:**    - **plugin.config.get**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_plugin_config_with_http_info(plugin, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_plugin_config_with_http_info(plugin, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str plugin: The id of the plugin (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -304,7 +304,7 @@ class PluginApi(object):
         """
 
         all_params = ['plugin', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -364,7 +364,7 @@ class PluginApi(object):
             files=local_var_files,
             response_type='dict(str, object)',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -375,11 +375,11 @@ class PluginApi(object):
 
         Get a list of all the plugins running on the server.     **Required permissions:**    - **plugin.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_plugins(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_plugins(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -388,7 +388,7 @@ class PluginApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_plugins_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_plugins_with_http_info(**kwargs)  # noqa: E501
@@ -399,11 +399,11 @@ class PluginApi(object):
 
         Get a list of all the plugins running on the server.     **Required permissions:**    - **plugin.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_plugins_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_plugins_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -413,7 +413,7 @@ class PluginApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -467,7 +467,7 @@ class PluginApi(object):
             files=local_var_files,
             response_type='list[PluginContainer]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -478,11 +478,11 @@ class PluginApi(object):
 
         Allows enabling/disabling a plugin/mod. Requires a server restart.     **Required permissions:**    - **plugin.toggle**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.toggle_plugin(plugin, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.toggle_plugin(plugin, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str plugin: The id of the plugin (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -492,7 +492,7 @@ class PluginApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.toggle_plugin_with_http_info(plugin, **kwargs)  # noqa: E501
         else:
             (data) = self.toggle_plugin_with_http_info(plugin, **kwargs)  # noqa: E501
@@ -503,11 +503,11 @@ class PluginApi(object):
 
         Allows enabling/disabling a plugin/mod. Requires a server restart.     **Required permissions:**    - **plugin.toggle**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.toggle_plugin_with_http_info(plugin, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.toggle_plugin_with_http_info(plugin, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str plugin: The id of the plugin (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -518,7 +518,7 @@ class PluginApi(object):
         """
 
         all_params = ['plugin', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -578,7 +578,7 @@ class PluginApi(object):
             files=local_var_files,
             response_type='PluginContainer',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

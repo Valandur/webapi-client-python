@@ -121,6 +121,9 @@ class DamageableData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(DamageableData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

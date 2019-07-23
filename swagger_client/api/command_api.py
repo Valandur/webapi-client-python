@@ -38,11 +38,11 @@ class CommandApi(object):
 
         Get detailed information about a command.     **Required permissions:**    - **cmd.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_command(cmd, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_command(cmd, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str cmd: The id of the command (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -52,7 +52,7 @@ class CommandApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_command_with_http_info(cmd, **kwargs)  # noqa: E501
         else:
             (data) = self.get_command_with_http_info(cmd, **kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class CommandApi(object):
 
         Get detailed information about a command.     **Required permissions:**    - **cmd.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_command_with_http_info(cmd, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_command_with_http_info(cmd, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str cmd: The id of the command (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -78,7 +78,7 @@ class CommandApi(object):
         """
 
         all_params = ['cmd', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -138,7 +138,7 @@ class CommandApi(object):
             files=local_var_files,
             response_type='Command',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -149,11 +149,11 @@ class CommandApi(object):
 
         Gets a list of all the commands available on the server.     **Required permissions:**    - **cmd.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_commands(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_commands(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -162,7 +162,7 @@ class CommandApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_commands_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_commands_with_http_info(**kwargs)  # noqa: E501
@@ -173,11 +173,11 @@ class CommandApi(object):
 
         Gets a list of all the commands available on the server.     **Required permissions:**    - **cmd.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_commands_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_commands_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -187,7 +187,7 @@ class CommandApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -241,7 +241,7 @@ class CommandApi(object):
             files=local_var_files,
             response_type='list[Command]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -252,11 +252,11 @@ class CommandApi(object):
 
         Execute a command on the server. (Almost the same as running it from the console).   Pass an array of commands to execute them in succession, you can also just pass a list with only one command if that's all you want to execute.  Returns a list with each response corresponding to a command.     **Required permissions:**    - **cmd.run**   - **cmd.run.[command]**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.run_commands(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.run_commands(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param list[ExecuteCommandRequest] body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -266,7 +266,7 @@ class CommandApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.run_commands_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.run_commands_with_http_info(**kwargs)  # noqa: E501
@@ -277,11 +277,11 @@ class CommandApi(object):
 
         Execute a command on the server. (Almost the same as running it from the console).   Pass an array of commands to execute them in succession, you can also just pass a list with only one command if that's all you want to execute.  Returns a list with each response corresponding to a command.     **Required permissions:**    - **cmd.run**   - **cmd.run.[command]**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.run_commands_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.run_commands_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param list[ExecuteCommandRequest] body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -292,7 +292,7 @@ class CommandApi(object):
         """
 
         all_params = ['body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -348,7 +348,7 @@ class CommandApi(object):
             files=local_var_files,
             response_type='list[ExecuteCommandResponse]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

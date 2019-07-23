@@ -38,11 +38,11 @@ class RegistryApi(object):
 
         Lists all the catalog values of a specified CatalogType.     **Required permissions:**    - **registry.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_registry(_class, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_registry(_class, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str _class: The fully qualified classname of the catalog type (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -52,7 +52,7 @@ class RegistryApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_registry_with_http_info(_class, **kwargs)  # noqa: E501
         else:
             (data) = self.get_registry_with_http_info(_class, **kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class RegistryApi(object):
 
         Lists all the catalog values of a specified CatalogType.     **Required permissions:**    - **registry.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_registry_with_http_info(_class, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_registry_with_http_info(_class, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str _class: The fully qualified classname of the catalog type (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -78,7 +78,7 @@ class RegistryApi(object):
         """
 
         all_params = ['_class', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -138,7 +138,7 @@ class RegistryApi(object):
             files=local_var_files,
             response_type='list[CatalogType]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

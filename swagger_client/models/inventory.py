@@ -211,6 +211,9 @@ class Inventory(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Inventory, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

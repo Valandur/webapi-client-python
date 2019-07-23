@@ -115,6 +115,9 @@ class Stat(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Stat, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

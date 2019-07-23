@@ -34,15 +34,15 @@ class ChunkApi(object):
         self.api_client = api_client
 
     def create_chunk_at(self, world, x, z, **kwargs):  # noqa: E501
-        """Load &amp; Generate a chunk  # noqa: E501
+        """Load & Generate a chunk  # noqa: E501
 
         Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_chunk_at(world, x, z, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_chunk_at(world, x, z, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The uuid of the world in which to create the chunk (required)
         :param int x: The x-coordinate of the chunk (in chunk coordinates) (required)
         :param int z: The z-coordinate of the chunk (in chunk coordinates) (required)
@@ -54,22 +54,22 @@ class ChunkApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_chunk_at_with_http_info(world, x, z, **kwargs)  # noqa: E501
         else:
             (data) = self.create_chunk_at_with_http_info(world, x, z, **kwargs)  # noqa: E501
             return data
 
     def create_chunk_at_with_http_info(self, world, x, z, **kwargs):  # noqa: E501
-        """Load &amp; Generate a chunk  # noqa: E501
+        """Load & Generate a chunk  # noqa: E501
 
         Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_chunk_at_with_http_info(world, x, z, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_chunk_at_with_http_info(world, x, z, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The uuid of the world in which to create the chunk (required)
         :param int x: The x-coordinate of the chunk (in chunk coordinates) (required)
         :param int z: The z-coordinate of the chunk (in chunk coordinates) (required)
@@ -82,7 +82,7 @@ class ChunkApi(object):
         """
 
         all_params = ['world', 'x', 'z', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -154,7 +154,7 @@ class ChunkApi(object):
             files=local_var_files,
             response_type='Chunk',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -165,11 +165,11 @@ class ChunkApi(object):
 
         Get detailed information about a chunk     **Required permissions:**    - **chunk.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_chunk_at(world, x, z, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_chunk_at(world, x, z, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The uuid of the world in which to get the chunk (required)
         :param int x: The x-coordinate of the chunk (in chunk coordinates) (required)
         :param int z: The z-coordinate of the chunk (in chunk coordinates) (required)
@@ -181,7 +181,7 @@ class ChunkApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_chunk_at_with_http_info(world, x, z, **kwargs)  # noqa: E501
         else:
             (data) = self.get_chunk_at_with_http_info(world, x, z, **kwargs)  # noqa: E501
@@ -192,11 +192,11 @@ class ChunkApi(object):
 
         Get detailed information about a chunk     **Required permissions:**    - **chunk.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_chunk_at_with_http_info(world, x, z, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_chunk_at_with_http_info(world, x, z, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The uuid of the world in which to get the chunk (required)
         :param int x: The x-coordinate of the chunk (in chunk coordinates) (required)
         :param int z: The z-coordinate of the chunk (in chunk coordinates) (required)
@@ -209,7 +209,7 @@ class ChunkApi(object):
         """
 
         all_params = ['world', 'x', 'z', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -281,7 +281,7 @@ class ChunkApi(object):
             files=local_var_files,
             response_type='Chunk',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -292,11 +292,11 @@ class ChunkApi(object):
 
         Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_chunks(world, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_chunks(world, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The uuid of the for which to get all chunks (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -306,7 +306,7 @@ class ChunkApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_chunks_with_http_info(world, **kwargs)  # noqa: E501
         else:
             (data) = self.list_chunks_with_http_info(world, **kwargs)  # noqa: E501
@@ -317,11 +317,11 @@ class ChunkApi(object):
 
         Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_chunks_with_http_info(world, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_chunks_with_http_info(world, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The uuid of the for which to get all chunks (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -332,7 +332,7 @@ class ChunkApi(object):
         """
 
         all_params = ['world', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -392,7 +392,7 @@ class ChunkApi(object):
             files=local_var_files,
             response_type='list[Chunk]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

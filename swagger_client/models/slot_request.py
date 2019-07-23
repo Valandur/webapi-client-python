@@ -121,6 +121,9 @@ class SlotRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(SlotRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

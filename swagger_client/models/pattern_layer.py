@@ -124,6 +124,9 @@ class PatternLayer(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(PatternLayer, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

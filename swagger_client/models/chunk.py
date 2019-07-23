@@ -350,6 +350,9 @@ class Chunk(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Chunk, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

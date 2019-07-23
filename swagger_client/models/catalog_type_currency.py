@@ -121,6 +121,9 @@ class CatalogTypeCurrency(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CatalogTypeCurrency, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

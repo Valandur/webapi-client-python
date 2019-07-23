@@ -38,11 +38,11 @@ class ServerApi(object):
 
         Get the main server properties (server.properties file).     **Required permissions:**    - **server.properties.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_properties(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_properties(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -51,7 +51,7 @@ class ServerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_properties_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_properties_with_http_info(**kwargs)  # noqa: E501
@@ -62,11 +62,11 @@ class ServerApi(object):
 
         Get the main server properties (server.properties file).     **Required permissions:**    - **server.properties.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_properties_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_properties_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
         :param bool pretty: Add to make the Web-API pretty print the response (useful for debugging your requests)
@@ -76,7 +76,7 @@ class ServerApi(object):
         """
 
         all_params = ['details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -130,7 +130,7 @@ class ServerApi(object):
             files=local_var_files,
             response_type='list[ServerProperty]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -141,11 +141,11 @@ class ServerApi(object):
 
         Modify settings in the server.properties file. **Note that these settings don't take effect until you restart the server.     **Required permissions:**    - **server.properties.modify**   - **server.properties.modify.[property]**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_properties(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_properties(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param object body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -155,7 +155,7 @@ class ServerApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.modify_properties_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.modify_properties_with_http_info(**kwargs)  # noqa: E501
@@ -166,11 +166,11 @@ class ServerApi(object):
 
         Modify settings in the server.properties file. **Note that these settings don't take effect until you restart the server.     **Required permissions:**    - **server.properties.modify**   - **server.properties.modify.[property]**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_properties_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_properties_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param object body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -181,7 +181,7 @@ class ServerApi(object):
         """
 
         all_params = ['body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -237,7 +237,7 @@ class ServerApi(object):
             files=local_var_files,
             response_type='list[ServerProperty]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

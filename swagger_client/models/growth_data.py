@@ -92,6 +92,9 @@ class GrowthData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GrowthData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

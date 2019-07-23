@@ -89,6 +89,9 @@ class TableEntry(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(TableEntry, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

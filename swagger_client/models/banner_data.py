@@ -124,6 +124,9 @@ class BannerData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(BannerData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

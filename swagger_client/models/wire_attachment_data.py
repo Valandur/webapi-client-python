@@ -181,6 +181,9 @@ class WireAttachmentData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(WireAttachmentData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

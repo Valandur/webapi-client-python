@@ -434,6 +434,9 @@ class ServerInfo(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ServerInfo, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

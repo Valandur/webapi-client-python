@@ -121,6 +121,9 @@ class ServerStatInteger(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ServerStatInteger, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

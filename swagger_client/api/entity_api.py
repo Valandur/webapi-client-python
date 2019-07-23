@@ -38,11 +38,11 @@ class EntityApi(object):
 
         Creates & Spawns a new entity with the specified properties.     **Required permissions:**    - **entity.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_entity(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_entity(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param CreateEntityRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -52,7 +52,7 @@ class EntityApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.create_entity_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.create_entity_with_http_info(**kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class EntityApi(object):
 
         Creates & Spawns a new entity with the specified properties.     **Required permissions:**    - **entity.create**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_entity_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_entity_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param CreateEntityRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -78,7 +78,7 @@ class EntityApi(object):
         """
 
         all_params = ['body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -134,7 +134,7 @@ class EntityApi(object):
             files=local_var_files,
             response_type='Entity',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -145,11 +145,11 @@ class EntityApi(object):
 
         Provides direct access to the underlaying entity object and can execute any method on it.     **Required permissions:**    - **entity.method**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.execute_method(entity, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.execute_method(entity, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str entity: The uuid of the entity (required)
         :param ExecuteMethodRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -160,7 +160,7 @@ class EntityApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.execute_method_with_http_info(entity, **kwargs)  # noqa: E501
         else:
             (data) = self.execute_method_with_http_info(entity, **kwargs)  # noqa: E501
@@ -171,11 +171,11 @@ class EntityApi(object):
 
         Provides direct access to the underlaying entity object and can execute any method on it.     **Required permissions:**    - **entity.method**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.execute_method_with_http_info(entity, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.execute_method_with_http_info(entity, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str entity: The uuid of the entity (required)
         :param ExecuteMethodRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -187,7 +187,7 @@ class EntityApi(object):
         """
 
         all_params = ['entity', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -249,7 +249,7 @@ class EntityApi(object):
             files=local_var_files,
             response_type='ExecuteMethodResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -260,11 +260,11 @@ class EntityApi(object):
 
         Get detailed information about an entity.     **Required permissions:**    - **entity.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_entity(entity, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_entity(entity, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str entity: The uuid of the entity (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -274,7 +274,7 @@ class EntityApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.get_entity_with_http_info(entity, **kwargs)  # noqa: E501
         else:
             (data) = self.get_entity_with_http_info(entity, **kwargs)  # noqa: E501
@@ -285,11 +285,11 @@ class EntityApi(object):
 
         Get detailed information about an entity.     **Required permissions:**    - **entity.one**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_entity_with_http_info(entity, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_entity_with_http_info(entity, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str entity: The uuid of the entity (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -300,7 +300,7 @@ class EntityApi(object):
         """
 
         all_params = ['entity', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -360,7 +360,7 @@ class EntityApi(object):
             files=local_var_files,
             response_type='Entity',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -371,11 +371,11 @@ class EntityApi(object):
 
         Get a list of all entities on the server (in all worlds).     **Required permissions:**    - **entity.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_entities(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_entities(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The world to filter the entities by
         :param str type: The type id of the entities to filter by
         :param str min: The minimum coordinates at which the entity must be, min=x|y|z
@@ -389,7 +389,7 @@ class EntityApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.list_entities_with_http_info(**kwargs)  # noqa: E501
         else:
             (data) = self.list_entities_with_http_info(**kwargs)  # noqa: E501
@@ -400,11 +400,11 @@ class EntityApi(object):
 
         Get a list of all entities on the server (in all worlds).     **Required permissions:**    - **entity.list**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_entities_with_http_info(async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.list_entities_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str world: The world to filter the entities by
         :param str type: The type id of the entities to filter by
         :param str min: The minimum coordinates at which the entity must be, min=x|y|z
@@ -419,7 +419,7 @@ class EntityApi(object):
         """
 
         all_params = ['world', 'type', 'min', 'max', 'limit', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -483,7 +483,7 @@ class EntityApi(object):
             files=local_var_files,
             response_type='list[Entity]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -494,11 +494,11 @@ class EntityApi(object):
 
         Modify the properties of an existing entity.     **Required permissions:**    - **entity.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_entity(entity, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_entity(entity, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str entity: The uuid of the entity (required)
         :param UpdateEntityRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -509,7 +509,7 @@ class EntityApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.modify_entity_with_http_info(entity, **kwargs)  # noqa: E501
         else:
             (data) = self.modify_entity_with_http_info(entity, **kwargs)  # noqa: E501
@@ -520,11 +520,11 @@ class EntityApi(object):
 
         Modify the properties of an existing entity.     **Required permissions:**    - **entity.modify**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_entity_with_http_info(entity, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.modify_entity_with_http_info(entity, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str entity: The uuid of the entity (required)
         :param UpdateEntityRequest body:
         :param bool details: Add to include additional details, omit or false otherwise
@@ -536,7 +536,7 @@ class EntityApi(object):
         """
 
         all_params = ['entity', 'body', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -598,7 +598,7 @@ class EntityApi(object):
             files=local_var_files,
             response_type='Entity',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -609,11 +609,11 @@ class EntityApi(object):
 
         Destroys an entity.     **Required permissions:**    - **entity.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.remove_entity(entity, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.remove_entity(entity, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str entity: The uuid of the entity (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -623,7 +623,7 @@ class EntityApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.remove_entity_with_http_info(entity, **kwargs)  # noqa: E501
         else:
             (data) = self.remove_entity_with_http_info(entity, **kwargs)  # noqa: E501
@@ -634,11 +634,11 @@ class EntityApi(object):
 
         Destroys an entity.     **Required permissions:**    - **entity.delete**     # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.remove_entity_with_http_info(entity, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.remove_entity_with_http_info(entity, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str entity: The uuid of the entity (required)
         :param bool details: Add to include additional details, omit or false otherwise
         :param str accept: Override the 'Accept' request header (useful for debugging your requests)
@@ -649,7 +649,7 @@ class EntityApi(object):
         """
 
         all_params = ['entity', 'details', 'accept', 'pretty']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -709,7 +709,7 @@ class EntityApi(object):
             files=local_var_files,
             response_type='Entity',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

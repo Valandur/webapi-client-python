@@ -5652,6 +5652,9 @@ class Player(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Player, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

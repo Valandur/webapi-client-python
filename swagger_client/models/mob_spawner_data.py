@@ -327,6 +327,9 @@ class MobSpawnerData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(MobSpawnerData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

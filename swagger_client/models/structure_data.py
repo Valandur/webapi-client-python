@@ -356,6 +356,9 @@ class StructureData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(StructureData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

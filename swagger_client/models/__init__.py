@@ -85,11 +85,11 @@ from swagger_client.models.hide_data import HideData
 from swagger_client.models.horse_data import HorseData
 from swagger_client.models.identifiable import Identifiable
 from swagger_client.models.igniteable_data import IgniteableData
-from swagger_client.models.inline_response_400 import InlineResponse400
-from swagger_client.models.inline_response_401 import InlineResponse401
-from swagger_client.models.inline_response_403 import InlineResponse403
-from swagger_client.models.inline_response_404 import InlineResponse404
-from swagger_client.models.inline_response_500 import InlineResponse500
+from swagger_client.models.inline_response400 import InlineResponse400
+from swagger_client.models.inline_response401 import InlineResponse401
+from swagger_client.models.inline_response403 import InlineResponse403
+from swagger_client.models.inline_response404 import InlineResponse404
+from swagger_client.models.inline_response500 import InlineResponse500
 from swagger_client.models.interactive_message import InteractiveMessage
 from swagger_client.models.interactive_message_option import InteractiveMessageOption
 from swagger_client.models.inventory import Inventory

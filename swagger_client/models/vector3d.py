@@ -150,6 +150,9 @@ class Vector3d(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Vector3d, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -44,7 +44,7 @@ class RedProtectRegion(object):
         'world': 'World',
         'admins': 'list[Player]',
         'can_delete': 'bool',
-        'date': 'str',
+        '_date': 'str',
         'flags': 'dict(str, object)',
         'leaders': 'list[Player]',
         'members': 'list[Player]',
@@ -62,7 +62,7 @@ class RedProtectRegion(object):
         'world': 'world',
         'admins': 'admins',
         'can_delete': 'canDelete',
-        'date': 'date',
+        '_date': 'date',
         'flags': 'flags',
         'leaders': 'leaders',
         'members': 'members',
@@ -71,7 +71,7 @@ class RedProtectRegion(object):
         'welcome_message': 'welcomeMessage'
     }
 
-    def __init__(self, id=None, link=None, max=None, min=None, name=None, world=None, admins=None, can_delete=None, date=None, flags=None, leaders=None, members=None, priority=None, tp_point=None, welcome_message=None):  # noqa: E501
+    def __init__(self, id=None, link=None, max=None, min=None, name=None, world=None, admins=None, can_delete=None, _date=None, flags=None, leaders=None, members=None, priority=None, tp_point=None, welcome_message=None):  # noqa: E501
         """RedProtectRegion - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -82,7 +82,7 @@ class RedProtectRegion(object):
         self._world = None
         self._admins = None
         self._can_delete = None
-        self._date = None
+        self.__date = None
         self._flags = None
         self._leaders = None
         self._members = None
@@ -101,8 +101,8 @@ class RedProtectRegion(object):
             self.admins = admins
         if can_delete is not None:
             self.can_delete = can_delete
-        if date is not None:
-            self.date = date
+        if _date is not None:
+            self._date = _date
         if flags is not None:
             self.flags = flags
         if leaders is not None:
@@ -313,27 +313,27 @@ class RedProtectRegion(object):
         self._can_delete = can_delete
 
     @property
-    def date(self):
-        """Gets the date of this RedProtectRegion.  # noqa: E501
+    def _date(self):
+        """Gets the _date of this RedProtectRegion.  # noqa: E501
 
         The date this region was created?  # noqa: E501
 
-        :return: The date of this RedProtectRegion.  # noqa: E501
+        :return: The _date of this RedProtectRegion.  # noqa: E501
         :rtype: str
         """
-        return self._date
+        return self.__date
 
-    @date.setter
-    def date(self, date):
-        """Sets the date of this RedProtectRegion.
+    @_date.setter
+    def _date(self, _date):
+        """Sets the _date of this RedProtectRegion.
 
         The date this region was created?  # noqa: E501
 
-        :param date: The date of this RedProtectRegion.  # noqa: E501
+        :param _date: The _date of this RedProtectRegion.  # noqa: E501
         :type: str
         """
 
-        self._date = date
+        self.__date = _date
 
     @property
     def flags(self):
@@ -494,6 +494,9 @@ class RedProtectRegion(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(RedProtectRegion, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

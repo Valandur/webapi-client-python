@@ -121,6 +121,9 @@ class Cause(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Cause, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

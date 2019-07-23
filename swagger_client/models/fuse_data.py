@@ -121,6 +121,9 @@ class FuseData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(FuseData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
